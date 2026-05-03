@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #F7F6F2;
+  --bg-card:   #FFFFFF;
+  --bg-alt:    #F0EDE8;
+  --primary:   #1C3A2A;
+  --primary-l: #2D5A3D;
+  --primary-xl:#4A7C59;
+  --gold:      #C9A84C;
+  --gold-l:    #F0E4B8;
+  --text-1:    #1A1A1A;
+  --text-2:    #4A4A4A;
+  --text-3:    #8A8A8A;
+  --border:    #E4E0D8;
+  --border-d:  #C8C4BC;
+  --success:   #2D7A4F;
+  --warning:   #C9A84C;
+  --error:     #C0392B;
+  --shadow:    0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.10), 0 4px 8px rgba(0,0,0,0.06);
+  --radius:    10px;
+  --radius-lg: 14px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-1);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Scrollbar ─────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-d); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-3); }
+
+/* ── Card ──────────────────────────────────────────────────────────────────── */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+/* Legacy alias */
+.glass { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow); }
+
+/* ── Buttons ───────────────────────────────────────────────────────────────── */
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.15s, box-shadow 0.15s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-shadow: var(--shadow);
+}
+.btn-primary:hover { background: var(--primary-l); box-shadow: var(--shadow-md); }
+.btn-primary:disabled { opacity: 0.45; cursor: not-allowed; }
+
+.btn-ghost {
+  background: var(--bg-card);
+  color: var(--text-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.15s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.btn-ghost:hover { background: var(--bg-alt); border-color: var(--border-d); color: var(--text-1); }
+.btn-ghost:disabled { opacity: 0.45; cursor: not-allowed; }
+
+.btn-danger {
+  background: #FEF2F2;
+  color: var(--error);
+  border: 1px solid #FECACA;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.15s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.btn-danger:hover { background: #FEE2E2; border-color: #FCA5A5; }
+
+.btn-success {
+  background: #F0FDF4;
+  color: var(--success);
+  border: 1px solid #BBF7D0;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.15s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.btn-success:hover { background: #DCFCE7; border-color: #86EFAC; }
+
+/* ── Inputs ────────────────────────────────────────────────────────────────── */
+.input {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 9px 13px;
+  color: var(--text-1);
+  font-size: 14px;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  font-family: inherit;
+}
+.input:focus {
+  border-color: var(--primary);
+  background: var(--bg-card);
+  box-shadow: 0 0 0 3px rgba(28,58,42,0.08);
+}
+.input::placeholder { color: var(--text-3); }
+select.input option { background: var(--bg-card); color: var(--text-1); }
+textarea.input { resize: vertical; }
+
+.label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 5px;
+}
+
+/* ── Table ─────────────────────────────────────────────────────────────────── */
+table { width: 100%; border-collapse: collapse; }
+thead { background: var(--bg-alt); }
+th {
+  text-align: left;
+  padding: 10px 14px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+td {
+  padding: 12px 14px;
+  font-size: 14px;
+  color: var(--text-2);
+  border-bottom: 1px solid var(--border);
+}
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: var(--bg-alt); }
+
+/* Force all page content text to be dark */
+main h1, main h2, main h3, main h4 { color: var(--text-1) !important; }
+main p { color: var(--text-2); }
+main td { color: var(--text-2) !important; }
+main .text-white { color: var(--text-1) !important; }
+main .text-cyan-400 { color: var(--primary) !important; }
+main .text-violet-400 { color: var(--primary) !important; }
+main .text-gray-400 { color: var(--text-3) !important; }
+main .text-gray-500 { color: var(--text-3) !important; }
+main .text-gray-600 { color: var(--text-3) !important; }
+main .font-semibold.text-white { color: var(--text-1) !important; }
+main .font-bold.text-white { color: var(--text-1) !important; }
+
+/* ── Badges ────────────────────────────────────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.badge-pending  { background: #FFFBEB; color: #92400E; border: 1px solid #FDE68A; }
+.badge-approved { background: #F0FDF4; color: #166534; border: 1px solid #BBF7D0; }
+.badge-rejected { background: #FEF2F2; color: #991B1B; border: 1px solid #FECACA; }
+.badge-admin    { background: #EFF6FF; color: #1E40AF; border: 1px solid #BFDBFE; }
+.badge-user     { background: var(--bg-alt); color: var(--text-2); border: 1px solid var(--border); }
+.badge-premium  { background: #FFFBEB; color: #92400E; border: 1px solid #FDE68A; }
