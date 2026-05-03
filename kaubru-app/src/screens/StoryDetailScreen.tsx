@@ -31,9 +31,9 @@ interface Story {
 type ReadMode = 'english' | 'kaubru' | 'both';
 
 const FALLBACK_IMAGES = [
-  require('../../assets/story_elder.png'),
-  require('../../assets/story_forest.png'),
-  require('../../assets/story_festival.png'),
+  require('../../assets/culture2.png'),
+  require('../../assets/culture3.png'),
+  require('../../assets/culture2.png'),
   require('../../assets/culture1.jpg'),
   require('../../assets/culture2.png'),
 ];
