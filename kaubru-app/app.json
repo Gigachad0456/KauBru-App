@@ -12,7 +12,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#0A0A1A"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.kaubru.translator"
@@ -22,7 +24,11 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#0A0A1A"
       },
-      "package": "com.kaubru.translator"
+      "package": "com.kaubru.translator",
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -33,7 +39,20 @@
         {
           "microphonePermission": "Allow KauBru AI to access your microphone to record pronunciations."
         }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "kotlinVersion": "1.9.25"
+          }
+        }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "c66c036b-18db-4c66-8048-2a19307ce021"
+      }
+    }
   }
 }
