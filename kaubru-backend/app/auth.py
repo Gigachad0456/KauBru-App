@@ -11,6 +11,7 @@ from app.config import settings
 from app.database import get_db
 from app import models
 
+# Fix for passlib + bcrypt 4.0+ compatibility
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
 
