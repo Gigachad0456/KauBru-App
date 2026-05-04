@@ -44,10 +44,16 @@
         "expo-build-properties",
         {
           "android": {
-            "kotlinVersion": "1.9.25"
+            "kotlinVersion": "2.0.21"
           }
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "9ceb7c5b-1169-48ec-9b24-f60b0b271d1d"
+      }
+    },
+    "owner": "isaac09864"
   }
 }
