@@ -29,19 +29,23 @@ app = FastAPI(
 app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
+# ── CORS ─────────────────────────────────────────────────────────────────────
+# Using the exact same logic that worked for your mobile app before
+origins = ["*"]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=origins,
     allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# ── Static files (uploaded audio) ─────────────────────────────────────────────
+# ── Static files ─────────────────────────────────────────────────────────────
 UPLOADS_DIR = os.path.join(os.path.dirname(__file__), "..", "uploads")
 os.makedirs(UPLOADS_DIR, exist_ok=True)
 app.mount("/uploads", StaticFiles(directory=UPLOADS_DIR), name="uploads")
-# ── Static files (generated TTS audio) ────────────────────────────────────────
+
 GENERATED_AUDIO_DIR = os.path.join(os.path.dirname(__file__), "..", "generated_audio")
 os.makedirs(GENERATED_AUDIO_DIR, exist_ok=True)
 app.mount("/generated_audio", StaticFiles(directory=GENERATED_AUDIO_DIR), name="generated_audio")
@@ -59,7 +63,6 @@ app.include_router(notifications.router)
 app.include_router(stories.router)
 app.include_router(picture_words.router)
 app.include_router(chat.router)
-
 
 @app.get("/", tags=["Health"])
 def root():
