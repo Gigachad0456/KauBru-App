@@ -10,6 +10,7 @@ import LessonsPage from './pages/LessonsPage'
 import TranslationsPage from './pages/TranslationsPage'
 import StoriesPage from './pages/StoriesPage'
 import ActivityPage from './pages/ActivityPage'
+import PictureWordsPage from './pages/PictureWordsPage'
 
 function PrivateRoute({ children }: { children: React.ReactNode }) {
   const token = localStorage.getItem('token')
@@ -38,6 +39,7 @@ export default function App() {
           <Route path="lessons" element={<LessonsPage />} />
           <Route path="translations" element={<TranslationsPage />} />
           <Route path="stories" element={<StoriesPage />} />
+          <Route path="picture-words" element={<PictureWordsPage />} />
           <Route path="activity" element={<ActivityPage />} />
         </Route>
       </Routes>

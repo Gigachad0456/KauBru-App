@@ -44,7 +44,7 @@ export default function UserDetailPage() {
   const { user, translations, contributions, saved_words } = data
 
   const dirLabel = (d: string) => d === 'en_to_kb' ? 'EN→KB' : 'KB→EN'
-  const dirColor = (d: string) => d === 'en_to_kb' ? 'text-cyan-400' : 'text-purple-400'
+  const dirColor = (d: string) => d === 'en_to_kb' ? 'var(--primary)' : '#7C3AED'
 
   return (
     <div className="p-6 space-y-6">
@@ -114,7 +114,7 @@ export default function UserDetailPage() {
                   : translations.map(t => (
                     <tr key={t.id}>
                       <td className="text-xs" style={{ color: "var(--text-3)" }}>{t.id}</td>
-                      <td><span className={`font-bold text-xs ${dirColor(t.direction)}`}>{dirLabel(t.direction)}</span></td>
+                      <td><span className="font-bold text-xs" style={{ color: dirColor(t.direction) }}>{dirLabel(t.direction)}</span></td>
                       <td className="text-gray-300 max-w-xs truncate">{t.source_text}</td>
                       <td className="font-semibold" style={{ color: "var(--primary)" }}>{t.translated_text}</td>
                       <td className="text-xs" style={{ color: "var(--text-3)" }}>{new Date(t.created_at).toLocaleString()}</td>
@@ -166,6 +166,9 @@ export default function UserDetailPage() {
     </div>
   )
 }
+
+
+
 
 
 

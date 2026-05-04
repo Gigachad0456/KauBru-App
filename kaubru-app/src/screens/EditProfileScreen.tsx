@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, ScrollView, TouchableOpacity, Alert, Platform, Image } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity, Alert, Platform, Image, KeyboardAvoidingView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker';
 import { authAPI } from '../services/api';
@@ -111,11 +111,21 @@ export default function EditProfileScreen({ navigation }: any) {
   };
 
   return (
+    <KeyboardAvoidingView
+      style={{ flex: 1 }}
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      keyboardVerticalOffset={Platform.OS === 'ios' ? 0 : 20}
+    >
     <View style={{ flex: 1, backgroundColor: COLORS.bg }}>
       {/* Header */}
       <Header title="Edit Profile" showBack={true} />
 
-      <ScrollView contentContainerStyle={{ paddingHorizontal: SPACING.lg, paddingBottom: 100 }} keyboardShouldPersistTaps="handled">
+      <ScrollView
+        contentContainerStyle={{ paddingHorizontal: SPACING.lg, paddingBottom: 100 }}
+        keyboardShouldPersistTaps="handled"
+        showsVerticalScrollIndicator={false}
+        automaticallyAdjustKeyboardInsets={true}
+      >
 
         {/* Avatar */}
         <View style={{ alignItems: 'center', marginBottom: SPACING.lg }}>
@@ -204,6 +214,7 @@ export default function EditProfileScreen({ navigation }: any) {
         </TouchableOpacity>
       </ScrollView>
     </View>
+    </KeyboardAvoidingView>
   );
 }
 

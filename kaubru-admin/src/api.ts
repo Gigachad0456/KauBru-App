@@ -106,4 +106,14 @@ export const adminApi = {
     const fd = new FormData(); fd.append('file', file)
     return api.post(`/stories/${id}/cover`, fd, { headers: { 'Content-Type': 'multipart/form-data' } })
   },
+
+  // Picture Words
+  pictureWords: () => api.get('/picture-words/admin/all'),
+  createPictureWord: (data: object) => api.post('/picture-words/admin', data),
+  updatePictureWord: (id: number, data: object) => api.put(`/picture-words/admin/${id}`, data),
+  deletePictureWord: (id: number) => api.delete(`/picture-words/admin/${id}`),
+  uploadPictureWordImage: (id: number, file: File) => {
+    const fd = new FormData(); fd.append('file', file);
+    return api.post(`/picture-words/admin/${id}/image`, fd, { headers: { 'Content-Type': 'multipart/form-data' } });
+  },
 }

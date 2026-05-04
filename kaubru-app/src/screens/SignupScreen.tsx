@@ -38,13 +38,15 @@ export default function SignupScreen({ navigation }: Props) {
 
   return (
     <KeyboardAvoidingView
-      behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       style={styles.flex}
+      keyboardVerticalOffset={Platform.OS === 'ios' ? 0 : 20}
     >
       <ScrollView
         contentContainerStyle={styles.scroll}
         keyboardShouldPersistTaps="handled"
         showsVerticalScrollIndicator={false}
+        automaticallyAdjustKeyboardInsets={true}
       >
         {/* Logo */}
         <View style={styles.logoRow}>
@@ -62,7 +64,7 @@ export default function SignupScreen({ navigation }: Props) {
         <View style={styles.tabRow}>
           <TouchableOpacity
             style={styles.tabBtn}
-            onPress={() => navigation.navigate('Login')}
+            onPress={() => navigation.goBack()}
           >
             <Text style={styles.tabText}>Login</Text>
           </TouchableOpacity>

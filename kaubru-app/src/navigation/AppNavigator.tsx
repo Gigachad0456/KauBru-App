@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Platform } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -26,7 +26,7 @@ import QuizScreen from '../screens/QuizScreen';
 import EditProfileScreen from '../screens/EditProfileScreen';
 import StoriesScreen from '../screens/StoriesScreen';
 import StoryDetailScreen from '../screens/StoryDetailScreen';
-import NotificationsScreen from '../screens/NotificationsScreen';
+import ChatScreen from '../screens/ChatScreen';
 
 import { COLORS, RADIUS, SPACING, SHADOW } from '../config/theme';
 
@@ -35,47 +35,40 @@ const Tab = createBottomTabNavigator();
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
-interface LessonWord {
-  id: number;
-  english: string;
-  kaubru: string;
-  audio_url?: string;
-}
-
+interface LessonWord { id: number; english: string; kaubru: string; audio_url?: string; }
 interface Lesson {
-  id: number;
-  title: string;
-  description?: string;
-  category: string;
-  progress: number;
-  is_premium: boolean;
-  words?: LessonWord[];
-  created_at: string;
+  id: number; title: string; description?: string;
+  category: string; progress: number; is_premium: boolean;
+  words?: LessonWord[]; created_at: string;
 }
 
 export type AppStackParamList = {
-  MainTabs: undefined;
-  Premium: undefined;
-  Pronunciation: undefined;
-  SavedWords: undefined;
-  MyContributions: undefined;
-  LessonDetail: { lesson: Lesson };
-  Quiz: { lesson: Lesson };
-  EditProfile: undefined;
-  Stories: undefined;
-  StoryDetail: { story: any };
-  Notifications: undefined;
+  MainTabs: undefined; Premium: undefined; Pronunciation: undefined;
+  SavedWords: undefined; MyContributions: undefined;
+  LessonDetail: { lesson: Lesson }; Quiz: { lesson: Lesson };
+  EditProfile: undefined; Stories: undefined; StoryDetail: { story: any };
 };
 
-// ─── Tab Icon ─────────────────────────────────────────────────────────────────
+// ─── Tab config ───────────────────────────────────────────────────────────────
 
-type TabIconProps = { focused: boolean; size: number };
+const TABS = [
+  { name: 'Translate',  icon: 'swap-horizontal',  label: 'Translate'  },
+  { name: 'Dictionary', icon: 'book-outline',      label: 'Dictionary' },
+  { name: 'Learn',      icon: 'school-outline',    label: 'Learn'      },
+  { name: 'Contribute', icon: 'pencil-outline',    label: 'Contribute' },
+  { name: 'Profile',    icon: 'person-outline',    label: 'Profile'    },
+] as const;
 
-function TabIcon({ name, focused, size }: TabIconProps & { name: string }) {
-  const color = focused ? COLORS.primary : COLORS.textMuted;
+// ─── Custom Tab Bar Icon ──────────────────────────────────────────────────────
+
+function TabIcon({ name, focused }: { name: string; focused: boolean }) {
   return (
     <View style={[styles.tabIconWrap, focused && styles.tabIconWrapActive]}>
-      <Ionicons name={name as any} size={size} color={color} />
+      <Ionicons
+        name={name as any}
+        size={22}
+        color={focused ? COLORS.white : 'rgba(255,255,255,0.45)'}
+      />
     </View>
   );
 }
@@ -85,31 +78,34 @@ function TabIcon({ name, focused, size }: TabIconProps & { name: string }) {
 function MainTabs() {
   return (
     <Tab.Navigator
-      screenOptions={({ route }) => ({
-        headerShown: false,
-        tabBarStyle: styles.tabBar,
-        tabBarShowLabel: true,
-        tabBarLabelStyle: styles.tabLabel,
-        tabBarActiveTintColor: COLORS.primary,
-        tabBarInactiveTintColor: COLORS.textMuted,
-        tabBarIcon: ({ focused, size }) => {
-          const icons: Record<string, { name: string; lib?: string }> = {
-            Translate:   { name: 'swap-horizontal' },
-            Dictionary:  { name: 'book-outline' },
-            Learn:       { name: 'school-outline' },
-            Contribute:  { name: 'pencil-outline' },
-            Profile:     { name: 'person-outline' },
-          };
-          const cfg = icons[route.name] || { name: 'ellipse-outline' };
-          return <TabIcon name={cfg.name} focused={focused} size={size} />;
-        },
-      })}
+      screenOptions={({ route }) => {
+        const tab = TABS.find(t => t.name === route.name);
+        return {
+          headerShown: false,
+          tabBarStyle: styles.tabBar,
+          tabBarShowLabel: false,
+          tabBarIcon: ({ focused }) => (
+            <TabIcon
+              name={tab?.icon || 'ellipse-outline'}
+              focused={focused}
+            />
+          ),
+        };
+      }}
     >
-      <Tab.Screen name="Translate"  component={HomeScreen} />
-      <Tab.Screen name="Dictionary" component={DictionaryScreen} />
-      <Tab.Screen name="Learn"      component={LearnScreen} />
-      <Tab.Screen name="Contribute" component={ContributeScreen} />
-      <Tab.Screen name="Profile"    component={ProfileScreen} />
+      {TABS.map(tab => {
+        const components: Record<string, React.ComponentType<any>> = {
+          Translate: HomeScreen, Dictionary: DictionaryScreen,
+          Learn: LearnScreen, Contribute: ContributeScreen, Profile: ProfileScreen,
+        };
+        return (
+          <Tab.Screen
+            key={tab.name}
+            name={tab.name}
+            component={components[tab.name]}
+          />
+        );
+      })}
     </Tab.Navigator>
   );
 }
@@ -118,10 +114,24 @@ function MainTabs() {
 
 function AuthStack() {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+        animation: 'fade',
+        animationDuration: 250,
+      }}
+    >
       <Stack.Screen name="Onboarding" component={OnboardingScreen} />
-      <Stack.Screen name="Login"      component={LoginScreen} />
-      <Stack.Screen name="Signup"     component={SignupScreen} />
+      <Stack.Screen
+        name="Login"
+        component={LoginScreen}
+        options={{ animation: 'slide_from_right' }}
+      />
+      <Stack.Screen
+        name="Signup"
+        component={SignupScreen}
+        options={{ animation: 'slide_from_right' }}
+      />
     </Stack.Navigator>
   );
 }
@@ -130,23 +140,46 @@ function AuthStack() {
 
 function AppStack() {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="MainTabs"       component={MainTabs} />
-      <Stack.Screen name="Premium"        component={PremiumScreen} />
-      <Stack.Screen name="Pronunciation"  component={PronunciationScreen} />
-      <Stack.Screen name="SavedWords"     component={SavedWordsScreen} />
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+        animation: 'slide_from_right',
+        animationDuration: 300,
+        contentStyle: { backgroundColor: COLORS.bg },
+      }}
+    >
+      <Stack.Screen
+        name="MainTabs"
+        component={MainTabs}
+        options={{ animation: 'fade' }}
+      />
+      <Stack.Screen name="Premium"         component={PremiumScreen} />
+      <Stack.Screen name="Pronunciation"   component={PronunciationScreen} />
+      <Stack.Screen name="SavedWords"      component={SavedWordsScreen} />
       <Stack.Screen name="MyContributions" component={MyContributionsScreen} />
-      <Stack.Screen name="LessonDetail"   component={LessonDetailScreen} />
-      <Stack.Screen name="Quiz"           component={QuizScreen} />
-      <Stack.Screen name="EditProfile"    component={EditProfileScreen} />
-      <Stack.Screen name="Stories"        component={StoriesScreen} />
-      <Stack.Screen name="StoryDetail"    component={StoryDetailScreen} />
-      <Stack.Screen name="Notifications"  component={NotificationsScreen} />
+      <Stack.Screen name="LessonDetail"    component={LessonDetailScreen} />
+      <Stack.Screen
+        name="Quiz"
+        component={QuizScreen}
+        options={{ animation: 'slide_from_bottom', animationDuration: 350 }}
+      />
+      <Stack.Screen name="EditProfile"     component={EditProfileScreen} />
+      <Stack.Screen name="Stories"         component={StoriesScreen} />
+      <Stack.Screen
+        name="StoryDetail"
+        component={StoryDetailScreen}
+        options={{ animation: 'slide_from_bottom', animationDuration: 350 }}
+      />
+      <Stack.Screen
+        name="Chat"
+        component={ChatScreen}
+        options={{ animation: 'slide_from_bottom', animationDuration: 350 }}
+      />
     </Stack.Navigator>
   );
 }
 
-// ─── Root Navigator ───────────────────────────────────────────────────────────
+// ─── Root ─────────────────────────────────────────────────────────────────────
 
 export default function AppNavigator() {
   const { user, loading } = useAuth();
@@ -158,29 +191,39 @@ export default function AppNavigator() {
   );
 }
 
+// ─── Styles ───────────────────────────────────────────────────────────────────
+
+const TAB_BAR_HEIGHT = Platform.OS === 'ios' ? 84 : 72;
+
 const styles = StyleSheet.create({
+  // Floating pill tab bar
   tabBar: {
-    backgroundColor: COLORS.bgCard,
-    borderTopWidth: 1,
-    borderTopColor: COLORS.border,
-    height: 72,
-    paddingBottom: 12,
-    paddingTop: 8,
-    ...SHADOW.md,
+    position: 'absolute',
+    bottom: Platform.OS === 'ios' ? 24 : 16,
+    left: 40,
+    right: 40,
+    height: 60,
+    borderRadius: 30,
+    backgroundColor: COLORS.primary,
+    borderTopWidth: 0,
+    elevation: 12,
+    shadowColor: COLORS.primary,
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.35,
+    shadowRadius: 20,
+    paddingBottom: 0,
+    paddingTop: 0,
+    paddingHorizontal: SPACING.sm,
   },
-  tabLabel: {
-    fontSize: 10,
-    fontWeight: '600',
-    textTransform: 'uppercase',
-    letterSpacing: 0.3,
-  },
+
+  // Icon container
   tabIconWrap: {
-    width: 36, height: 36,
-    borderRadius: RADIUS.sm,
+    width: 40, height: 40,
+    borderRadius: 20,
     alignItems: 'center',
     justifyContent: 'center',
   },
   tabIconWrapActive: {
-    backgroundColor: COLORS.bgGreenLight,
+    backgroundColor: 'rgba(255,255,255,0.2)',
   },
 });

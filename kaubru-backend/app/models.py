@@ -204,3 +204,18 @@ class AppNotification(Base):
     created_at = Column(DateTime, default=datetime.utcnow)
 
     user = relationship("User")
+
+
+class PictureWord(Base):
+    """A vocabulary word with an illustration image for the Learn with Pictures section."""
+    __tablename__ = "picture_words"
+
+    id = Column(Integer, primary_key=True, index=True)
+    english = Column(String(200), nullable=False)
+    kaubru = Column(String(200), nullable=False)
+    category = Column(String(100), default="Animals")  # Animals | Nature | Food | Objects | etc.
+    image_url = Column(String(500), nullable=True)
+    audio_url = Column(String(500), nullable=True)
+    sort_order = Column(Integer, default=0)
+    is_active = Column(Boolean, default=True)
+    created_at = Column(DateTime, default=datetime.utcnow)

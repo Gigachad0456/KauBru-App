@@ -16,10 +16,10 @@ db = SessionLocal()
 
 WORDS = [
     # Greetings
-    {"english": "hello", "kaubru": "Hou", "category": "greetings",
-     "example_english": "Hello, how are you?", "example_kaubru": "hou, kaham de tong?"},
-    {"english": "goodbye", "kaubru": "N/A", "category": "greetings",
-     "example_english": "Goodbye, see you tomorrow.", "example_kaubru": "Khnai malai phi na"},
+    {"english": "hello", "kaubru": "Hoh", "category": "greetings",
+     "example_english": "Hello, how are you?", "example_kaubru": "Hoh, kaham de tong?"},
+    {"english": "goodbye", "kaubru": "bye", "category": "greetings",
+     "example_english": "Goodbye, see you tomorrow.", "example_kaubru": "Bye, khnai malai phi na"},
     {"english": "thank you", "kaubru": "khachang ha", "category": "greetings",
      "example_english": "Thank you very much.", "example_kaubru": "betha khe khachangha."},
     {"english": "yes", "kaubru": "em", "category": "greetings",

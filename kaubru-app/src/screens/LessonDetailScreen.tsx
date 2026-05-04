@@ -7,7 +7,6 @@ import {
 import { Ionicons } from '@expo/vector-icons';
 import { lessonsAPI } from '../services/api';
 import { useAuth } from '../context/AuthContext';
-import SpeakButton from '../components/SpeakButton';
 import { COLORS, SPACING, RADIUS, SHADOW } from '../config/theme';
 
 interface LessonWord {
@@ -112,11 +111,6 @@ export default function LessonDetailScreen({ route, navigation }: any) {
                   <Text style={styles.wordEnglish}>{word.english}</Text>
                   <Text style={styles.wordKaubru}>{word.kaubru}</Text>
                 </View>
-                <SpeakButton
-                  text={word.kaubru}
-                  language="kb"
-                  size="sm"
-                />
               </View>
             </View>
           ))

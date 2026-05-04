@@ -8,6 +8,7 @@ const NAV = [
   { to: '/contributions', icon: '✦',  label: 'Contributions' },
   { to: '/lessons',       icon: '◈',  label: 'Lessons' },
   { to: '/stories',       icon: '◉',  label: 'Stories' },
+  { to: '/picture-words', icon: '🖼',  label: 'Picture Words' },
   { to: '/translations',  icon: '⇄',  label: 'Translations' },
   { to: '/activity',      icon: '◷',  label: 'Activity' },
 ]

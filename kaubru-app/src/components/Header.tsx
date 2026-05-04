@@ -1,75 +1,62 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
-import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-import { COLORS, SPACING, RADIUS, SHADOW } from '../config/theme';
-import { useAuth } from '../context/AuthContext';
-import { API_BASE_URL } from '../config/api';
+import { COLORS, SPACING, SHADOW } from '../config/theme';
 
-function fullUrl(path: string | null | undefined): string | null {
-  if (!path) return null;
-  if (path.startsWith('http')) return path;
-  return `${API_BASE_URL}${path}`;
-}
-
-interface HeaderProps {
+interface Props {
   title?: string;
-  subtitle?: string;
   showBack?: boolean;
   showProfile?: boolean;
   showNotifications?: boolean;
+  onBack?: () => void;
 }
 
-export default function Header({ 
-  title = 'KauBru', 
-  subtitle, 
-  showBack = false, 
+export default function Header({
+  title,
+  showBack = false,
   showProfile = false,
-  showNotifications = false 
-}: HeaderProps) {
+  showNotifications = false,
+  onBack,
+}: Props) {
   const navigation = useNavigation<any>();
-  const { user } = useAuth();
-  
-  const avatarUri = fullUrl(user?.avatar_url);
 
   return (
     <View style={styles.header}>
       <View style={styles.left}>
         {showBack ? (
-          <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backBtn}>
+          <TouchableOpacity
+            onPress={onBack ?? (() => navigation.goBack())}
+            style={styles.iconBtn}
+            accessibilityRole="button"
+            accessibilityLabel="Go back"
+          >
             <Ionicons name="arrow-back" size={22} color={COLORS.primary} />
           </TouchableOpacity>
         ) : (
-          <MaterialCommunityIcons name="translate" size={22} color={COLORS.primary} />
+          <View style={styles.logoRow}>
+            <MaterialCommunityIcons name="translate" size={20} color={COLORS.primary} />
+            <Text style={styles.logoText}>KauBru</Text>
+          </View>
         )}
-        <View>
-          <Text style={styles.headerTitle}>{title}</Text>
-          {subtitle ? <Text style={styles.subtitle}>{subtitle}</Text> : null}
-        </View>
       </View>
+
+      {title && <Text style={styles.title}>{title}</Text>}
 
       <View style={styles.right}>
         {showNotifications && (
-          <TouchableOpacity 
-            style={styles.iconBtn}
-            onPress={() => navigation.navigate('Notifications')}
-          >
-            <Ionicons name="notifications-outline" size={24} color={COLORS.textPrimary} />
+          <TouchableOpacity style={styles.iconBtn} accessibilityRole="button" accessibilityLabel="Notifications">
+            <Ionicons name="notifications-outline" size={22} color={COLORS.textSecondary} />
           </TouchableOpacity>
         )}
-
         {showProfile && (
-          <TouchableOpacity 
-            style={styles.profileBtn}
-            onPress={() => navigation.navigate('EditProfile')}
+          <TouchableOpacity
+            style={styles.iconBtn}
+            onPress={() => navigation.navigate('Profile')}
+            accessibilityRole="button"
+            accessibilityLabel="Profile"
           >
-            {avatarUri ? (
-              <Image source={{ uri: avatarUri }} style={styles.avatar} />
-            ) : (
-              <View style={styles.avatarFallback}>
-                <Text style={styles.avatarText}>{user?.name?.[0]?.toUpperCase() || 'U'}</Text>
-              </View>
-            )}
+            <Ionicons name="person-circle-outline" size={26} color={COLORS.primary} />
           </TouchableOpacity>
         )}
       </View>
@@ -84,60 +71,22 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: SPACING.lg,
     paddingTop: SPACING.xxl,
-    paddingBottom: SPACING.sm,
+    paddingBottom: SPACING.md,
     backgroundColor: COLORS.bg,
   },
-  left: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  backBtn: {
-    marginRight: 4,
-  },
-  headerTitle: {
-    fontSize: 18,
-    fontWeight: '700',
-    color: COLORS.textPrimary,
-  },
-  subtitle: {
-    fontSize: 12,
-    color: COLORS.textMuted,
-  },
-  right: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 12,
+  left: { flex: 1, flexDirection: 'row', alignItems: 'center' },
+  right: { flexDirection: 'row', alignItems: 'center', gap: SPACING.xs },
+  logoRow: { flexDirection: 'row', alignItems: 'center', gap: 6 },
+  logoText: { fontSize: 18, fontWeight: '800', color: COLORS.primary },
+  title: {
+    flex: 2, fontSize: 17, fontWeight: '700',
+    color: COLORS.textPrimary, textAlign: 'center',
   },
   iconBtn: {
-    padding: 4,
-  },
-  profileBtn: {
-    width: 36,
-    height: 36,
-    borderRadius: 18,
-    backgroundColor: COLORS.bgCardAlt,
-    borderWidth: 1,
-    borderColor: COLORS.border,
-    alignItems: 'center',
-    justifyContent: 'center',
-    overflow: 'hidden',
+    width: 40, height: 40, borderRadius: 20,
+    alignItems: 'center', justifyContent: 'center',
+    backgroundColor: COLORS.bgCard,
+    borderWidth: 1, borderColor: COLORS.border,
     ...SHADOW.sm,
-  },
-  avatar: {
-    width: '100%',
-    height: '100%',
-  },
-  avatarFallback: {
-    width: '100%',
-    height: '100%',
-    backgroundColor: COLORS.primaryLight,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  avatarText: {
-    color: COLORS.white,
-    fontWeight: '700',
-    fontSize: 14,
   },
 });

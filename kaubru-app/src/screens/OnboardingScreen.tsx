@@ -1,11 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import {
   View, Text, StyleSheet, Dimensions, TouchableOpacity,
-  FlatList, NativeSyntheticEvent, NativeScrollEvent, ImageBackground,
+  FlatList, NativeSyntheticEvent, NativeScrollEvent,
 } from 'react-native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { Ionicons } from '@expo/vector-icons';
-import { LinearGradient } from 'expo-linear-gradient';
+import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { COLORS, SPACING, RADIUS, SHADOW } from '../config/theme';
 
@@ -16,33 +15,41 @@ const ONBOARDING_KEY = 'onboarding_complete';
 
 interface Slide {
   id: string;
-  image: any;
+  icon: string;
+  iconLib: 'ion' | 'mci';
   tag: string;
   title: string;
   subtitle: string;
+  bgColor: string;
 }
 
 const SLIDES: Slide[] = [
   {
     id: '1',
-    image: require('../../assets/culture1.jpg'),
+    icon: 'leaf',
+    iconLib: 'mci',
     tag: 'PRESERVE',
     title: 'Living Heritage',
-    subtitle: 'The KauBru/Reang people carry centuries of culture through dance, music, and language.',
+    subtitle: 'Digitizing the KauBru/Reang language for future generations. Explore a rich dictionary of verified words.',
+    bgColor: COLORS.bgGreenLight,
   },
   {
     id: '2',
-    image: require('../../assets/culture2.png'),
-    tag: 'CELEBRATE',
-    title: 'Traditional Dance',
-    subtitle: 'Hozagiri and other sacred dances tell stories passed down through generations.',
+    icon: 'swap-horizontal',
+    iconLib: 'ion',
+    tag: 'TRANSLATE',
+    title: 'Translate Instantly',
+    subtitle: 'Translate between English and KauBru with accuracy.',
+    bgColor: COLORS.goldLight,
   },
   {
     id: '3',
-    image: require('../../assets/culture3.png'),
+    icon: 'school-outline',
+    iconLib: 'ion',
     tag: 'LEARN',
-    title: 'Speak KauBru',
-    subtitle: 'Translate, explore the dictionary, and contribute words to keep the language alive.',
+    title: 'Learn & Contribute',
+    subtitle: 'Take structured lessons, quiz yourself, and contribute new words to help grow the community dictionary.',
+    bgColor: COLORS.bgGreenLight,
   },
 ];
 
@@ -55,10 +62,7 @@ export default function OnboardingScreen({ navigation }: Props) {
     (async () => {
       try {
         const done = await AsyncStorage.getItem(ONBOARDING_KEY);
-        if (done === 'true') {
-          navigation.replace('Login');
-          return;
-        }
+        if (done === 'true') { navigation.replace('Login'); return; }
       } catch {}
       setChecked(true);
     })();
@@ -79,110 +83,106 @@ export default function OnboardingScreen({ navigation }: Props) {
   const isLastSlide = currentIndex === SLIDES.length - 1;
 
   const renderSlide = ({ item }: { item: Slide }) => (
-    <ImageBackground
-      source={item.image}
-      style={[styles.slide, { width }]}
-      resizeMode="cover"
-    >
-      {/* Dark gradient overlay — more cinematic */}
-      <LinearGradient
-        colors={['transparent', 'rgba(0,0,0,0.2)', 'rgba(0,0,0,0.6)', 'rgba(0,0,0,0.95)']}
-        locations={[0, 0.3, 0.6, 1]}
-        style={StyleSheet.absoluteFill}
-      />
-
-      {/* Content pinned to bottom */}
-      <View style={styles.slideContent}>
-        <View style={styles.tagPill}>
-          <Text style={styles.tagText}>{item.tag}</Text>
-        </View>
-        <Text style={styles.slideTitle}>{item.title}</Text>
-        <Text style={styles.slideSubtitle}>{item.subtitle}</Text>
+    <View style={[styles.slide, { width }]}>
+      {/* Icon illustration */}
+      <View style={[styles.iconContainer, { backgroundColor: item.bgColor }]}>
+        {item.iconLib === 'mci' ? (
+          <MaterialCommunityIcons name={item.icon as any} size={72} color={COLORS.primary} />
+        ) : (
+          <Ionicons name={item.icon as any} size={72} color={COLORS.primary} />
+        )}
       </View>
-    </ImageBackground>
+
+      {/* Tag */}
+      <View style={styles.tagPill}>
+        <Text style={styles.tagText}>{item.tag}</Text>
+      </View>
+
+      <Text style={styles.slideTitle}>{item.title}</Text>
+      <Text style={styles.slideSubtitle}>{item.subtitle}</Text>
+    </View>
   );
 
   return (
     <View style={styles.container}>
-      {/* Full-screen slides */}
+      {/* Decorative blobs */}
+      <View style={styles.blob1} />
+      <View style={styles.blob2} />
+
+      {/* Logo */}
+      <View style={styles.logoArea}>
+        <View style={styles.logoIcon}>
+          <MaterialCommunityIcons name="leaf" size={36} color={COLORS.primary} />
+        </View>
+        <Text style={styles.appName}>KauBru</Text>
+        <Text style={styles.appSubName}>AI TRANSLATOR</Text>
+      </View>
+
+      {/* Slides */}
       <FlatList
         ref={flatListRef}
         data={SLIDES}
-        keyExtractor={(item) => item.id}
+        keyExtractor={item => item.id}
         renderItem={renderSlide}
         horizontal
         pagingEnabled
         showsHorizontalScrollIndicator={false}
         onScroll={handleScroll}
         scrollEventThrottle={16}
-        style={StyleSheet.absoluteFill}
+        style={styles.flatList}
       />
 
-      {/* Top logo bar */}
-      <View style={styles.topBar}>
-        <View style={styles.logoRow}>
-          <Text style={styles.logoLeaf}>🌿</Text>
-          <Text style={styles.logoText}>KauBru</Text>
-        </View>
-        {!isLastSlide && (
-          <TouchableOpacity
-            onPress={() => completeOnboarding('Signup')}
-            style={styles.skipBtn}
-          >
-            <Text style={styles.skipText}>Skip</Text>
-          </TouchableOpacity>
-        )}
+      {/* Dot indicators */}
+      <View style={styles.dotsRow}>
+        {SLIDES.map((_, i) => (
+          <View key={i} style={[styles.dot, i === currentIndex && styles.dotActive]} />
+        ))}
       </View>
 
-      {/* Bottom controls */}
-      <View style={styles.bottomBar}>
-        {/* Dot indicators */}
-        <View style={styles.dotsRow}>
-          {SLIDES.map((_, i) => (
-            <View key={i} style={[styles.dot, i === currentIndex && styles.dotActive]} />
-          ))}
-        </View>
-
+      {/* CTA */}
+      <View style={styles.cta}>
         {isLastSlide ? (
-          <View style={styles.ctaCol}>
+          <>
             <TouchableOpacity
               onPress={() => completeOnboarding('Signup')}
-              style={styles.getStartedBtnWrapper}
+              style={styles.getStartedBtn}
+              accessibilityRole="button"
+              accessibilityLabel="Get Started"
             >
-              <LinearGradient
-                colors={['#FFFFFF', '#F0E4B8']}
-                style={styles.getStartedBtn}
-              >
-                <Text style={styles.getStartedText}>Get Started</Text>
-                <Ionicons name="arrow-forward" size={20} color={COLORS.primary} />
-              </LinearGradient>
+              <Text style={styles.getStartedText}>Get Started</Text>
+              <Ionicons name="arrow-forward" size={18} color={COLORS.primary} />
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => navigation.replace('Login')}
               style={styles.loginLink}
+              accessibilityRole="button"
+              accessibilityLabel="I already have an account"
             >
               <Text style={styles.loginLinkText}>I already have an account</Text>
             </TouchableOpacity>
-          </View>
+          </>
         ) : (
-          <TouchableOpacity
-            onPress={() => {
-              const next = currentIndex + 1;
-              flatListRef.current?.scrollToIndex({ index: next, animated: true });
-              setCurrentIndex(next);
-            }}
-            style={styles.nextBtnWrapper}
-          >
-            <LinearGradient
-              colors={[COLORS.primaryLight, COLORS.primary] as const}
-              start={{ x: 0, y: 0 }}
-              end={{ x: 1, y: 0 }}
+          <View style={styles.skipRow}>
+            <TouchableOpacity
+              onPress={() => completeOnboarding('Signup')}
+              style={styles.skipBtn}
+              accessibilityRole="button"
+            >
+              <Text style={styles.skipText}>Skip</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                const next = currentIndex + 1;
+                flatListRef.current?.scrollToIndex({ index: next, animated: true });
+                setCurrentIndex(next);
+              }}
               style={styles.nextBtn}
+              accessibilityRole="button"
             >
               <Text style={styles.nextText}>Next</Text>
-              <Ionicons name="arrow-forward" size={20} color={COLORS.white} />
-            </LinearGradient>
-          </TouchableOpacity>
+              <Ionicons name="arrow-forward" size={16} color={COLORS.white} />
+            </TouchableOpacity>
+          </View>
         )}
       </View>
     </View>
@@ -190,116 +190,91 @@ export default function OnboardingScreen({ navigation }: Props) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#000' },
-
-  slide: {
-    height,
-    justifyContent: 'flex-end',
+  container: {
+    flex: 1,
+    backgroundColor: COLORS.bg,
+    paddingBottom: SPACING.xxl,
   },
-  slideContent: {
-    paddingHorizontal: SPACING.xl,
-    paddingBottom: 200,  // leave room for bottom controls
+  blob1: {
+    position: 'absolute', width: 280, height: 280, borderRadius: 140,
+    backgroundColor: COLORS.primary, opacity: 0.05, top: -60, right: -80,
   },
-  tagPill: {
-    backgroundColor: COLORS.gold,
-    borderRadius: RADIUS.full,
-    paddingHorizontal: SPACING.md,
-    paddingVertical: 5,
-    alignSelf: 'flex-start',
-    marginBottom: SPACING.md,
-    ...SHADOW.md,
+  blob2: {
+    position: 'absolute', width: 220, height: 220, borderRadius: 110,
+    backgroundColor: COLORS.gold, opacity: 0.07, bottom: 120, left: -60,
   },
-  tagText: {
-    fontSize: 12, fontWeight: '900', color: COLORS.primary, letterSpacing: 2,
-  },
-  slideTitle: {
-    fontSize: 42, fontWeight: '900', color: COLORS.white,
-    fontFamily: 'Georgia', marginBottom: SPACING.md,
-    textShadowColor: 'rgba(0,0,0,0.8)', textShadowOffset: { width: 0, height: 4 }, textShadowRadius: 12,
-    letterSpacing: -0.5,
-  },
-  slideSubtitle: {
-    fontSize: 17, color: 'rgba(255,255,255,0.9)', lineHeight: 28,
-    textShadowColor: 'rgba(0,0,0,0.6)', textShadowOffset: { width: 0, height: 2 }, textShadowRadius: 6,
-    fontWeight: '500',
-  },
-
-  // Top bar
-  topBar: {
-    position: 'absolute', top: 0, left: 0, right: 0,
-    flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
-    paddingHorizontal: SPACING.lg,
-    paddingTop: SPACING.xxl,
+  logoArea: {
+    alignItems: 'center',
+    paddingTop: height * 0.07,
     paddingBottom: SPACING.md,
   },
-  logoRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
-  logoLeaf: { fontSize: 26 },
-  logoText: {
-    fontSize: 22, fontWeight: '900', color: COLORS.white,
-    textShadowColor: 'rgba(0,0,0,0.5)', textShadowOffset: { width: 0, height: 1 }, textShadowRadius: 4,
+  logoIcon: {
+    width: 64, height: 64, borderRadius: 20,
+    backgroundColor: COLORS.bgGreenLight,
+    borderWidth: 1.5, borderColor: COLORS.primary + '30',
+    alignItems: 'center', justifyContent: 'center',
+    marginBottom: SPACING.sm, ...SHADOW.sm,
   },
-  skipBtn: {
-    backgroundColor: 'rgba(255,255,255,0.15)',
-    borderRadius: RADIUS.full,
-    paddingHorizontal: SPACING.lg,
-    paddingVertical: 8,
-    borderWidth: 1, borderColor: 'rgba(255,255,255,0.2)',
+  appName: {
+    fontSize: 30, fontWeight: '800', color: COLORS.primary,
+    letterSpacing: 1, fontFamily: 'Georgia',
   },
-  skipText: { fontSize: 14, fontWeight: '700', color: COLORS.white },
-
-  // Bottom bar
-  bottomBar: {
-    position: 'absolute', bottom: 0, left: 0, right: 0,
+  appSubName: {
+    fontSize: 11, color: COLORS.textMuted, fontWeight: '600',
+    letterSpacing: 4, marginTop: 2,
+  },
+  flatList: { flexGrow: 0 },
+  slide: {
     paddingHorizontal: SPACING.xl,
-    paddingBottom: SPACING.xxl,
-    paddingTop: SPACING.xl,
-    backgroundColor: 'rgba(0,0,0,0.6)',
-    borderTopLeftRadius: RADIUS.xxl,
-    borderTopRightRadius: RADIUS.xxl,
+    paddingTop: SPACING.lg,
+    alignItems: 'center',
+  },
+  iconContainer: {
+    width: 130, height: 130, borderRadius: 65,
+    alignItems: 'center', justifyContent: 'center',
+    marginBottom: SPACING.lg, ...SHADOW.md,
+  },
+  tagPill: {
+    backgroundColor: COLORS.primary, borderRadius: RADIUS.full,
+    paddingHorizontal: SPACING.md, paddingVertical: 4,
+    marginBottom: SPACING.sm,
+  },
+  tagText: { fontSize: 10, fontWeight: '800', color: COLORS.white, letterSpacing: 1.5 },
+  slideTitle: {
+    fontSize: 24, fontWeight: '800', color: COLORS.textPrimary,
+    textAlign: 'center', marginBottom: SPACING.sm, fontFamily: 'Georgia',
+  },
+  slideSubtitle: {
+    fontSize: 14, color: COLORS.textSecondary,
+    textAlign: 'center', lineHeight: 22,
   },
   dotsRow: {
     flexDirection: 'row', justifyContent: 'center',
-    gap: 10, marginBottom: SPACING.xl,
+    alignItems: 'center', marginTop: SPACING.lg,
+    marginBottom: SPACING.md, gap: SPACING.sm,
   },
-  dot: {
-    width: 10, height: 10, borderRadius: 5,
-    backgroundColor: 'rgba(255,255,255,0.3)',
-  },
-  dotActive: {
-    width: 32, height: 10, borderRadius: 5,
-    backgroundColor: COLORS.gold,
-  },
-
-  // CTA
-  ctaCol: { gap: SPACING.md },
-  getStartedBtnWrapper: {
-    borderRadius: RADIUS.full,
-    overflow: 'hidden',
-    ...SHADOW.premium,
-  },
+  dot: { width: 8, height: 8, borderRadius: 4, backgroundColor: COLORS.border },
+  dotActive: { width: 24, height: 8, borderRadius: 4, backgroundColor: COLORS.primary },
+  cta: { paddingHorizontal: SPACING.lg, marginTop: SPACING.sm },
   getStartedBtn: {
-    paddingVertical: SPACING.lg,
-    flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 12,
-  },
-  getStartedText: {
-    fontSize: 18, fontWeight: '900', color: COLORS.primary, letterSpacing: 0.5,
-  },
-  loginLink: {
-    alignItems: 'center', paddingVertical: SPACING.sm,
-  },
-  loginLinkText: {
-    fontSize: 15, color: 'rgba(255,255,255,0.7)', fontWeight: '700',
-  },
-  nextBtnWrapper: {
+    backgroundColor: COLORS.white,
     borderRadius: RADIUS.full,
-    overflow: 'hidden',
-    ...SHADOW.premium,
+    paddingVertical: SPACING.md + 2,
+    flexDirection: 'row', alignItems: 'center',
+    justifyContent: 'center', gap: 10,
+    borderWidth: 1.5, borderColor: COLORS.primary,
+    marginBottom: SPACING.md, ...SHADOW.sm,
   },
+  getStartedText: { fontSize: 16, fontWeight: '800', color: COLORS.primary },
+  loginLink: { alignItems: 'center', paddingVertical: SPACING.sm },
+  loginLinkText: { fontSize: 14, color: COLORS.textSecondary, fontWeight: '600' },
+  skipRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
+  skipBtn: { paddingVertical: SPACING.md, paddingHorizontal: SPACING.lg },
+  skipText: { fontSize: 15, color: COLORS.textMuted, fontWeight: '600' },
   nextBtn: {
-    paddingVertical: SPACING.lg,
-    flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 12,
+    flexDirection: 'row', alignItems: 'center', gap: SPACING.sm,
+    backgroundColor: COLORS.primary, borderRadius: RADIUS.full,
+    paddingVertical: SPACING.md, paddingHorizontal: SPACING.xl, ...SHADOW.sm,
   },
-  nextText: { fontSize: 18, fontWeight: '800', color: COLORS.white },
+  nextText: { fontSize: 15, color: COLORS.white, fontWeight: '700' },
 });
-
-

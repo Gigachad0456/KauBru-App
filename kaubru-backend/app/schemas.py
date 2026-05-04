@@ -224,3 +224,20 @@ class AppNotificationOut(BaseModel):
 
     class Config:
         from_attributes = True
+
+
+# ─── Picture Words ────────────────────────────────────────────────────────────
+
+class PictureWordOut(BaseModel):
+    id: int
+    english: str
+    kaubru: str
+    category: str
+    image_url: Optional[str] = None
+    audio_url: Optional[str] = None
+    sort_order: int
+    is_active: bool
+    created_at: datetime
+
+    class Config:
+        from_attributes = True

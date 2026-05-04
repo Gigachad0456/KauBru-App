@@ -14,7 +14,7 @@ mimetypes.add_type('audio/aac', '.aac')
 from app.config import settings
 from app.database import Base, engine
 from app.limiter import limiter
-from app.routes import auth, translation, dictionary, contributions, lessons, premium, admin, tts, notifications, stories
+from app.routes import auth, translation, dictionary, contributions, lessons, premium, admin, tts, notifications, stories, picture_words, chat
 
 # Create all tables on startup
 Base.metadata.create_all(bind=engine)
@@ -30,11 +30,13 @@ app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 # ── CORS ─────────────────────────────────────────────────────────────────────
-origins = settings.ALLOWED_ORIGINS.split(",")
+_origins = settings.ALLOWED_ORIGINS.strip()
+origins = ["*"] if _origins == "*" else [o.strip() for o in _origins.split(",") if o.strip()]
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
-    allow_credentials=True,
+    allow_credentials=True if origins != ["*"] else False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -59,6 +61,8 @@ app.include_router(admin.router)
 app.include_router(tts.router)
 app.include_router(notifications.router)
 app.include_router(stories.router)
+app.include_router(picture_words.router)
+app.include_router(chat.router)
 
 
 @app.get("/", tags=["Health"])

@@ -7,7 +7,6 @@ import { Ionicons } from '@expo/vector-icons';
 import { Audio } from 'expo-av';
 import { storiesAPI } from '../services/api';
 import { useAuth } from '../context/AuthContext';
-import SpeakButton from '../components/SpeakButton';
 import { COLORS, SPACING, RADIUS, SHADOW, FONTS } from '../config/theme';
 import { API_BASE_URL } from '../config/api';
 
@@ -230,7 +229,6 @@ export default function StoryDetailScreen({ route, navigation }: any) {
                     <View style={styles.langDot} />
                     <Text style={styles.textBlockLang}>STORY CONTENT</Text>
                   </View>
-                  <SpeakButton text={story.content_english} language="en" size="sm" />
                 </View>
                 <Text style={styles.storyText}>{story.content_english}</Text>
               </View>
@@ -266,7 +264,6 @@ export default function StoryDetailScreen({ route, navigation }: any) {
                       <Text style={styles.vocabEnglish}>{word.english}</Text>
                       <Text style={styles.vocabKaubru}>{word.kaubru}</Text>
                     </View>
-                    <SpeakButton text={word.kaubru} language="kb" size="sm" />
                   </View>
                 ))}
               </View>

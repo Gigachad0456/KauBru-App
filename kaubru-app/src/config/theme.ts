@@ -88,6 +88,7 @@ export const SPACING = {
   lg: 24,
   xl: 32,
   xxl: 48,
+  tabBar: 100,  // bottom padding to clear the floating tab bar
 };
 
 export const SHADOW = {

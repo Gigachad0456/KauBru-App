@@ -1,8 +1,10 @@
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+import { API_BASE_URL } from '../config/api';
+
 const api = axios.create({
-  baseURL: 'https://kaubru-app-production.up.railway.app',
+  baseURL: API_BASE_URL,
   timeout: 10000,
   headers: { 'Content-Type': 'application/json' },
 });
@@ -113,6 +115,14 @@ export const storiesAPI = {
   getById: (id: number) => api.get(`/stories/${id}`),
 };
 
+// ─── Picture Words ────────────────────────────────────────────────────────────
+
+export const pictureWordsAPI = {
+  getAll: (category?: string) =>
+    api.get('/picture-words', { params: category ? { category } : undefined }),
+  categories: () => api.get('/picture-words/categories'),
+};
+
 // ─── Premium ──────────────────────────────────────────────────────────────────
 
 export const premiumAPI = {
@@ -122,8 +132,15 @@ export const premiumAPI = {
 // ─── TTS ──────────────────────────────────────────────────────────────────────
 
 export const ttsAPI = {
-  pronounce: (text: string) => api.get(`/tts/pronounce?text=${encodeURIComponent(text)}`),
-  uploadAudio: (formData: FormData) => api.post('/tts/upload-audio', formData),
+  pronounce: (text: string) => api.get(`/api/tts/pronounce?text=${encodeURIComponent(text)}`),
+  uploadAudio: (formData: FormData) => api.post('/api/tts/upload-audio', formData),
+};
+
+// ─── Chat ─────────────────────────────────────────────────────────────────────
+
+export const chatAPI = {
+  sendMessage: (messages: { role: string; content: string }[]) =>
+    api.post('/chat', { messages }, { timeout: 120000 }), // 2 min timeout for local LLM
 };
 
 export default api;

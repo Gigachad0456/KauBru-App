@@ -21,7 +21,7 @@ export default function ContributeScreen() {
       try {
         const res = await contributionsAPI.my();
         setSubmittedCount(res.data.length || 0);
-      } catch (e) {}
+      } catch (e) { }
     })();
   }, []);
 
@@ -43,7 +43,11 @@ export default function ContributeScreen() {
   };
 
   return (
-    <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined} style={styles.flex}>
+    <KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      style={styles.flex}
+      keyboardVerticalOffset={Platform.OS === 'ios' ? 0 : 20}
+    >
       <View style={styles.container}>
         <Header />
 
@@ -51,6 +55,7 @@ export default function ContributeScreen() {
           contentContainerStyle={styles.scroll}
           keyboardShouldPersistTaps="handled"
           showsVerticalScrollIndicator={false}
+          automaticallyAdjustKeyboardInsets={true}
         >
           <Text style={styles.title}>Contribute</Text>
           <Text style={styles.subtitle}>
@@ -79,11 +84,6 @@ export default function ContributeScreen() {
               icon="➤"
               style={styles.submitBtn}
             />
-
-            <View style={styles.reviewNote}>
-              <Ionicons name="checkmark-circle-outline" size={16} color={COLORS.primary} />
-              <Text style={styles.reviewText}>Verified by the KauBru Council.</Text>
-            </View>
           </View>
 
           {/* Impact stats */}
