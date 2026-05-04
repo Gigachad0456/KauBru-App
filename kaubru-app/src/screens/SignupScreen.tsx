@@ -113,11 +113,11 @@ export default function SignupScreen({ navigation }: Props) {
           <View style={styles.dividerLine} />
         </View>
 
-        {/* Social buttons — Google only per user request */}
+        {/* Social buttons */}
         <View style={styles.socialRow}>
           <TouchableOpacity
-            style={styles.socialBtn}
-            onPress={() => Alert.alert('Google Auth', 'Use the Login tab to sign in with Google.')}
+            style={[styles.socialBtn, { opacity: 0.6 }]}
+            onPress={() => Alert.alert('Coming Soon ✨', 'Google sign-in will be available in a future update. Please use email signup for now.')}
           >
             <MaterialCommunityIcons name="google" size={18} color="#DB4437" />
             <Text style={styles.socialText}>Continue with Google</Text>

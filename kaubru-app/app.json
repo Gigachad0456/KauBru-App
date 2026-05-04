@@ -37,7 +37,7 @@
       [
         "expo-av",
         {
-          "microphonePermission": "Allow KauBru AI to access your microphone to record pronunciations."
+          "microphonePermission": "Allow KauBru Translator to access your microphone to record pronunciations."
         }
       ],
       [
@@ -48,11 +48,6 @@
           }
         }
       ]
-    ],
-    "extra": {
-      "eas": {
-        "projectId": "c66c036b-18db-4c66-8048-2a19307ce021"
-      }
-    }
+    ]
   }
 }

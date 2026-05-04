@@ -4,72 +4,19 @@ import {
   Alert, KeyboardAvoidingView, Platform,
 } from 'react-native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { Ionicons, AntDesign, MaterialCommunityIcons } from '@expo/vector-icons';
-import * as WebBrowser from 'expo-web-browser';
-import * as Google from 'expo-auth-session/providers/google';
+import { AntDesign, MaterialCommunityIcons } from '@expo/vector-icons';
 import InputField from '../components/InputField';
 import PrimaryButton from '../components/PrimaryButton';
 import { useAuth } from '../context/AuthContext';
 import { COLORS, SPACING, RADIUS, SHADOW } from '../config/theme';
 
-WebBrowser.maybeCompleteAuthSession();
-
 type Props = { navigation: NativeStackNavigationProp<any> };
 
 export default function LoginScreen({ navigation }: Props) {
-  const { login, socialLogin } = useAuth();
+  const { login } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
-
-  // Google Auth Config
-  const [request, response, promptAsync] = Google.useAuthRequest({
-    androidClientId: process.env.EXPO_PUBLIC_GOOGLE_ANDROID_CLIENT_ID?.includes('your-') 
-      ? undefined : process.env.EXPO_PUBLIC_GOOGLE_ANDROID_CLIENT_ID,
-    iosClientId: process.env.EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID?.includes('your-') 
-      ? undefined : process.env.EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID,
-    webClientId: process.env.EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID,
-    scopes: ['openid', 'profile', 'email'],
-  });
-
-  React.useEffect(() => {
-    console.log('--- Google Auth Debug ---');
-    console.log('Android ID:', process.env.EXPO_PUBLIC_GOOGLE_ANDROID_CLIENT_ID);
-    console.log('Web ID:', process.env.EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID);
-    console.log('Request Ready:', !!request);
-    
-    if (response?.type === 'success') {
-      const { authentication } = response;
-      handleGoogleLogin(authentication?.accessToken);
-    } else if (response?.type === 'error') {
-      console.log('Google Auth Response Error:', response.error);
-    }
-  }, [response, request]);
-
-  const handleGoogleLogin = async (token?: string) => {
-    if (!token) return;
-    setLoading(true);
-    try {
-      // In a real app, you'd fetch the user's info from Google's API using the token
-      const res = await fetch('https://www.googleapis.com/userinfo/v2/me', {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      const user = await res.json();
-      
-      await socialLogin({
-        token,
-        provider: 'google',
-        email: user.email,
-        name: user.name,
-        social_id: user.id,
-        avatar_url: user.picture
-      });
-    } catch (err: any) {
-      Alert.alert('Google Login Error', 'Could not authenticate with Google.');
-    } finally {
-      setLoading(false);
-    }
-  };
 
   const handleLogin = async () => {
     if (!email.trim() || !password.trim()) {
@@ -82,16 +29,6 @@ export default function LoginScreen({ navigation }: Props) {
     } catch (err: any) {
       Alert.alert('Login Error', err?.response?.data?.detail || 'Login failed.');
     } finally { setLoading(false); }
-  };
-
-  const handleSocialLogin = (provider: string) => {
-    if (provider === 'Google') {
-      if (!request) {
-        Alert.alert('Google Auth', 'Google authentication is not configured correctly. Check your Client IDs.');
-        return;
-      }
-      promptAsync();
-    }
   };
 
   return (
@@ -169,11 +106,11 @@ export default function LoginScreen({ navigation }: Props) {
           <View style={styles.dividerLine} />
         </View>
 
-        {/* Social buttons — Google only per user request */}
+        {/* Social buttons */}
         <View style={styles.socialRow}>
           <TouchableOpacity
-            style={styles.socialBtn}
-            onPress={() => handleSocialLogin('Google')}
+            style={[styles.socialBtn, { opacity: 0.6 }]}
+            onPress={() => Alert.alert('Coming Soon ✨', 'Google sign-in will be available in a future update. Please use email login for now.')}
           >
             <AntDesign name="google" size={18} color="#DB4437" />
             <Text style={styles.socialText}>Continue with Google</Text>
