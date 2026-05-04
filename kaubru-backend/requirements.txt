@@ -13,3 +13,4 @@ aiofiles
 psycopg2-binary
 aiosqlite
 email-validator
+httpx
