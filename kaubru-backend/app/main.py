@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from slowapi import _rate_limit_exceeded_handler
@@ -30,15 +30,29 @@ app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 # ── CORS ─────────────────────────────────────────────────────────────────────
-# This is the most permissive setting possible to fix "Network Error" in browsers
+# List your Vercel URL explicitly just in case "*" is being ignored
+origins = [
+    "http://localhost:5173",
+    "http://localhost:3000",
+    "https://admin-panel-lunvenn3a-isac-reangs-projects.vercel.app",
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["*"], # Keep this but we'll also try to handle it in a custom way if it fails
     allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
-    expose_headers=["*"]
 )
+
+# Custom middleware to FORCE headers even on error
+@app.middleware("http")
+async def add_process_time_header(request: Request, call_next):
+    response = await call_next(request)
+    response.headers["Access-Control-Allow-Origin"] = "*"
+    response.headers["Access-Control-Allow-Methods"] = "*"
+    response.headers["Access-Control-Allow-Headers"] = "*"
+    return response
 
 # ── Static files ─────────────────────────────────────────────────────────────
 UPLOADS_DIR = os.path.join(os.path.dirname(__file__), "..", "uploads")
