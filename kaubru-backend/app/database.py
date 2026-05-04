@@ -5,6 +5,14 @@ from app.config import settings
 
 # Fix for Render/Railway which often provides 'postgres://' but SQLAlchemy requires 'postgresql://'
 SQLALCHEMY_DATABASE_URL = settings.DATABASE_URL
+
+# Fix for Railway/Heroku style URLs
+if SQLALCHEMY_DATABASE_URL and SQLALCHEMY_DATABASE_URL.startswith("postgres://"):
+    SQLALCHEMY_DATABASE_URL = SQLALCHEMY_DATABASE_URL.replace("postgres://", "postgresql://", 1)
+
+# Ensure it's not empty
+if not SQLALCHEMY_DATABASE_URL:
+    SQLALCHEMY_DATABASE_URL = "sqlite:///./kaubru.db"
 if SQLALCHEMY_DATABASE_URL.startswith("postgres://"):
     SQLALCHEMY_DATABASE_URL = SQLALCHEMY_DATABASE_URL.replace("postgres://", "postgresql://", 1)
 
