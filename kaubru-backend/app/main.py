@@ -30,15 +30,14 @@ app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 # ── CORS ─────────────────────────────────────────────────────────────────────
-# Using the exact same logic that worked for your mobile app before
-origins = ["*"]
-
+# This is the most permissive setting possible to fix "Network Error" in browsers
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["*"],
     allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
+    expose_headers=["*"]
 )
 
 # ── Static files ─────────────────────────────────────────────────────────────
