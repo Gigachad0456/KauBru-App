@@ -1,55 +1,108 @@
-from fastapi import APIRouter, Depends, HTTPException
+"""
+AI Chat route — uses Groq (cloud) when GROQ_API_KEY is set,
+falls back to local Ollama otherwise.
+"""
+from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
-from typing import List, Dict, Any
+from typing import List
 import httpx
 import os
 
 router = APIRouter(prefix="/chat", tags=["AI Chat"])
 
+GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://127.0.0.1:11434")
 OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "llama3")
+GROQ_MODEL = os.getenv("GROQ_MODEL", "llama3-8b-8192")
+
+SYSTEM_PROMPT = {
+    "role": "system",
+    "content": (
+        "You are the KauBru AI Assistant, built specifically for the KauBru "
+        "Language Translation App. Your purpose is to help users translate "
+        "between English and KauBru (a language from Tripura, India, spoken "
+        "by the Reang community), teach them vocabulary, and explain cultural "
+        "nuances. You are friendly, encouraging, and knowledgeable. Always "
+        "acknowledge that you are part of the KauBru App."
+    )
+}
+
 
 class ChatMessage(BaseModel):
     role: str
     content: str
 
+
 class ChatRequest(BaseModel):
     messages: List[ChatMessage]
 
+
+async def _groq_chat(messages: list[dict]) -> str:
+    """Send chat to Groq cloud API (OpenAI-compatible)."""
+    headers = {
+        "Authorization": f"Bearer {GROQ_API_KEY}",
+        "Content-Type": "application/json",
+    }
+    payload = {
+        "model": GROQ_MODEL,
+        "messages": messages,
+        "temperature": 0.7,
+        "max_tokens": 1024,
+    }
+    async with httpx.AsyncClient(timeout=60.0) as client:
+        resp = await client.post(
+            "https://api.groq.com/openai/v1/chat/completions",
+            headers=headers,
+            json=payload,
+        )
+        resp.raise_for_status()
+        data = resp.json()
+        return data["choices"][0]["message"]["content"]
+
+
+async def _ollama_chat(messages: list[dict]) -> str:
+    """Send chat to local Ollama instance."""
+    payload = {
+        "model": OLLAMA_MODEL,
+        "messages": messages,
+        "stream": False,
+    }
+    async with httpx.AsyncClient(timeout=120.0) as client:
+        resp = await client.post(f"{OLLAMA_URL}/api/chat", json=payload)
+        resp.raise_for_status()
+        data = resp.json()
+        return data.get("message", {}).get("content", "")
+
+
 @router.post("")
 async def ai_chat(request: ChatRequest):
-    try:
-        # Prepend a system prompt to give the AI context about the app
-        system_prompt = {
-            "role": "system",
-            "content": "You are the KauBru AI Assistant, built specifically for the KauBru Language Translation App. Your purpose is to help users translate between English and KauBru (a language from Tripura, India, spoken by the Reang community), teach them vocabulary, and explain cultural nuances. You are friendly, encouraging, and knowledgeable. Always acknowledge that you are part of the KauBru App."
-        }
-        
-        ollama_messages = [system_prompt] + [{"role": m.role, "content": m.content} for m in request.messages]
+    # Build messages with system prompt
+    messages = [SYSTEM_PROMPT] + [
+        {"role": m.role, "content": m.content} for m in request.messages
+    ]
 
-        payload = {
-            "model": OLLAMA_MODEL,
-            "messages": ollama_messages,
-            "stream": False
-        }
-        
-        async with httpx.AsyncClient(timeout=60.0) as client:
-            response = await client.post(f"{OLLAMA_URL}/api/chat", json=payload)
-            response.raise_for_status()
-            data = response.json()
-            
-            return {
-                "message": data.get("message", {}).get("content", ""),
-                "role": "assistant"
-            }
-            
+    try:
+        if GROQ_API_KEY:
+            # Production: use Groq cloud
+            content = await _groq_chat(messages)
+        else:
+            # Local dev: use Ollama
+            content = await _ollama_chat(messages)
+
+        return {"message": content, "role": "assistant"}
+
     except httpx.ConnectError:
         raise HTTPException(
-            status_code=503, 
-            detail="Ollama service is not reachable. Ensure Ollama is running locally."
+            status_code=503,
+            detail="AI service is not reachable. Please try again later."
+        )
+    except httpx.HTTPStatusError as e:
+        raise HTTPException(
+            status_code=502,
+            detail=f"AI service error: {e.response.status_code}"
         )
     except Exception as e:
         raise HTTPException(
-            status_code=500, 
+            status_code=500,
             detail=f"Error communicating with AI: {str(e)}"
         )
