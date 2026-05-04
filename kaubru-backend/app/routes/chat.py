@@ -97,11 +97,19 @@ async def ai_chat(request: ChatRequest):
             detail="AI service is not reachable. Please try again later."
         )
     except httpx.HTTPStatusError as e:
+        # Log the actual error body for debugging
+        try:
+            error_body = e.response.json()
+            error_detail = error_body.get("error", {}).get("message", str(e))
+        except Exception:
+            error_detail = e.response.text[:200]
+        print(f"[CHAT ERROR] Status {e.response.status_code}: {error_detail}")
         raise HTTPException(
             status_code=502,
-            detail=f"AI service error: {e.response.status_code}"
+            detail=f"AI service error: {error_detail}"
         )
     except Exception as e:
+        print(f"[CHAT ERROR] Unexpected: {str(e)}")
         raise HTTPException(
             status_code=500,
             detail=f"Error communicating with AI: {str(e)}"
