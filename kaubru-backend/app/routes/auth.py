@@ -13,6 +13,7 @@ from sqlalchemy.orm import Session
 
 from app import models, schemas
 from app.auth import hash_password, verify_password, create_access_token, get_current_user
+from app.config import settings
 from app.database import get_db
 from app.email_service import send_verification_email, send_password_reset_email
 from app.limiter import limiter
@@ -207,8 +208,8 @@ def upload_avatar(
     if len(data) > MAX_AVATAR_SIZE:
         raise HTTPException(status_code=400, detail="File too large. Max 5 MB.")
 
-    # Use Cloudinary if configured, otherwise fall back to local storage
-    if settings.CLOUDINARY_CLOUD_NAME and settings.CLOUDINARY_API_KEY:
+    # Use Cloudinary if all credentials are configured
+    if settings.CLOUDINARY_CLOUD_NAME and settings.CLOUDINARY_API_KEY and settings.CLOUDINARY_API_SECRET:
         try:
             public_id = f"user_{current_user.id}"
             avatar_url = _upload_to_cloudinary(data, public_id)
@@ -216,12 +217,19 @@ def upload_avatar(
             logger.error(f"Cloudinary upload failed: {e}")
             raise HTTPException(status_code=500, detail="Avatar upload failed. Please try again.")
     else:
-        # Local fallback (dev only — not persistent on Railway)
-        ext = os.path.splitext(file.filename or "avatar.jpg")[1] or ".jpg"
-        filename = f"avatar_{current_user.id}_{uuid.uuid4().hex}{ext}"
+        # Local fallback — works but files are lost on Railway redeploy
+        file_ext = os.path.splitext(file.filename or "avatar.jpg")[1] or ".jpg"
+        filename = f"avatar_{current_user.id}_{uuid.uuid4().hex}{file_ext}"
         dest = os.path.join(AVATAR_DIR, filename)
         with open(dest, "wb") as f:
             f.write(data)
+        # Delete old local avatar if it exists
+        if current_user.avatar_url and current_user.avatar_url.startswith("/uploads/avatars/"):
+            old_path = os.path.join(
+                os.path.dirname(__file__), "..", "..", current_user.avatar_url.lstrip("/")
+            )
+            if os.path.exists(old_path):
+                os.remove(old_path)
         avatar_url = f"/uploads/avatars/{filename}"
 
     current_user.avatar_url = avatar_url
