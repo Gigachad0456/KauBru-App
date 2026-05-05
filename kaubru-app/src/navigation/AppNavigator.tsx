@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Platform } from 'react-native';
+import { View, Text, StyleSheet, Platform } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -28,7 +28,7 @@ import StoriesScreen from '../screens/StoriesScreen';
 import StoryDetailScreen from '../screens/StoryDetailScreen';
 import ChatScreen from '../screens/ChatScreen';
 
-import { COLORS, RADIUS, SPACING, SHADOW } from '../config/theme';
+import { COLORS, SPACING } from '../config/theme';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -61,14 +61,19 @@ const TABS = [
 
 // ─── Custom Tab Bar Icon ──────────────────────────────────────────────────────
 
-function TabIcon({ name, focused }: { name: string; focused: boolean }) {
+function TabIcon({ name, label, focused }: { name: string; label: string; focused: boolean }) {
   return (
-    <View style={[styles.tabIconWrap, focused && styles.tabIconWrapActive]}>
-      <Ionicons
-        name={name as any}
-        size={22}
-        color={focused ? COLORS.white : 'rgba(255,255,255,0.45)'}
-      />
+    <View style={styles.tabItem}>
+      <View style={[styles.tabIconWrap, focused && styles.tabIconWrapActive]}>
+        <Ionicons
+          name={name as any}
+          size={20}
+          color={focused ? COLORS.white : 'rgba(255,255,255,0.5)'}
+        />
+      </View>
+      <Text style={[styles.tabLabel, focused && styles.tabLabelActive]}>
+        {label}
+      </Text>
     </View>
   );
 }
@@ -87,6 +92,7 @@ function MainTabs() {
           tabBarIcon: ({ focused }) => (
             <TabIcon
               name={tab?.icon || 'ellipse-outline'}
+              label={tab?.label || ''}
               focused={focused}
             />
           ),
@@ -193,37 +199,55 @@ export default function AppNavigator() {
 
 // ─── Styles ───────────────────────────────────────────────────────────────────
 
-const TAB_BAR_HEIGHT = Platform.OS === 'ios' ? 84 : 72;
-
 const styles = StyleSheet.create({
   // Floating pill tab bar
   tabBar: {
     position: 'absolute',
     bottom: Platform.OS === 'ios' ? 24 : 16,
-    left: 40,
-    right: 40,
-    height: 60,
-    borderRadius: 30,
+    left: 24,
+    right: 24,
+    height: 64,
+    borderRadius: 32,
     backgroundColor: COLORS.primary,
     borderTopWidth: 0,
-    elevation: 12,
-    shadowColor: COLORS.primary,
+    elevation: 16,
+    shadowColor: '#000',
     shadowOffset: { width: 0, height: 8 },
-    shadowOpacity: 0.35,
-    shadowRadius: 20,
+    shadowOpacity: 0.2,
+    shadowRadius: 24,
     paddingBottom: 0,
     paddingTop: 0,
-    paddingHorizontal: SPACING.sm,
+  },
+
+  // Tab item wrapper (icon + label)
+  tabItem: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 3,
+    paddingTop: 4,
   },
 
   // Icon container
   tabIconWrap: {
-    width: 40, height: 40,
-    borderRadius: 20,
+    width: 36,
+    height: 36,
+    borderRadius: 18,
     alignItems: 'center',
     justifyContent: 'center',
   },
   tabIconWrapActive: {
-    backgroundColor: 'rgba(255,255,255,0.2)',
+    backgroundColor: 'rgba(255,255,255,0.18)',
+  },
+
+  // Label
+  tabLabel: {
+    fontSize: 10,
+    fontWeight: '600',
+    color: 'rgba(255,255,255,0.45)',
+    letterSpacing: 0.2,
+  },
+  tabLabelActive: {
+    color: 'rgba(255,255,255,0.95)',
+    fontWeight: '700',
   },
 });

@@ -27,6 +27,8 @@
       "package": "com.kaubru.translator",
       "permissions": [
         "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS",
+        "android.permission.RECORD_AUDIO",
         "android.permission.MODIFY_AUDIO_SETTINGS"
       ]
     },
@@ -54,6 +56,12 @@
         "projectId": "9ceb7c5b-1169-48ec-9b24-f60b0b271d1d"
       }
     },
-    "owner": "isaac09864"
+    "owner": "isaac09864",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/9ceb7c5b-1169-48ec-9b24-f60b0b271d1d"
+    }
   }
 }

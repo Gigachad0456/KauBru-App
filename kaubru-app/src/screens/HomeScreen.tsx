@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import {
   View, Text, StyleSheet, ScrollView, TouchableOpacity,
-  Alert, Share, TextInput, Animated,
+  Alert, Share, TextInput, StatusBar,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import * as Clipboard from 'expo-clipboard';
 import { LinearGradient } from 'expo-linear-gradient';
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { translationAPI } from '../services/api';
-import Header from '../components/Header';
-import { COLORS, SPACING, RADIUS, SHADOW } from '../config/theme';
+import { COLORS, SPACING, RADIUS, SHADOW, FONTS } from '../config/theme';
 
 const HISTORY_KEY = 'search_history';
 const MAX_HISTORY = 20;
-const DISPLAY_HISTORY = 8;
+const DISPLAY_HISTORY = 6;
 
 export function addToHistory(history: string[], query: string): string[] {
   const deduped = history.filter(h => h !== query);
@@ -23,13 +23,12 @@ export function addToHistory(history: string[], query: string): string[] {
 
 export default function HomeScreen() {
   const navigation = useNavigation<any>();
+  const insets = useSafeAreaInsets();
   const [direction, setDirection] = useState<'en_to_kb' | 'kb_to_en'>('en_to_kb');
   const [inputText, setInputText] = useState('');
   const [result, setResult] = useState<{ translated: string; unknown: string[] } | null>(null);
   const [loading, setLoading] = useState(false);
-  const [charCount, setCharCount] = useState(0);
   const [history, setHistory] = useState<string[]>([]);
-  const [showHistory, setShowHistory] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -53,7 +52,6 @@ export default function HomeScreen() {
     if (text) setInputText(text);
     setLoading(true);
     setResult(null);
-    setShowHistory(false);
     try {
       const res = await translationAPI.translate(query, direction);
       setResult({ translated: res.data.translated_text, unknown: res.data.unknown_words });
@@ -67,27 +65,52 @@ export default function HomeScreen() {
 
   const swapDirection = () => {
     setDirection(d => d === 'en_to_kb' ? 'kb_to_en' : 'en_to_kb');
-    setInputText(''); setResult(null); setCharCount(0);
+    setInputText('');
+    setResult(null);
   };
 
   const clearHistory = async () => {
-    setHistory([]); setShowHistory(false);
+    setHistory([]);
     try { await AsyncStorage.removeItem(HISTORY_KEY); } catch {}
   };
 
   const fromLabel = direction === 'en_to_kb' ? 'English' : 'KauBru';
-  const toLabel = direction === 'en_to_kb' ? 'KauBru' : 'English';
+  const toLabel   = direction === 'en_to_kb' ? 'KauBru'  : 'English';
 
   return (
     <View style={styles.container}>
-      <Header showProfile showNotifications />
+      <StatusBar barStyle="dark-content" />
+
+      {/* ── Top bar ──────────────────────────────────────────────────── */}
+      <View style={[styles.topBar, { paddingTop: insets.top + SPACING.sm }]}>
+        <View style={styles.logoRow}>
+          <MaterialCommunityIcons name="translate" size={18} color={COLORS.primary} />
+          <Text style={styles.logoText}>KauBru</Text>
+        </View>
+        <View style={styles.topActions}>
+          <TouchableOpacity
+            style={styles.iconBtn}
+            onPress={() => navigation.navigate('Notifications')}
+            accessibilityLabel="Notifications"
+          >
+            <Ionicons name="notifications-outline" size={20} color={COLORS.textSecondary} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.iconBtn}
+            onPress={() => navigation.navigate('Profile')}
+            accessibilityLabel="Profile"
+          >
+            <Ionicons name="person-circle-outline" size={22} color={COLORS.primary} />
+          </TouchableOpacity>
+        </View>
+      </View>
 
       <ScrollView
         contentContainerStyle={styles.scroll}
         keyboardShouldPersistTaps="handled"
         showsVerticalScrollIndicator={false}
       >
-        {/* ── Language selector ─────────────────────────────────────────── */}
+        {/* ── Language selector ─────────────────────────────────────── */}
         <View style={styles.langSelector}>
           <TouchableOpacity
             style={[styles.langBtn, direction === 'en_to_kb' && styles.langBtnActive]}
@@ -98,8 +121,8 @@ export default function HomeScreen() {
             </Text>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={swapDirection} style={styles.swapCircle}>
-            <Ionicons name="swap-horizontal" size={20} color={COLORS.white} />
+          <TouchableOpacity onPress={swapDirection} style={styles.swapBtn} accessibilityLabel="Swap languages">
+            <Ionicons name="swap-horizontal" size={18} color={COLORS.white} />
           </TouchableOpacity>
 
           <TouchableOpacity
@@ -112,64 +135,60 @@ export default function HomeScreen() {
           </TouchableOpacity>
         </View>
 
-        {/* ── Input area ────────────────────────────────────────────────── */}
+        {/* ── Input card ────────────────────────────────────────────── */}
         <View style={styles.inputCard}>
-          <View style={styles.inputLangLabel}>
-            <Text style={styles.inputLangText}>{fromLabel}</Text>
-          </View>
+          <Text style={styles.inputLangLabel}>{fromLabel}</Text>
           <TextInput
             style={styles.textInput}
-            placeholder={`Enter ${fromLabel} text...`}
+            placeholder={`Type ${fromLabel} text here...`}
             placeholderTextColor={COLORS.textMuted}
             value={inputText}
-            onChangeText={t => { setInputText(t); setCharCount(t.length); }}
+            onChangeText={setInputText}
             multiline
             textAlignVertical="top"
-            onFocus={() => history.length > 0 && setShowHistory(true)}
           />
           <View style={styles.inputFooter}>
-            <TouchableOpacity
-              onPress={() => { setInputText(''); setResult(null); setCharCount(0); }}
-              style={{ opacity: inputText ? 1 : 0 }}
-            >
-              <Ionicons name="close-circle" size={20} color={COLORS.textMuted} />
-            </TouchableOpacity>
-            <Text style={styles.charCount}>{charCount} / 2000</Text>
+            {inputText.length > 0 && (
+              <TouchableOpacity
+                onPress={() => { setInputText(''); setResult(null); }}
+                style={styles.clearBtn}
+              >
+                <Ionicons name="close-circle" size={18} color={COLORS.textMuted} />
+                <Text style={styles.clearBtnText}>Clear</Text>
+              </TouchableOpacity>
+            )}
+            <Text style={styles.charCount}>{inputText.length} / 2000</Text>
           </View>
         </View>
 
-        {/* ── Translate button ──────────────────────────────────────────── */}
+        {/* ── Translate button ──────────────────────────────────────── */}
         <TouchableOpacity
           onPress={() => handleTranslate()}
           disabled={loading || !inputText.trim()}
           activeOpacity={0.85}
-          style={[styles.translateBtnWrap, (!inputText.trim() || loading) && { opacity: 0.55 }]}
+          style={[styles.translateBtnWrap, (!inputText.trim() || loading) && styles.translateBtnDisabled]}
         >
           <LinearGradient
-            colors={[COLORS.primaryLight, COLORS.primary] as const}
+            colors={[COLORS.primaryLight, COLORS.primary]}
             start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }}
             style={styles.translateBtn}
           >
-            {loading ? (
-              <Text style={styles.translateBtnText}>Translating...</Text>
-            ) : (
-              <>
-                <Text style={styles.translateBtnText}>Translate</Text>
-                <Ionicons name="arrow-forward" size={20} color={COLORS.white} />
-              </>
-            )}
+            <Text style={styles.translateBtnText}>
+              {loading ? 'Translating...' : 'Translate'}
+            </Text>
+            {!loading && <Ionicons name="arrow-forward" size={18} color={COLORS.white} />}
           </LinearGradient>
         </TouchableOpacity>
 
-        {/* ── Result ───────────────────────────────────────────────────── */}
+        {/* ── Result card ───────────────────────────────────────────── */}
         {result && (
           <View style={styles.resultCard}>
-            <View style={styles.resultTopRow}>
+            <View style={styles.resultHeader}>
               <View style={styles.resultLangBadge}>
                 <Text style={styles.resultLangText}>{toLabel}</Text>
               </View>
               <View style={styles.aiBadge}>
-                <Ionicons name="sparkles" size={11} color={COLORS.gold} />
+                <Ionicons name="sparkles" size={10} color={COLORS.gold} />
                 <Text style={styles.aiBadgeText}>AI Verified</Text>
               </View>
             </View>
@@ -178,9 +197,9 @@ export default function HomeScreen() {
 
             {result.unknown.length > 0 && (
               <View style={styles.unknownRow}>
-                <Ionicons name="alert-circle-outline" size={14} color={COLORS.warning} />
+                <Ionicons name="alert-circle-outline" size={13} color={COLORS.warning} />
                 <Text style={styles.unknownText}>
-                  Unknown words: {result.unknown.join(', ')}
+                  Unknown: {result.unknown.join(', ')}
                 </Text>
               </View>
             )}
@@ -190,30 +209,30 @@ export default function HomeScreen() {
                 style={styles.actionBtn}
                 onPress={async () => {
                   await Clipboard.setStringAsync(result.translated);
-                  Alert.alert('Copied!', 'Translation copied to clipboard.');
+                  Alert.alert('Copied', 'Translation copied to clipboard.');
                 }}
               >
-                <Ionicons name="copy-outline" size={18} color={COLORS.primary} />
+                <Ionicons name="copy-outline" size={16} color={COLORS.primary} />
                 <Text style={styles.actionBtnText}>Copy</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.actionBtn}
                 onPress={() => Share.share({ message: `"${inputText}" → "${result.translated}" (KauBru)` })}
               >
-                <Ionicons name="share-social-outline" size={18} color={COLORS.primary} />
+                <Ionicons name="share-social-outline" size={16} color={COLORS.primary} />
                 <Text style={styles.actionBtnText}>Share</Text>
               </TouchableOpacity>
             </View>
           </View>
         )}
 
-        {/* ── Search history ────────────────────────────────────────────── */}
+        {/* ── Recent history ────────────────────────────────────────── */}
         {history.length > 0 && (
           <View style={styles.historyCard}>
             <View style={styles.historyHeader}>
               <Text style={styles.historyTitle}>Recent</Text>
               <TouchableOpacity onPress={clearHistory}>
-                <Text style={styles.clearText}>Clear all</Text>
+                <Text style={styles.clearAllText}>Clear</Text>
               </TouchableOpacity>
             </View>
             {history.slice(0, DISPLAY_HISTORY).map((item, idx) => (
@@ -222,24 +241,29 @@ export default function HomeScreen() {
                 style={[styles.historyRow, idx > 0 && styles.historyRowBorder]}
                 onPress={() => handleTranslate(item)}
               >
-                <Ionicons name="time-outline" size={15} color={COLORS.textMuted} />
+                <Ionicons name="time-outline" size={14} color={COLORS.textMuted} />
                 <Text style={styles.historyText} numberOfLines={1}>{item}</Text>
-                <Ionicons name="arrow-up-outline" size={14} color={COLORS.textMuted} style={{ transform: [{ rotate: '45deg' }] }} />
+                <Ionicons
+                  name="arrow-up-outline"
+                  size={13}
+                  color={COLORS.textMuted}
+                  style={{ transform: [{ rotate: '45deg' }] }}
+                />
               </TouchableOpacity>
             ))}
           </View>
         )}
       </ScrollView>
 
-      {/* ── AI Chat FAB ────────────────────────────────────────────────── */}
-      <TouchableOpacity 
-        style={styles.chatFab}
+      {/* ── AI Chat FAB ───────────────────────────────────────────────── */}
+      <TouchableOpacity
+        style={[styles.chatFab, { bottom: insets.bottom + 88 }]}
         onPress={() => navigation.navigate('Chat')}
-        activeOpacity={0.8}
+        activeOpacity={0.85}
       >
-        <Ionicons name="chatbubbles-outline" size={24} color={COLORS.white} />
-        <View style={styles.chatFabBadge}>
-          <Ionicons name="sparkles" size={10} color={COLORS.gold} />
+        <Ionicons name="chatbubbles-outline" size={22} color={COLORS.white} />
+        <View style={styles.fabBadge}>
+          <Ionicons name="sparkles" size={9} color={COLORS.gold} />
         </View>
       </TouchableOpacity>
     </View>
@@ -248,123 +272,236 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: COLORS.bg },
-  scroll: { paddingHorizontal: SPACING.lg, paddingBottom: 120, paddingTop: SPACING.sm },
 
-  langSelector: {
-    flexDirection: 'row', alignItems: 'center',
-    backgroundColor: COLORS.bgCard,
-    borderRadius: RADIUS.full, padding: 5,
-    marginBottom: SPACING.lg,
+  topBar: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: SPACING.lg,
+    paddingBottom: SPACING.md,
+    backgroundColor: COLORS.bg,
+  },
+  logoRow: { flexDirection: 'row', alignItems: 'center', gap: 6 },
+  logoText: { fontSize: 17, fontWeight: '800', color: COLORS.primary, letterSpacing: -0.3 },
+  topActions: { flexDirection: 'row', alignItems: 'center', gap: SPACING.xs },
+  iconBtn: {
+    width: 38, height: 38, borderRadius: 19,
+    alignItems: 'center', justifyContent: 'center',
+    backgroundColor: COLORS.white,
     borderWidth: 1, borderColor: COLORS.border,
+    ...SHADOW.sm,
+  },
+
+  scroll: { paddingHorizontal: SPACING.lg, paddingBottom: 120, paddingTop: SPACING.xs },
+
+  // Language selector
+  langSelector: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: COLORS.white,
+    borderRadius: RADIUS.full,
+    padding: 4,
+    marginBottom: SPACING.lg,
+    borderWidth: 1,
+    borderColor: COLORS.border,
     ...SHADOW.sm,
   },
   langBtn: {
-    flex: 1, paddingVertical: SPACING.sm + 4,
-    alignItems: 'center', borderRadius: RADIUS.full,
+    flex: 1,
+    paddingVertical: 10,
+    alignItems: 'center',
+    borderRadius: RADIUS.full,
   },
-  langBtnActive: { backgroundColor: COLORS.primary, ...SHADOW.md },
+  langBtnActive: { backgroundColor: COLORS.primary, ...SHADOW.sm },
   langBtnText: { fontSize: 14, fontWeight: '700', color: COLORS.textMuted },
   langBtnTextActive: { color: COLORS.white },
-  swapCircle: {
-    width: 36, height: 36, borderRadius: 18,
+  swapBtn: {
+    width: 34, height: 34, borderRadius: 17,
     backgroundColor: COLORS.primary,
     alignItems: 'center', justifyContent: 'center',
-    marginHorizontal: SPACING.xs,
-    ...SHADOW.sm,
+    marginHorizontal: 4,
   },
 
+  // Input
   inputCard: {
-    backgroundColor: COLORS.bgCard,
+    backgroundColor: COLORS.white,
     borderRadius: RADIUS.xl,
-    borderWidth: 1, borderColor: COLORS.border,
+    borderWidth: 1,
+    borderColor: COLORS.border,
     marginBottom: SPACING.md,
-    overflow: 'hidden',
     ...SHADOW.md,
+    overflow: 'hidden',
   },
   inputLangLabel: {
-    paddingHorizontal: SPACING.lg, paddingTop: SPACING.md, paddingBottom: SPACING.xs,
-  },
-  inputLangText: { fontSize: 11, fontWeight: '700', color: COLORS.primary, letterSpacing: 1, textTransform: 'uppercase' },
-  textInput: {
-    color: COLORS.textPrimary, fontSize: 18,
+    fontSize: 10,
+    fontWeight: '800',
+    color: COLORS.primary,
+    letterSpacing: 1.2,
+    textTransform: 'uppercase',
     paddingHorizontal: SPACING.lg,
-    paddingTop: SPACING.sm, paddingBottom: SPACING.sm,
-    minHeight: 120, lineHeight: 28, fontWeight: '500',
+    paddingTop: SPACING.md,
+    paddingBottom: 4,
+  },
+  textInput: {
+    color: COLORS.textPrimary,
+    fontSize: 18,
+    paddingHorizontal: SPACING.lg,
+    paddingTop: SPACING.sm,
+    paddingBottom: SPACING.sm,
+    minHeight: 110,
+    lineHeight: 28,
+    fontWeight: '500',
   },
   inputFooter: {
-    flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
-    paddingHorizontal: SPACING.lg, paddingBottom: SPACING.md,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: SPACING.lg,
+    paddingBottom: SPACING.md,
   },
-  charCount: { fontSize: 12, color: COLORS.textMuted },
+  clearBtn: { flexDirection: 'row', alignItems: 'center', gap: 4 },
+  clearBtnText: { fontSize: 12, color: COLORS.textMuted, fontWeight: '500' },
+  charCount: { fontSize: 11, color: COLORS.textMuted },
 
-  translateBtnWrap: { marginBottom: SPACING.lg, borderRadius: RADIUS.full, overflow: 'hidden', ...SHADOW.premium },
+  // Translate button
+  translateBtnWrap: {
+    borderRadius: RADIUS.full,
+    overflow: 'hidden',
+    marginBottom: SPACING.lg,
+    ...SHADOW.premium,
+  },
+  translateBtnDisabled: { opacity: 0.5 },
   translateBtn: {
-    flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
-    gap: SPACING.sm, paddingVertical: SPACING.md + 4,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: SPACING.sm,
+    paddingVertical: 15,
   },
-  translateBtnText: { color: COLORS.white, fontSize: 16, fontWeight: '800', letterSpacing: 0.5 },
+  translateBtnText: { color: COLORS.white, fontSize: 15, fontWeight: '800', letterSpacing: 0.3 },
 
+  // Result
   resultCard: {
-    backgroundColor: COLORS.bgCard,
+    backgroundColor: COLORS.white,
     borderRadius: RADIUS.xl,
-    borderWidth: 1.5, borderColor: COLORS.bgGreenLight,
-    padding: SPACING.lg, marginBottom: SPACING.lg,
+    borderWidth: 1.5,
+    borderColor: COLORS.bgGreenLight,
+    padding: SPACING.lg,
+    marginBottom: SPACING.lg,
     ...SHADOW.md,
   },
-  resultTopRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: SPACING.md },
-  resultLangBadge: {
-    backgroundColor: COLORS.bgGreenLight, borderRadius: RADIUS.full,
-    paddingHorizontal: SPACING.md, paddingVertical: 4,
+  resultHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: SPACING.md,
   },
-  resultLangText: { fontSize: 11, fontWeight: '800', color: COLORS.primary, letterSpacing: 1 },
+  resultLangBadge: {
+    backgroundColor: COLORS.bgGreenLight,
+    borderRadius: RADIUS.full,
+    paddingHorizontal: SPACING.md,
+    paddingVertical: 4,
+  },
+  resultLangText: { fontSize: 10, fontWeight: '800', color: COLORS.primary, letterSpacing: 1 },
   aiBadge: {
-    flexDirection: 'row', alignItems: 'center', gap: 4,
-    backgroundColor: COLORS.goldLight, borderRadius: RADIUS.full,
-    paddingHorizontal: SPACING.sm, paddingVertical: 3,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+    backgroundColor: '#FFF8E7',
+    borderRadius: RADIUS.full,
+    paddingHorizontal: SPACING.sm,
+    paddingVertical: 3,
+    borderWidth: 1,
+    borderColor: '#F0E4B8',
   },
   aiBadgeText: { fontSize: 10, fontWeight: '700', color: COLORS.gold },
-  resultText: { fontSize: 26, fontWeight: '700', color: COLORS.textPrimary, lineHeight: 36, marginBottom: SPACING.md, fontFamily: 'Georgia' },
-  unknownRow: { flexDirection: 'row', alignItems: 'center', gap: 6, marginBottom: SPACING.md, backgroundColor: '#FFF8E7', padding: SPACING.sm, borderRadius: RADIUS.sm },
+  resultText: {
+    fontSize: 26,
+    fontWeight: '700',
+    color: COLORS.textPrimary,
+    lineHeight: 36,
+    marginBottom: SPACING.md,
+    fontFamily: FONTS.serif,
+  },
+  unknownRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+    marginBottom: SPACING.md,
+    backgroundColor: '#FFF8E7',
+    padding: SPACING.sm,
+    borderRadius: RADIUS.sm,
+  },
   unknownText: { fontSize: 12, color: COLORS.warning, fontWeight: '600', flex: 1 },
   resultActions: {
-    flexDirection: 'row', gap: SPACING.sm,
-    paddingTop: SPACING.md, borderTopWidth: 1, borderTopColor: COLORS.border,
+    flexDirection: 'row',
+    gap: SPACING.sm,
+    paddingTop: SPACING.md,
+    borderTopWidth: 1,
+    borderTopColor: COLORS.border,
   },
   actionBtn: {
-    flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
-    gap: 6, paddingVertical: SPACING.sm + 2,
-    backgroundColor: COLORS.bgGreenLight, borderRadius: RADIUS.full,
-    borderWidth: 1, borderColor: COLORS.bgGreenLight,
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 6,
+    paddingVertical: 10,
+    backgroundColor: COLORS.bgGreenLight,
+    borderRadius: RADIUS.full,
   },
   actionBtnText: { fontSize: 13, fontWeight: '700', color: COLORS.primary },
 
+  // History
   historyCard: {
-    backgroundColor: COLORS.bgCard, borderRadius: RADIUS.xl,
-    borderWidth: 1, borderColor: COLORS.border,
-    padding: SPACING.lg, marginBottom: SPACING.lg, ...SHADOW.sm,
+    backgroundColor: COLORS.white,
+    borderRadius: RADIUS.xl,
+    borderWidth: 1,
+    borderColor: COLORS.border,
+    padding: SPACING.lg,
+    marginBottom: SPACING.lg,
+    ...SHADOW.sm,
   },
-  historyHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: SPACING.md },
-  historyTitle: { fontSize: 15, fontWeight: '800', color: COLORS.textPrimary },
-  clearText: { fontSize: 13, color: COLORS.error, fontWeight: '600' },
-  historyRow: { flexDirection: 'row', alignItems: 'center', gap: SPACING.md, paddingVertical: SPACING.sm + 2 },
+  historyHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: SPACING.md,
+  },
+  historyTitle: { fontSize: 14, fontWeight: '800', color: COLORS.textPrimary },
+  clearAllText: { fontSize: 13, color: COLORS.error, fontWeight: '600' },
+  historyRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: SPACING.md,
+    paddingVertical: 10,
+  },
   historyRowBorder: { borderTopWidth: 1, borderTopColor: COLORS.bg },
   historyText: { flex: 1, fontSize: 14, color: COLORS.textSecondary, fontWeight: '500' },
-  
+
+  // FAB
   chatFab: {
     position: 'absolute',
-    bottom: 100, // Above tab bar
     right: SPACING.lg,
-    width: 60, height: 60,
-    borderRadius: 30,
+    width: 54,
+    height: 54,
+    borderRadius: 27,
     backgroundColor: COLORS.primary,
-    alignItems: 'center', justifyContent: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
     ...SHADOW.premium,
-    borderWidth: 2, borderColor: COLORS.bgGreenLight,
+    borderWidth: 2,
+    borderColor: COLORS.bgGreenLight,
   },
-  chatFabBadge: {
-    position: 'absolute', top: 12, right: 12,
-    backgroundColor: COLORS.bgCardAlt,
-    borderRadius: 8, width: 16, height: 16,
-    alignItems: 'center', justifyContent: 'center',
-  }
+  fabBadge: {
+    position: 'absolute',
+    top: 10,
+    right: 10,
+    width: 14,
+    height: 14,
+    borderRadius: 7,
+    backgroundColor: COLORS.white,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 });
