@@ -25,6 +25,11 @@ app = FastAPI(
     version="1.0.0",
 )
 
+# ── Trust Railway's reverse proxy so real client IPs are visible ──────────────
+# This makes request.client.host return the real IP, not the proxy IP.
+from uvicorn.middleware.proxy_headers import ProxyHeadersMiddleware
+app.add_middleware(ProxyHeadersMiddleware, trusted_hosts="*")
+
 # ── Rate limiting ─────────────────────────────────────────────────────────────
 app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)

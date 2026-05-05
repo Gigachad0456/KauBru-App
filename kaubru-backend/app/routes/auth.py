@@ -33,7 +33,7 @@ def _make_token() -> str:
 # ─── Signup ───────────────────────────────────────────────────────────────────
 
 @router.post("/signup", response_model=schemas.TokenResponse, status_code=201)
-@limiter.limit("5/minute")
+@limiter.limit("10/minute")
 def signup(
     request: Request,
     payload: schemas.SignupRequest,
