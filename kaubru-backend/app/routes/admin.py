@@ -242,10 +242,11 @@ def translations_per_day(
     _: models.User = Depends(require_admin),
 ):
     from datetime import timedelta
+    from sqlalchemy import cast, Date
     since = datetime.utcnow() - timedelta(days=days)
     rows = (
         db.query(
-            func.strftime("%Y-%m-%d", models.TranslationHistory.created_at).label("day"),
+            cast(models.TranslationHistory.created_at, Date).label("day"),
             func.count(models.TranslationHistory.id).label("cnt"),
         )
         .filter(models.TranslationHistory.created_at >= since)
@@ -253,7 +254,7 @@ def translations_per_day(
         .order_by("day")
         .all()
     )
-    return [TimeSeriesPoint(date=r.day, value=r.cnt) for r in rows if r.day]
+    return [TimeSeriesPoint(date=str(r.day), value=r.cnt) for r in rows if r.day]
 
 
 @router.get("/dashboard/signups-per-day", response_model=List[TimeSeriesPoint])
@@ -263,10 +264,11 @@ def signups_per_day(
     _: models.User = Depends(require_admin),
 ):
     from datetime import timedelta
+    from sqlalchemy import cast, Date
     since = datetime.utcnow() - timedelta(days=days)
     rows = (
         db.query(
-            func.strftime("%Y-%m-%d", models.User.created_at).label("day"),
+            cast(models.User.created_at, Date).label("day"),
             func.count(models.User.id).label("cnt"),
         )
         .filter(models.User.created_at >= since)
@@ -274,7 +276,7 @@ def signups_per_day(
         .order_by("day")
         .all()
     )
-    return [TimeSeriesPoint(date=r.day, value=r.cnt) for r in rows if r.day]
+    return [TimeSeriesPoint(date=str(r.day), value=r.cnt) for r in rows if r.day]
 
 
 # ─── Users ────────────────────────────────────────────────────────────────────
