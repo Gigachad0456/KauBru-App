@@ -85,33 +85,3 @@ app.include_router(chat.router)
 @app.get("/", tags=["Health"])
 def root():
     return {"message": "KauBru AI Translator API is running 🌿"}
-
-
-@app.get("/debug/users", tags=["Debug"])
-def debug_users():
-    """Temporary debug endpoint — shows user count and latest users."""
-    import os
-    from app.database import SessionLocal
-    from app import models
-    from app.config import settings
-    
-    db = SessionLocal()
-    try:
-        count = db.query(models.User).count()
-        users = db.query(models.User).order_by(models.User.id.desc()).limit(10).all()
-        
-        # Check what DATABASE_URL is actually set to
-        env_db_url = os.environ.get("DATABASE_URL", "NOT SET")
-        
-        return {
-            "total": count,
-            "database_url_hint": str(db.bind.url)[:60] + "...",
-            "env_DATABASE_URL": env_db_url[:60] + "..." if len(env_db_url) > 60 else env_db_url,
-            "settings_DATABASE_URL": settings.DATABASE_URL[:60] + "...",
-            "users": [
-                {"id": u.id, "name": u.name, "email": u.email, "avatar_url": u.avatar_url}
-                for u in users
-            ]
-        }
-    finally:
-        db.close()
