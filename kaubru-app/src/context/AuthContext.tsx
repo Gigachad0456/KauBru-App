@@ -25,33 +25,69 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
+const TOKEN_KEY = 'token';
+const USER_KEY  = 'cached_user';
+
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<User | null>(null);
-  const [token, setToken] = useState<string | null>(null);
+  const [user, setUser]     = useState<User | null>(null);
+  const [token, setToken]   = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+
+  // Persist user to AsyncStorage so it survives app restarts
+  const persistUser = async (u: User | null) => {
+    try {
+      if (u) {
+        await AsyncStorage.setItem(USER_KEY, JSON.stringify(u));
+      } else {
+        await AsyncStorage.removeItem(USER_KEY);
+      }
+    } catch {}
+  };
+
+  const setAndPersistUser = (u: User | null) => {
+    setUser(u);
+    persistUser(u);
+  };
 
   useEffect(() => {
     // Restore session on app start
     (async () => {
       try {
-        const stored = await AsyncStorage.getItem('token');
-        if (stored) {
-          setToken(stored);
+        const [storedToken, storedUser] = await Promise.all([
+          AsyncStorage.getItem(TOKEN_KEY),
+          AsyncStorage.getItem(USER_KEY),
+        ]);
+
+        if (!storedToken) {
+          setLoading(false);
+          return;
+        }
+
+        setToken(storedToken);
+
+        // Immediately restore cached user so UI shows instantly
+        if (storedUser) {
           try {
-            const res = await authAPI.me();
-            setUser(res.data);
-          } catch (err: any) {
-            console.log('Session restore fetch user error:', err?.message);
-            // Only clear token if it's definitely invalid (401)
-            // If it's a network error (no response), keep the token
-            if (err?.response?.status === 401) {
-              await AsyncStorage.removeItem('token');
-              setToken(null);
-            }
+            const parsed = JSON.parse(storedUser);
+            setUser(parsed);
+          } catch {}
+        }
+
+        // Then fetch fresh user data from server in background
+        try {
+          const res = await authAPI.me();
+          setAndPersistUser(res.data);
+        } catch (err: any) {
+          // 401 = token expired/invalid → log out
+          if (err?.response?.status === 401) {
+            await AsyncStorage.multiRemove([TOKEN_KEY, USER_KEY]);
+            setToken(null);
+            setUser(null);
           }
+          // Network error → keep cached user, stay logged in
         }
       } catch (e) {
-        console.error('AsyncStorage error:', e);
+        console.error('AuthContext restore error:', e);
       } finally {
         setLoading(false);
       }
@@ -61,39 +97,39 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const login = async (email: string, password: string) => {
     const res = await authAPI.login(email, password);
     const { access_token } = res.data;
-    await AsyncStorage.setItem('token', access_token);
+    await AsyncStorage.setItem(TOKEN_KEY, access_token);
     setToken(access_token);
     const me = await authAPI.me();
-    setUser(me.data);
+    setAndPersistUser(me.data);
   };
 
   const signup = async (name: string, email: string, password: string) => {
     const res = await authAPI.signup(name, email, password);
     const { access_token } = res.data;
-    await AsyncStorage.setItem('token', access_token);
+    await AsyncStorage.setItem(TOKEN_KEY, access_token);
     setToken(access_token);
     const me = await authAPI.me();
-    setUser(me.data);
+    setAndPersistUser(me.data);
   };
 
   const socialLogin = async (payload: any) => {
     const res = await authAPI.socialLogin(payload);
     const { access_token } = res.data;
-    await AsyncStorage.setItem('token', access_token);
+    await AsyncStorage.setItem(TOKEN_KEY, access_token);
     setToken(access_token);
     const me = await authAPI.me();
-    setUser(me.data);
+    setAndPersistUser(me.data);
   };
 
   const logout = async () => {
-    await AsyncStorage.removeItem('token');
+    await AsyncStorage.multiRemove([TOKEN_KEY, USER_KEY]);
     setToken(null);
     setUser(null);
   };
 
   const refreshUser = async () => {
     const me = await authAPI.me();
-    setUser(me.data);
+    setAndPersistUser(me.data);
   };
 
   return (

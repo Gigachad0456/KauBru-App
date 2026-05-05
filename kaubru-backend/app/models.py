@@ -18,7 +18,7 @@ class User(Base):
     points = Column(Integer, default=0)
     is_premium = Column(Boolean, default=False)
     is_verified = Column(Boolean, default=False)
-    avatar_url = Column(String(300), nullable=True)
+    avatar_url = Column(String(600), nullable=True)
     push_token = Column(String(200), nullable=True)
     social_id = Column(String(100), nullable=True, index=True)
     social_provider = Column(String(20), nullable=True) # google

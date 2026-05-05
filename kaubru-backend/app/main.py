@@ -85,3 +85,24 @@ app.include_router(chat.router)
 @app.get("/", tags=["Health"])
 def root():
     return {"message": "KauBru AI Translator API is running 🌿"}
+
+
+@app.get("/debug/users", tags=["Debug"])
+def debug_users():
+    """Temporary debug endpoint — shows user count and latest users."""
+    from app.database import SessionLocal
+    from app import models
+    db = SessionLocal()
+    try:
+        count = db.query(models.User).count()
+        users = db.query(models.User).order_by(models.User.id.desc()).limit(10).all()
+        return {
+            "total": count,
+            "database_url_hint": str(db.bind.url)[:60] + "...",
+            "users": [
+                {"id": u.id, "name": u.name, "email": u.email, "avatar_url": u.avatar_url}
+                for u in users
+            ]
+        }
+    finally:
+        db.close()

@@ -38,20 +38,29 @@ export default function HomeScreen() {
   const [result, setResult] = useState<{ translated: string; unknown: string[] } | null>(null);
   const [loading, setLoading] = useState(false);
   const [history, setHistory] = useState<string[]>([]);
-
-  const avatarUrl = fullAvatarUrl(user?.avatar_url);
-  const initials = user?.name
-    ? user.name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2)
-    : '?';
+  const [avatarUrl, setAvatarUrl] = useState<string | null>(fullAvatarUrl(user?.avatar_url));
+  const [initials, setInitials] = useState(
+    user?.name ? user.name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2) : '?'
+  );
 
   // Refresh user data whenever this screen comes into focus
   // so avatar updates from EditProfile are reflected immediately
   useEffect(() => {
-    const unsubscribe = navigation.addListener('focus', () => {
-      refreshUser().catch(() => {});
+    const unsubscribe = navigation.addListener('focus', async () => {
+      try {
+        await refreshUser();
+      } catch {}
     });
     return unsubscribe;
   }, [navigation]);
+
+  // Sync local avatar state whenever user object changes
+  useEffect(() => {
+    setAvatarUrl(fullAvatarUrl(user?.avatar_url));
+    setInitials(
+      user?.name ? user.name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2) : '?'
+    );
+  }, [user?.avatar_url, user?.name]);
 
   useEffect(() => {
     (async () => {
