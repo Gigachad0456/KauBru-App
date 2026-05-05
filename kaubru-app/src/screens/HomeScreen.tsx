@@ -32,12 +32,26 @@ export function addToHistory(history: string[], query: string): string[] {
 export default function HomeScreen() {
   const navigation = useNavigation<any>();
   const insets = useSafeAreaInsets();
-  const { user } = useAuth();
+  const { user, refreshUser } = useAuth();
   const [direction, setDirection] = useState<'en_to_kb' | 'kb_to_en'>('en_to_kb');
   const [inputText, setInputText] = useState('');
   const [result, setResult] = useState<{ translated: string; unknown: string[] } | null>(null);
   const [loading, setLoading] = useState(false);
   const [history, setHistory] = useState<string[]>([]);
+
+  const avatarUrl = fullAvatarUrl(user?.avatar_url);
+  const initials = user?.name
+    ? user.name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2)
+    : '?';
+
+  // Refresh user data whenever this screen comes into focus
+  // so avatar updates from EditProfile are reflected immediately
+  useEffect(() => {
+    const unsubscribe = navigation.addListener('focus', () => {
+      refreshUser().catch(() => {});
+    });
+    return unsubscribe;
+  }, [navigation]);
 
   const avatarUrl = fullAvatarUrl(user?.avatar_url);
   const initials = user?.name
