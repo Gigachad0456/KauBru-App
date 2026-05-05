@@ -165,6 +165,32 @@ ALLOWED_IMAGE_TYPES = {"image/jpeg", "image/png", "image/webp", "image/gif"}
 MAX_AVATAR_SIZE = 5 * 1024 * 1024  # 5 MB
 
 
+def _upload_to_cloudinary(data: bytes, public_id: str) -> str:
+    """Upload image bytes to Cloudinary and return the secure URL."""
+    import cloudinary
+    import cloudinary.uploader
+    import io
+
+    cloudinary.config(
+        cloud_name=settings.CLOUDINARY_CLOUD_NAME,
+        api_key=settings.CLOUDINARY_API_KEY,
+        api_secret=settings.CLOUDINARY_API_SECRET,
+        secure=True,
+    )
+    result = cloudinary.uploader.upload(
+        io.BytesIO(data),
+        public_id=public_id,
+        folder="kaubru/avatars",
+        overwrite=True,
+        resource_type="image",
+        transformation=[
+            {"width": 256, "height": 256, "crop": "fill", "gravity": "face"},
+            {"quality": "auto", "fetch_format": "auto"},
+        ],
+    )
+    return result["secure_url"]
+
+
 @router.post("/avatar", response_model=schemas.AvatarResponse)
 def upload_avatar(
     file: UploadFile = File(...),
@@ -181,25 +207,27 @@ def upload_avatar(
     if len(data) > MAX_AVATAR_SIZE:
         raise HTTPException(status_code=400, detail="File too large. Max 5 MB.")
 
-    ext = os.path.splitext(file.filename or "avatar.jpg")[1] or ".jpg"
-    filename = f"avatar_{current_user.id}_{uuid.uuid4().hex}{ext}"
-    dest = os.path.join(AVATAR_DIR, filename)
+    # Use Cloudinary if configured, otherwise fall back to local storage
+    if settings.CLOUDINARY_CLOUD_NAME and settings.CLOUDINARY_API_KEY:
+        try:
+            public_id = f"user_{current_user.id}"
+            avatar_url = _upload_to_cloudinary(data, public_id)
+        except Exception as e:
+            logger.error(f"Cloudinary upload failed: {e}")
+            raise HTTPException(status_code=500, detail="Avatar upload failed. Please try again.")
+    else:
+        # Local fallback (dev only — not persistent on Railway)
+        ext = os.path.splitext(file.filename or "avatar.jpg")[1] or ".jpg"
+        filename = f"avatar_{current_user.id}_{uuid.uuid4().hex}{ext}"
+        dest = os.path.join(AVATAR_DIR, filename)
+        with open(dest, "wb") as f:
+            f.write(data)
+        avatar_url = f"/uploads/avatars/{filename}"
 
-    with open(dest, "wb") as f:
-        f.write(data)
-
-    # Delete old avatar file if it was a local upload
-    if current_user.avatar_url and current_user.avatar_url.startswith("/uploads/avatars/"):
-        old_path = os.path.join(
-            os.path.dirname(__file__), "..", "..", current_user.avatar_url.lstrip("/")
-        )
-        if os.path.exists(old_path):
-            os.remove(old_path)
-
-    current_user.avatar_url = f"/uploads/avatars/{filename}"
+    current_user.avatar_url = avatar_url
     db.commit()
     db.refresh(current_user)
-    return {"avatar_url": current_user.avatar_url}
+    return {"avatar_url": avatar_url}
 
 
 # ─── Email Verification ───────────────────────────────────────────────────────

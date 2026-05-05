@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {
   View, Text, StyleSheet, ScrollView, TouchableOpacity,
-  Alert, Share, TextInput, StatusBar,
+  Alert, Share, TextInput, StatusBar, Image,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import * as Clipboard from 'expo-clipboard';
@@ -10,7 +10,15 @@ import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { translationAPI } from '../services/api';
+import { useAuth } from '../context/AuthContext';
+import { API_BASE_URL } from '../config/api';
 import { COLORS, SPACING, RADIUS, SHADOW, FONTS } from '../config/theme';
+
+function fullAvatarUrl(path: string | null | undefined): string | null {
+  if (!path) return null;
+  if (path.startsWith('http')) return path;
+  return `${API_BASE_URL}${path}`;
+}
 
 const HISTORY_KEY = 'search_history';
 const MAX_HISTORY = 20;
@@ -24,11 +32,17 @@ export function addToHistory(history: string[], query: string): string[] {
 export default function HomeScreen() {
   const navigation = useNavigation<any>();
   const insets = useSafeAreaInsets();
+  const { user } = useAuth();
   const [direction, setDirection] = useState<'en_to_kb' | 'kb_to_en'>('en_to_kb');
   const [inputText, setInputText] = useState('');
   const [result, setResult] = useState<{ translated: string; unknown: string[] } | null>(null);
   const [loading, setLoading] = useState(false);
   const [history, setHistory] = useState<string[]>([]);
+
+  const avatarUrl = fullAvatarUrl(user?.avatar_url);
+  const initials = user?.name
+    ? user.name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2)
+    : '?';
 
   useEffect(() => {
     (async () => {
@@ -96,11 +110,24 @@ export default function HomeScreen() {
             <Ionicons name="notifications-outline" size={20} color={COLORS.textSecondary} />
           </TouchableOpacity>
           <TouchableOpacity
-            style={styles.iconBtn}
+            style={styles.avatarBtn}
             onPress={() => navigation.navigate('Profile')}
             accessibilityLabel="Profile"
           >
-            <Ionicons name="person-circle-outline" size={22} color={COLORS.primary} />
+            {avatarUrl ? (
+              <Image
+                source={{ uri: avatarUrl }}
+                style={styles.avatarImg}
+                onError={() => console.log('[Avatar] Failed to load:', avatarUrl)}
+              />
+            ) : (
+              <View style={styles.avatarFallback}>
+                <Text style={styles.avatarInitials}>{initials}</Text>
+              </View>
+            )}
+            {user?.is_premium && (
+              <View style={styles.premiumDot} />
+            )}
           </TouchableOpacity>
         </View>
       </View>
@@ -290,6 +317,49 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.white,
     borderWidth: 1, borderColor: COLORS.border,
     ...SHADOW.sm,
+  },
+
+  // Avatar button
+  avatarBtn: {
+    width: 38,
+    height: 38,
+    borderRadius: 19,
+    overflow: 'visible',
+    position: 'relative',
+  },
+  avatarImg: {
+    width: 38,
+    height: 38,
+    borderRadius: 19,
+    borderWidth: 2,
+    borderColor: COLORS.primary,
+  },
+  avatarFallback: {
+    width: 38,
+    height: 38,
+    borderRadius: 19,
+    backgroundColor: COLORS.primary,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 2,
+    borderColor: COLORS.primaryLight,
+  },
+  avatarInitials: {
+    fontSize: 13,
+    fontWeight: '800',
+    color: COLORS.white,
+    letterSpacing: 0.5,
+  },
+  premiumDot: {
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
+    width: 11,
+    height: 11,
+    borderRadius: 6,
+    backgroundColor: COLORS.gold,
+    borderWidth: 2,
+    borderColor: COLORS.white,
   },
 
   scroll: { paddingHorizontal: SPACING.lg, paddingBottom: 120, paddingTop: SPACING.xs },

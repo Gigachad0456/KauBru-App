@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Alert } from 'react-native';
+import * as Updates from 'expo-updates';
 import { AuthProvider, useAuth } from './src/context/AuthContext';
 import { requestAndRegisterPushToken } from './src/services/notifications';
 import AppNavigator from './src/navigation/AppNavigator';
@@ -32,6 +33,24 @@ function AppWithAuth() {
 }
 
 export default function App() {
+  useEffect(() => {
+    // Check for OTA updates on launch and apply immediately if available
+    async function checkForUpdate() {
+      try {
+        if (!__DEV__) {
+          const update = await Updates.checkForUpdateAsync();
+          if (update.isAvailable) {
+            await Updates.fetchUpdateAsync();
+            await Updates.reloadAsync(); // applies update immediately
+          }
+        }
+      } catch {
+        // Non-fatal — app continues with current bundle
+      }
+    }
+    checkForUpdate();
+  }, []);
+
   return (
     <SafeAreaProvider>
       <AuthProvider>

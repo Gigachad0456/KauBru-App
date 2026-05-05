@@ -22,6 +22,11 @@ class Settings(BaseSettings):
     GOOGLE_IOS_CLIENT_ID: str = ""
     GOOGLE_WEB_CLIENT_ID: str = ""
 
+    # Cloudinary (avatar storage)
+    CLOUDINARY_CLOUD_NAME: str = ""
+    CLOUDINARY_API_KEY: str = ""
+    CLOUDINARY_API_SECRET: str = ""
+
 
     # Rate limiting (requests per window)
     RATE_LIMIT_TRANSLATE: str = "30/minute"

@@ -18,3 +18,4 @@ alembic
 aiofiles
 jinja2
 python-slugify
+cloudinary
