@@ -28,20 +28,21 @@ export default function LoginScreen({ navigation }: Props) {
       await login(email.trim(), password);
     } catch (err: any) {
       console.error('Login Error:', err);
-      let errorMessage = 'Login failed. Please check your credentials and internet connection.';
-      
-      if (err?.response?.data?.detail) {
+      let errorMessage = 'Login failed. Please check your credentials and try again.';
+
+      // Render free tier cold start — server waking up
+      if (!err?.response) {
+        errorMessage = 'Server is waking up, please wait a moment and try again.';
+      } else if (err?.response?.data?.detail) {
         if (typeof err.response.data.detail === 'string') {
           errorMessage = err.response.data.detail;
         } else if (Array.isArray(err.response.data.detail)) {
           errorMessage = err.response.data.detail.map((d: any) => d.msg).join('\n');
-        } else {
-          errorMessage = JSON.stringify(err.response.data.detail);
         }
       } else if (err.message) {
         errorMessage = err.message;
       }
-      
+
       Alert.alert('Login Error', errorMessage);
     } finally { setLoading(false); }
   };

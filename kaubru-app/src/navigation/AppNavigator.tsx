@@ -61,19 +61,14 @@ const TABS = [
 
 // ─── Custom Tab Bar Icon ──────────────────────────────────────────────────────
 
-function TabIcon({ name, label, focused }: { name: string; label: string; focused: boolean }) {
+function TabIcon({ name, focused }: { name: string; focused: boolean }) {
   return (
-    <View style={styles.tabItem}>
-      <View style={[styles.tabIconWrap, focused && styles.tabIconWrapActive]}>
-        <Ionicons
-          name={name as any}
-          size={20}
-          color={focused ? COLORS.white : 'rgba(255,255,255,0.5)'}
-        />
-      </View>
-      <Text style={[styles.tabLabel, focused && styles.tabLabelActive]}>
-        {label}
-      </Text>
+    <View style={[styles.tabIconWrap, focused && styles.tabIconWrapActive]}>
+      <Ionicons
+        name={name as any}
+        size={20}
+        color={focused ? COLORS.white : 'rgba(255,255,255,0.5)'}
+      />
     </View>
   );
 }
@@ -89,10 +84,10 @@ function MainTabs() {
           headerShown: false,
           tabBarStyle: styles.tabBar,
           tabBarShowLabel: false,
+          tabBarLabel: () => null,
           tabBarIcon: ({ focused }) => (
             <TabIcon
               name={tab?.icon || 'ellipse-outline'}
-              label={tab?.label || ''}
               focused={focused}
             />
           ),
@@ -219,14 +214,6 @@ const styles = StyleSheet.create({
     paddingTop: 0,
   },
 
-  // Tab item wrapper (icon + label)
-  tabItem: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: 3,
-    paddingTop: 4,
-  },
-
   // Icon container
   tabIconWrap: {
     width: 36,
@@ -237,17 +224,5 @@ const styles = StyleSheet.create({
   },
   tabIconWrapActive: {
     backgroundColor: 'rgba(255,255,255,0.18)',
-  },
-
-  // Label
-  tabLabel: {
-    fontSize: 10,
-    fontWeight: '600',
-    color: 'rgba(255,255,255,0.45)',
-    letterSpacing: 0.2,
-  },
-  tabLabelActive: {
-    color: 'rgba(255,255,255,0.95)',
-    fontWeight: '700',
   },
 });

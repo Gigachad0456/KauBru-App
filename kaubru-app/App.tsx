@@ -49,6 +49,16 @@ export default function App() {
       }
     }
     checkForUpdate();
+
+    // Keep Render backend alive by pinging every 10 minutes
+    // Render free tier sleeps after 15 min of inactivity
+    const keepAlive = setInterval(async () => {
+      try {
+        await fetch('https://kaubru-app.onrender.com/', { method: 'GET' });
+      } catch {}
+    }, 10 * 60 * 1000); // every 10 minutes
+
+    return () => clearInterval(keepAlive);
   }, []);
 
   return (
