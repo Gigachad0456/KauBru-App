@@ -53,11 +53,6 @@ export default function HomeScreen() {
     return unsubscribe;
   }, [navigation]);
 
-  const avatarUrl = fullAvatarUrl(user?.avatar_url);
-  const initials = user?.name
-    ? user.name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2)
-    : '?';
-
   useEffect(() => {
     (async () => {
       try {
