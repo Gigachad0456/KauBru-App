@@ -32,7 +32,23 @@ export default function SignupScreen({ navigation }: Props) {
     try {
       await signup(name.trim(), email.trim(), password);
     } catch (err: any) {
-      Alert.alert('Signup Error', err?.response?.data?.detail || 'Signup failed.');
+      console.error('Signup Error:', err);
+      let errorMessage = 'Signup failed. Please check your internet connection and try again.';
+      
+      if (err?.response?.data?.detail) {
+        if (typeof err.response.data.detail === 'string') {
+          errorMessage = err.response.data.detail;
+        } else if (Array.isArray(err.response.data.detail)) {
+          // Handle FastAPI validation errors (422)
+          errorMessage = err.response.data.detail.map((d: any) => d.msg).join('\n');
+        } else {
+          errorMessage = JSON.stringify(err.response.data.detail);
+        }
+      } else if (err.message) {
+        errorMessage = err.message;
+      }
+      
+      Alert.alert('Signup Error', errorMessage);
     } finally { setLoading(false); }
   };
 

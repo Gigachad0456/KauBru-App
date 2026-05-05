@@ -40,13 +40,14 @@ def signup(
     background_tasks: BackgroundTasks,
     db: Session = Depends(get_db),
 ):
-    existing = db.query(models.User).filter(models.User.email == payload.email).first()
+    email = payload.email.lower().strip()
+    existing = db.query(models.User).filter(models.User.email == email).first()
     if existing:
         raise HTTPException(status_code=400, detail="Email already registered")
 
     user = models.User(
         name=payload.name,
-        email=payload.email,
+        email=email,
         password_hash=hash_password(payload.password),
         is_verified=False,
     )
@@ -78,7 +79,8 @@ def signup(
 @router.post("/login", response_model=schemas.TokenResponse)
 @limiter.limit("10/minute")
 def login(request: Request, payload: schemas.LoginRequest, db: Session = Depends(get_db)):
-    user = db.query(models.User).filter(models.User.email == payload.email).first()
+    email = payload.email.lower().strip()
+    user = db.query(models.User).filter(models.User.email == email).first()
     if not user or not verify_password(payload.password, user.password_hash):
         raise HTTPException(status_code=401, detail="Invalid email or password")
 
