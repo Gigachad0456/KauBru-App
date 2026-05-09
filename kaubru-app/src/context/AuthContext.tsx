@@ -146,16 +146,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const signup = async (name: string, email: string, password: string) => {
     const res = await authAPI.signup(name, email, password);
-    const { access_token, is_verified } = res.data;
+    const { access_token } = res.data;
     await AsyncStorage.setItem(TOKEN_KEY, access_token);
     setToken(access_token);
     const me = await authAPI.me();
     setAndPersistUser(me.data);
-    if (is_verified === false) {
-      setPendingVerification(true);
-    } else {
-      setPendingVerification(false);
-    }
+    // Email verification disabled — go straight to app
+    setPendingVerification(false);
   };
 
   const socialLogin = async (payload: any) => {
