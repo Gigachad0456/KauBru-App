@@ -3,7 +3,7 @@ from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 
 from app import models, schemas
-from app.auth import get_current_user
+from app.auth import get_current_user, get_verified_user
 from app.database import get_db
 
 router = APIRouter(prefix="/contributions", tags=["Contributions"])
@@ -13,7 +13,7 @@ router = APIRouter(prefix="/contributions", tags=["Contributions"])
 def submit_contribution(
     payload: schemas.ContributionRequest,
     db: Session = Depends(get_db),
-    current_user: models.User = Depends(get_current_user),
+    current_user: models.User = Depends(get_verified_user),
 ):
     contribution = models.Contribution(
         user_id=current_user.id,
@@ -32,7 +32,7 @@ def submit_contribution(
 @router.get("/my", response_model=List[schemas.ContributionOut])
 def my_contributions(
     db: Session = Depends(get_db),
-    current_user: models.User = Depends(get_current_user),
+    current_user: models.User = Depends(get_verified_user),
 ):
     return (
         db.query(models.Contribution)

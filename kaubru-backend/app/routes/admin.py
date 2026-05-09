@@ -468,6 +468,16 @@ def delete_user(
     u = db.query(models.User).filter(models.User.id == user_id).first()
     if not u:
         raise HTTPException(status_code=404, detail="User not found")
+
+    # Delete all related records first to avoid FK constraint errors
+    db.query(models.TranslationHistory).filter(models.TranslationHistory.user_id == user_id).delete()
+    db.query(models.SavedWord).filter(models.SavedWord.user_id == user_id).delete()
+    db.query(models.Contribution).filter(models.Contribution.user_id == user_id).delete()
+    db.query(models.LessonProgress).filter(models.LessonProgress.user_id == user_id).delete()
+    db.query(models.AppNotification).filter(models.AppNotification.user_id == user_id).delete()
+    db.query(models.EmailVerificationToken).filter(models.EmailVerificationToken.user_id == user_id).delete()
+    db.query(models.PasswordResetToken).filter(models.PasswordResetToken.user_id == user_id).delete()
+
     log_action(db, admin, "deleted_user", "user", u.id, f"Deleted user: {u.email}")
     db.delete(u)
     db.commit()

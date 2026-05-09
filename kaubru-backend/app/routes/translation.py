@@ -3,7 +3,7 @@ from fastapi import APIRouter, Depends, HTTPException, Request
 from sqlalchemy.orm import Session
 
 from app import models, schemas
-from app.auth import get_current_user
+from app.auth import get_current_user, get_verified_user
 from app.database import get_db
 from app.translation_service import translate
 from app.limiter import limiter
@@ -17,7 +17,7 @@ def translate_text(
     request: Request,
     payload: schemas.TranslateRequest,
     db: Session = Depends(get_db),
-    current_user: models.User = Depends(get_current_user),
+    current_user: models.User = Depends(get_verified_user),
 ):
     if payload.direction not in ("en_to_kb", "kb_to_en"):
         raise HTTPException(status_code=400, detail="direction must be 'en_to_kb' or 'kb_to_en'")
@@ -45,7 +45,7 @@ def translate_text(
 @router.get("/translations/history", response_model=List[schemas.TranslationHistoryOut])
 def get_history(
     db: Session = Depends(get_db),
-    current_user: models.User = Depends(get_current_user),
+    current_user: models.User = Depends(get_verified_user),
 ):
     records = (
         db.query(models.TranslationHistory)

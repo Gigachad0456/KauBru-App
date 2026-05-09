@@ -1,6 +1,6 @@
 from datetime import datetime
 from typing import Optional, List
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, EmailStr, field_validator
 
 
 # ─── Auth ────────────────────────────────────────────────────────────────────
@@ -43,6 +43,22 @@ class UserOut(BaseModel):
 
     class Config:
         from_attributes = True
+
+
+class VerifyOTPRequest(BaseModel):
+    otp: str
+
+    @field_validator("otp")
+    @classmethod
+    def otp_must_be_six_digits(cls, v: str) -> str:
+        import re
+        if not re.fullmatch(r"\d{6}", v):
+            raise ValueError("OTP must be exactly 6 digits")
+        return v
+
+
+class SignupOTPResponse(TokenResponse):
+    is_verified: bool
 
 
 class VerifyEmailRequest(BaseModel):
@@ -237,6 +253,139 @@ class PictureWordOut(BaseModel):
     audio_url: Optional[str] = None
     sort_order: int
     is_active: bool
+    created_at: datetime
+
+    class Config:
+        from_attributes = True
+
+
+# ─── Word Rush Game ───────────────────────────────────────────────────────────
+
+class WordRushScoreCreate(BaseModel):
+    score: int
+    level_reached: int
+    direction: str
+    correct_count: int
+    session_id: str
+
+
+class WordRushScoreOut(BaseModel):
+    id: int
+    user_id: int
+    score: int
+    level_reached: int
+    direction: str
+    correct_count: int
+    session_id: str
+    created_at: datetime
+
+    class Config:
+        from_attributes = True
+
+
+class LeaderboardEntry(BaseModel):
+    rank: int
+    user_id: int
+    user_name: str
+    score: int
+    level_reached: int
+    direction: str
+    created_at: datetime
+
+    class Config:
+        from_attributes = True
+
+
+class AwardPointsRequest(BaseModel):
+    session_id: str
+    points: int
+
+    @field_validator("points")
+    @classmethod
+    def points_must_be_non_negative(cls, v: int) -> int:
+        if v < 0:
+            raise ValueError("points must be a non-negative integer")
+        return v
+
+
+# ─── Culture & Heritage ───────────────────────────────────────────────────────
+
+VALID_CATEGORIES = {"history", "dance", "music", "traditions", "language", "festivals"}
+
+
+class CultureArticleCreate(BaseModel):
+    title: str
+    category: str
+    summary: Optional[str] = None
+    content: str
+    cover_image_url: Optional[str] = None
+    tags: Optional[str] = None
+    read_time_minutes: int = 5
+    is_published: bool = True
+
+    @field_validator("category")
+    @classmethod
+    def validate_category(cls, v: str) -> str:
+        if v not in VALID_CATEGORIES:
+            raise ValueError(f"category must be one of {sorted(VALID_CATEGORIES)}")
+        return v
+
+
+class CultureArticleUpdate(BaseModel):
+    title: Optional[str] = None
+    category: Optional[str] = None
+    summary: Optional[str] = None
+    content: Optional[str] = None
+    cover_image_url: Optional[str] = None
+    tags: Optional[str] = None
+    read_time_minutes: Optional[int] = None
+    is_published: Optional[bool] = None
+
+    @field_validator("category")
+    @classmethod
+    def validate_category(cls, v: Optional[str]) -> Optional[str]:
+        if v is not None and v not in VALID_CATEGORIES:
+            raise ValueError(f"category must be one of {sorted(VALID_CATEGORIES)}")
+        return v
+
+
+class CultureVocabOut(BaseModel):
+    id: int
+    english: str
+    kaubru: str
+    audio_url: Optional[str] = None
+
+    class Config:
+        from_attributes = True
+
+
+class CultureArticleOut(BaseModel):
+    id: int
+    title: str
+    category: str
+    summary: Optional[str] = None
+    content: Optional[str] = None          # omitted in list view
+    cover_image_url: Optional[str] = None
+    tags: Optional[str] = None
+    read_time_minutes: int
+    is_published: bool
+    vocabulary: Optional[List[CultureVocabOut]] = None
+    created_at: datetime
+
+    class Config:
+        from_attributes = True
+
+
+class CultureArticleListItem(BaseModel):
+    """List view — no content field."""
+    id: int
+    title: str
+    category: str
+    summary: Optional[str] = None
+    cover_image_url: Optional[str] = None
+    tags: Optional[str] = None
+    read_time_minutes: int
+    is_published: bool
     created_at: datetime
 
     class Config:

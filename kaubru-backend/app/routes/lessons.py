@@ -4,7 +4,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
 from app import models, schemas
-from app.auth import get_current_user
+from app.auth import get_current_user, get_verified_user
 from app.database import get_db
 
 router = APIRouter(prefix="/lessons", tags=["Lessons"])
@@ -13,7 +13,7 @@ router = APIRouter(prefix="/lessons", tags=["Lessons"])
 @router.get("", response_model=List[schemas.LessonOut])
 def get_lessons(
     db: Session = Depends(get_db),
-    current_user: models.User = Depends(get_current_user),
+    current_user: models.User = Depends(get_verified_user),
 ):
     lessons = db.query(models.Lesson).order_by(models.Lesson.id).all()
     # Attach per-user progress
@@ -44,7 +44,7 @@ def get_lessons(
 def get_lesson(
     lesson_id: int,
     db: Session = Depends(get_db),
-    current_user: models.User = Depends(get_current_user),
+    current_user: models.User = Depends(get_verified_user),
 ):
     lesson = db.query(models.Lesson).filter(models.Lesson.id == lesson_id).first()
     if not lesson:
@@ -93,7 +93,7 @@ def update_lesson_progress(
     lesson_id: int,
     payload: schemas.LessonProgressRequest,
     db: Session = Depends(get_db),
-    current_user: models.User = Depends(get_current_user),
+    current_user: models.User = Depends(get_verified_user),
 ):
     lesson = db.query(models.Lesson).filter(models.Lesson.id == lesson_id).first()
     if not lesson:

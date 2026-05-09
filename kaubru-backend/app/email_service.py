@@ -18,12 +18,18 @@ logger = logging.getLogger(__name__)
 def _send(to: str, subject: str, html: str) -> None:
     """Low-level send.  Falls back to console log if SMTP is not configured."""
     if not settings.SMTP_USER or not settings.SMTP_PASSWORD:
-        # Dev mode — just log the email content
-        logger.info("─── [DEV EMAIL] ───────────────────────────────")
-        logger.info("To:      %s", to)
-        logger.info("Subject: %s", subject)
-        logger.info("Body:\n%s", html)
-        logger.info("───────────────────────────────────────────────")
+        # Dev mode — print directly to stdout so it always shows in the terminal
+        print("\n" + "─" * 50)
+        print(f"[DEV EMAIL] To:      {to}")
+        print(f"[DEV EMAIL] Subject: {subject}")
+        # Extract just the OTP from the HTML body for easy reading
+        import re
+        otp_match = re.search(r'letter-spacing:[^>]+>([^<]+)<', html)
+        if otp_match:
+            print(f"[DEV EMAIL] OTP CODE: {otp_match.group(1).strip()}")
+        else:
+            print(f"[DEV EMAIL] Body:\n{html}")
+        print("─" * 50 + "\n")
         return
 
     msg = MIMEMultipart("alternative")
@@ -72,6 +78,31 @@ def send_verification_email(to: str, name: str, token: str) -> None:
     </div>
     """
     _send(to, "Verify your KauBru account", html)
+
+
+def send_otp_email(to: str, name: str, otp: str) -> None:
+    html = f"""
+    <div style="font-family:sans-serif;max-width:480px;margin:auto;padding:32px;
+                background:#0A0A1A;color:#fff;border-radius:12px;">
+      <h1 style="color:#00E5FF;margin-bottom:8px;">🌿 KauBru AI Translator</h1>
+      <h2 style="font-weight:700;margin-bottom:16px;">Verify your email</h2>
+      <p style="color:#a0a0c0;line-height:1.6;">
+        Hi {name}, here is your verification code:
+      </p>
+      <div style="text-align:center;margin:32px 0;">
+        <span style="font-size:48px;font-weight:800;letter-spacing:12px;color:#00E5FF;">
+          {otp}
+        </span>
+      </div>
+      <p style="color:#a0a0c0;line-height:1.6;text-align:center;">
+        This code expires in <strong>1 minute</strong>.
+      </p>
+      <p style="color:#606080;font-size:12px;margin-top:24px;">
+        If you didn't sign up for KauBru, you can safely ignore this email.
+      </p>
+    </div>
+    """
+    _send(to, "Your KauBru verification code", html)
 
 
 def send_password_reset_email(to: str, name: str, token: str) -> None:

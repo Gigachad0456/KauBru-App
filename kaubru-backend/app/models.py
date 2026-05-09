@@ -219,3 +219,50 @@ class PictureWord(Base):
     sort_order = Column(Integer, default=0)
     is_active = Column(Boolean, default=True)
     created_at = Column(DateTime, default=datetime.utcnow)
+
+
+class WordRushScore(Base):
+    """Stores Word Rush game session scores for the leaderboard."""
+    __tablename__ = "word_rush_scores"
+
+    id            = Column(Integer, primary_key=True, index=True)
+    user_id       = Column(Integer, ForeignKey("users.id"), nullable=False)
+    score         = Column(Integer, nullable=False)
+    level_reached = Column(Integer, nullable=False)
+    direction     = Column(String(20), nullable=False)   # en_to_kb | kb_to_en
+    correct_count = Column(Integer, nullable=False)
+    session_id    = Column(String(64), unique=True, index=True, nullable=False)
+    created_at    = Column(DateTime, default=datetime.utcnow)
+
+    user = relationship("User")
+
+
+class CultureArticle(Base):
+    """An informational article about KauBru/Bru/Reang culture and heritage."""
+    __tablename__ = "culture_articles"
+
+    id                = Column(Integer, primary_key=True, index=True)
+    title             = Column(String(300), nullable=False)
+    category          = Column(String(50), nullable=False)   # history|dance|music|traditions|language|festivals
+    summary           = Column(Text, nullable=True)
+    content           = Column(Text, nullable=False)
+    cover_image_url   = Column(String(500), nullable=True)
+    tags              = Column(String(500), nullable=True)   # comma-separated
+    read_time_minutes = Column(Integer, default=5)
+    is_published      = Column(Boolean, default=True)
+    created_at        = Column(DateTime, default=datetime.utcnow)
+
+    vocabulary = relationship("CultureArticleWord", back_populates="article",
+                              cascade="all, delete-orphan")
+
+
+class CultureArticleWord(Base):
+    """Vocabulary words linked to a culture article."""
+    __tablename__ = "culture_article_words"
+
+    id         = Column(Integer, primary_key=True, index=True)
+    article_id = Column(Integer, ForeignKey("culture_articles.id"), nullable=False)
+    word_id    = Column(Integer, ForeignKey("words.id"), nullable=False)
+
+    article = relationship("CultureArticle", back_populates="vocabulary")
+    word    = relationship("Word")

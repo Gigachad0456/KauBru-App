@@ -7,7 +7,7 @@ from sqlalchemy.orm import Session
 import os, uuid
 
 from app import models, schemas
-from app.auth import get_current_user
+from app.auth import get_current_user, get_verified_user
 from app.database import get_db
 
 router = APIRouter(prefix="/picture-words", tags=["Picture Words"])
@@ -24,7 +24,7 @@ MAX_SIZE = 5 * 1024 * 1024  # 5 MB
 def list_picture_words(
     category: Optional[str] = None,
     db: Session = Depends(get_db),
-    _: models.User = Depends(get_current_user),
+    _: models.User = Depends(get_verified_user),
 ):
     q = db.query(models.PictureWord).filter(models.PictureWord.is_active == True)
     if category:
@@ -35,7 +35,7 @@ def list_picture_words(
 @router.get("/categories", response_model=List[str])
 def list_categories(
     db: Session = Depends(get_db),
-    _: models.User = Depends(get_current_user),
+    _: models.User = Depends(get_verified_user),
 ):
     rows = db.query(models.PictureWord.category).distinct().all()
     return [r[0] for r in rows]
@@ -43,7 +43,7 @@ def list_categories(
 
 # ─── Admin: full CRUD ─────────────────────────────────────────────────────────
 
-def require_admin(current_user: models.User = Depends(get_current_user)) -> models.User:
+def require_admin(current_user: models.User = Depends(get_verified_user)) -> models.User:
     if current_user.role != "admin":
         raise HTTPException(status_code=403, detail="Admin access required")
     return current_user

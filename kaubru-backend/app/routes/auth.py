@@ -12,10 +12,10 @@ from fastapi import APIRouter, Depends, HTTPException, status, BackgroundTasks, 
 from sqlalchemy.orm import Session
 
 from app import models, schemas
-from app.auth import hash_password, verify_password, create_access_token, get_current_user
+from app.auth import hash_password, verify_password, create_access_token, get_current_user, get_verified_user
 from app.config import settings
 from app.database import get_db
-from app.email_service import send_verification_email, send_password_reset_email
+from app.email_service import send_verification_email, send_password_reset_email, send_otp_email
 from app.limiter import limiter
 
 logger = logging.getLogger(__name__)
@@ -31,9 +31,34 @@ def _make_token() -> str:
     return secrets.token_urlsafe(32)
 
 
+def _make_otp() -> str:
+    """Generate a cryptographically random 6-digit OTP string."""
+    return str(secrets.randbelow(1_000_000)).zfill(6)
+
+
+def _create_otp_token(user_id: int, db: Session) -> str:
+    """Invalidate existing unused OTP tokens and create a new one. Returns the OTP string."""
+    # Invalidate all existing unused tokens for this user
+    db.query(models.EmailVerificationToken).filter(
+        models.EmailVerificationToken.user_id == user_id,
+        models.EmailVerificationToken.used == False,
+    ).update({"used": True})
+
+    otp = _make_otp()
+    vtoken = models.EmailVerificationToken(
+        user_id=user_id,
+        token=otp,
+        expires_at=datetime.utcnow() + timedelta(minutes=1),
+        used=False,
+    )
+    db.add(vtoken)
+    db.commit()
+    return otp
+
+
 # ─── Signup ───────────────────────────────────────────────────────────────────
 
-@router.post("/signup", response_model=schemas.TokenResponse, status_code=201)
+@router.post("/signup", response_model=schemas.SignupOTPResponse, status_code=201)
 @limiter.limit("10/minute")
 def signup(
     request: Request,
@@ -56,23 +81,56 @@ def signup(
     db.commit()
     db.refresh(user)
 
-    # Create verification token
-    token_str = _make_token()
-    vtoken = models.EmailVerificationToken(
-        user_id=user.id,
-        token=token_str,
-        expires_at=datetime.utcnow() + timedelta(hours=VERIFY_TOKEN_EXPIRE_HOURS),
-    )
-    db.add(vtoken)
-    db.commit()
-
-    # Send verification email in background (non-blocking)
-    background_tasks.add_task(
-        send_verification_email, user.email, user.name, token_str
-    )
+    # Create OTP token and send OTP email in background
+    otp = _create_otp_token(user.id, db)
+    background_tasks.add_task(send_otp_email, user.email, user.name, otp)
 
     access_token = create_access_token({"sub": str(user.id)})
-    return {"access_token": access_token}
+    return {"access_token": access_token, "is_verified": False}
+
+
+# ─── OTP Verification ─────────────────────────────────────────────────────────
+
+@router.post("/verify-otp")
+def verify_otp(
+    payload: schemas.VerifyOTPRequest,
+    db: Session = Depends(get_db),
+    current_user: models.User = Depends(get_current_user),
+):
+    vtoken = (
+        db.query(models.EmailVerificationToken)
+        .filter(
+            models.EmailVerificationToken.user_id == current_user.id,
+            models.EmailVerificationToken.token == payload.otp,
+            models.EmailVerificationToken.used == False,
+        )
+        .first()
+    )
+    if not vtoken:
+        raise HTTPException(status_code=400, detail="Invalid OTP")
+    if vtoken.expires_at < datetime.utcnow():
+        raise HTTPException(status_code=400, detail="OTP has expired")
+
+    vtoken.used = True
+    current_user.is_verified = True
+    db.commit()
+    return {"message": "Email verified successfully"}
+
+
+@router.post("/resend-otp")
+@limiter.limit("3/10minute")
+def resend_otp(
+    request: Request,
+    background_tasks: BackgroundTasks,
+    db: Session = Depends(get_db),
+    current_user: models.User = Depends(get_current_user),
+):
+    if current_user.is_verified:
+        raise HTTPException(status_code=400, detail="Email already verified")
+
+    otp = _create_otp_token(current_user.id, db)
+    background_tasks.add_task(send_otp_email, current_user.email, current_user.name, otp)
+    return {"message": "OTP sent"}
 
 
 # ─── Login ────────────────────────────────────────────────────────────────────
@@ -84,6 +142,12 @@ def login(request: Request, payload: schemas.LoginRequest, db: Session = Depends
     user = db.query(models.User).filter(models.User.email == email).first()
     if not user or not verify_password(payload.password, user.password_hash):
         raise HTTPException(status_code=401, detail="Invalid email or password")
+
+    if not user.is_verified:
+        raise HTTPException(
+            status_code=403,
+            detail="Email not verified. Please check your email for the OTP."
+        )
 
     token = create_access_token({"sub": str(user.id)})
     return {"access_token": token}
@@ -108,6 +172,7 @@ def social_login(payload: schemas.SocialLoginRequest, db: Session = Depends(get_
             user.social_provider = payload.provider
             if not user.avatar_url:
                 user.avatar_url = payload.avatar_url
+            user.is_verified = True
             db.commit()
         else:
             # Create new user
@@ -139,7 +204,7 @@ def me(current_user: models.User = Depends(get_current_user)):
 def update_me(
     payload: schemas.UpdateProfileRequest,
     db: Session = Depends(get_db),
-    current_user: models.User = Depends(get_current_user),
+    current_user: models.User = Depends(get_verified_user),
 ):
     if payload.name is not None:
         current_user.name = payload.name.strip()
@@ -196,7 +261,7 @@ def _upload_to_cloudinary(data: bytes, public_id: str) -> str:
 def upload_avatar(
     file: UploadFile = File(...),
     db: Session = Depends(get_db),
-    current_user: models.User = Depends(get_current_user),
+    current_user: models.User = Depends(get_verified_user),
 ):
     content_type = file.content_type or ""
     ext = os.path.splitext(file.filename or "")[1].lower()

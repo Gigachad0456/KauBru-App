@@ -6,7 +6,7 @@ import uuid
 import shutil
 
 from app import models, schemas
-from app.auth import get_current_user
+from app.auth import get_current_user, get_verified_user
 from app.database import get_db
 from app.services.tts_service import GENERATED_AUDIO_DIR
 from app.services.pronunciation_service import add_or_update_pronunciation
@@ -28,7 +28,7 @@ def get_all_words(
     skip: int = 0,
     limit: int = 50,
     db: Session = Depends(get_db),
-    _: models.User = Depends(get_current_user),
+    _: models.User = Depends(get_verified_user),
 ):
     return db.query(models.Word).offset(skip).limit(limit).all()
 
@@ -37,7 +37,7 @@ def get_all_words(
 def search_words(
     q: str = Query(..., min_length=1),
     db: Session = Depends(get_db),
-    _: models.User = Depends(get_current_user),
+    _: models.User = Depends(get_verified_user),
 ):
     pattern = f"%{q.lower()}%"
     results = (
@@ -54,7 +54,7 @@ def search_words(
 @router.get("/categories", response_model=List[str])
 def get_categories(
     db: Session = Depends(get_db),
-    _: models.User = Depends(get_current_user),
+    _: models.User = Depends(get_verified_user),
 ):
     rows = db.query(models.Word.category).distinct().all()
     return [r[0] for r in rows]
@@ -64,7 +64,7 @@ def get_categories(
 def save_word(
     word_id: int,
     db: Session = Depends(get_db),
-    current_user: models.User = Depends(get_current_user),
+    current_user: models.User = Depends(get_verified_user),
 ):
     word = db.query(models.Word).filter(models.Word.id == word_id).first()
     if not word:
@@ -90,7 +90,7 @@ def save_word(
 @router.get("/saved", response_model=List[schemas.WordOut])
 def get_saved_words(
     db: Session = Depends(get_db),
-    current_user: models.User = Depends(get_current_user),
+    current_user: models.User = Depends(get_verified_user),
 ):
     saved = (
         db.query(models.SavedWord)
@@ -104,7 +104,7 @@ def get_saved_words(
 def unsave_word(
     word_id: int,
     db: Session = Depends(get_db),
-    current_user: models.User = Depends(get_current_user),
+    current_user: models.User = Depends(get_verified_user),
 ):
     saved = (
         db.query(models.SavedWord)
@@ -129,7 +129,7 @@ def upload_word_audio(
     word_id: int,
     file: UploadFile = File(...),
     db: Session = Depends(get_db),
-    current_user: models.User = Depends(get_current_user),
+    current_user: models.User = Depends(get_verified_user),
 ):
     """
     Upload an audio file for a dictionary word.
