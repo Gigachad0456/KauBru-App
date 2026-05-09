@@ -1,36 +1,50 @@
 """
-Email service — sends verification and password-reset emails.
+Email service — sends OTP and verification emails.
 
-If SMTP credentials are not configured the emails are printed to stdout
-so development works without a mail server.
+Uses Resend API (HTTPS) when RESEND_API_KEY is set — works on Render free tier.
+Falls back to SMTP (Gmail) if SMTP credentials are set.
+Falls back to console log in dev mode if neither is configured.
 """
 
-import smtplib
 import logging
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
-
+import httpx
 from app.config import settings
 
 logger = logging.getLogger(__name__)
 
 
-def _send(to: str, subject: str, html: str) -> None:
-    """Low-level send.  Falls back to console log if SMTP is not configured."""
-    if not settings.SMTP_USER or not settings.SMTP_PASSWORD:
-        # Dev mode — print directly to stdout so it always shows in the terminal
-        print("\n" + "─" * 50)
-        print(f"[DEV EMAIL] To:      {to}")
-        print(f"[DEV EMAIL] Subject: {subject}")
-        # Extract just the OTP from the HTML body for easy reading
-        import re
-        otp_match = re.search(r'letter-spacing:[^>]+>([^<]+)<', html)
-        if otp_match:
-            print(f"[DEV EMAIL] OTP CODE: {otp_match.group(1).strip()}")
-        else:
-            print(f"[DEV EMAIL] Body:\n{html}")
-        print("─" * 50 + "\n")
-        return
+def _send_via_resend(to: str, subject: str, html: str) -> None:
+    """Send email via Resend HTTPS API — works on Render free tier."""
+    import os
+    api_key = os.getenv("RESEND_API_KEY", "")
+    if not api_key:
+        raise ValueError("RESEND_API_KEY not set")
+
+    # Use verified sender domain or onboarding address
+    from_addr = os.getenv("RESEND_FROM", "KauBru <onboarding@resend.dev>")
+
+    response = httpx.post(
+        "https://api.resend.com/emails",
+        headers={
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json",
+        },
+        json={
+            "from": from_addr,
+            "to": [to],
+            "subject": subject,
+            "html": html,
+        },
+        timeout=15.0,
+    )
+    response.raise_for_status()
+
+
+def _send_via_smtp(to: str, subject: str, html: str) -> None:
+    """Send email via SMTP (Gmail). May be blocked on Render free tier."""
+    import smtplib
+    from email.mime.text import MIMEText
+    from email.mime.multipart import MIMEMultipart
 
     msg = MIMEMultipart("alternative")
     msg["Subject"] = subject
@@ -38,15 +52,48 @@ def _send(to: str, subject: str, html: str) -> None:
     msg["To"] = to
     msg.attach(MIMEText(html, "html"))
 
-    try:
-        with smtplib.SMTP(settings.SMTP_HOST, settings.SMTP_PORT) as server:
-            server.ehlo()
-            server.starttls()
-            server.login(settings.SMTP_USER, settings.SMTP_PASSWORD)
-            server.sendmail(settings.EMAIL_FROM, to, msg.as_string())
-    except Exception as exc:
-        logger.error("Failed to send email to %s: %s", to, exc)
-        raise
+    with smtplib.SMTP(settings.SMTP_HOST, settings.SMTP_PORT) as server:
+        server.ehlo()
+        server.starttls()
+        server.login(settings.SMTP_USER, settings.SMTP_PASSWORD)
+        server.sendmail(settings.EMAIL_FROM, to, msg.as_string())
+
+
+def _send(to: str, subject: str, html: str) -> None:
+    """Send email — tries Resend first, then SMTP, then logs to console."""
+    import os
+    resend_key = os.getenv("RESEND_API_KEY", "")
+    smtp_ready = bool(settings.SMTP_USER and settings.SMTP_PASSWORD)
+
+    if resend_key:
+        try:
+            _send_via_resend(to, subject, html)
+            logger.info(f"Email sent via Resend to {to}")
+            return
+        except Exception as exc:
+            logger.error(f"Resend failed: {exc}")
+            raise
+
+    if smtp_ready:
+        try:
+            _send_via_smtp(to, subject, html)
+            logger.info(f"Email sent via SMTP to {to}")
+            return
+        except Exception as exc:
+            logger.error(f"SMTP failed: {exc}")
+            raise
+
+    # Dev fallback — print OTP to console
+    import re
+    print("\n" + "-" * 50)
+    print(f"[DEV EMAIL] To:      {to}")
+    print(f"[DEV EMAIL] Subject: {subject}")
+    otp_match = re.search(r'letter-spacing:[^>]+>([^<]+)<', html)
+    if otp_match:
+        print(f"[DEV EMAIL] OTP CODE: {otp_match.group(1).strip()}")
+    else:
+        print(f"[DEV EMAIL] Body (truncated): {html[:200]}")
+    print("-" * 50 + "\n")
 
 
 # ─── Email templates ──────────────────────────────────────────────────────────
