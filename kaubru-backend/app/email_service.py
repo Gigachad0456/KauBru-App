@@ -20,8 +20,16 @@ def _send_via_resend(to: str, subject: str, html: str) -> None:
     if not api_key:
         raise ValueError("RESEND_API_KEY not set")
 
-    # Use verified sender domain or onboarding address
-    from_addr = os.getenv("RESEND_FROM", "KauBru <onboarding@resend.dev>")
+    # Use the email you signed up to Resend with as the from address
+    # Until you verify a domain, Resend only allows sending FROM onboarding@resend.dev
+    # AND only TO the email you registered with.
+    # Set RESEND_FROM in Render env vars to your Resend signup email.
+    from_addr = os.getenv("RESEND_FROM", "onboarding@resend.dev")
+
+    # If no custom domain, Resend test mode only sends to verified addresses.
+    # Override the recipient to the Resend account email for testing.
+    resend_test_email = os.getenv("RESEND_TEST_EMAIL", "")
+    actual_to = resend_test_email if resend_test_email else to
 
     response = httpx.post(
         "https://api.resend.com/emails",
@@ -31,13 +39,15 @@ def _send_via_resend(to: str, subject: str, html: str) -> None:
         },
         json={
             "from": from_addr,
-            "to": [to],
+            "to": [actual_to],
             "subject": subject,
             "html": html,
         },
         timeout=15.0,
     )
     response.raise_for_status()
+    if resend_test_email and resend_test_email != to:
+        print(f"[RESEND] Email for {to} redirected to test address {resend_test_email}")
 
 
 def _send_via_smtp(to: str, subject: str, html: str) -> None:
@@ -72,7 +82,12 @@ def _send(to: str, subject: str, html: str) -> None:
             return
         except Exception as exc:
             logger.error(f"Resend failed: {exc}")
-            raise
+            # Log OTP to console as fallback so it's visible in Render logs
+            import re
+            otp_match = re.search(r'letter-spacing:[^>]+>([^<]+)<', html)
+            if otp_match:
+                print(f"\n[EMAIL FALLBACK] To: {to} | OTP: {otp_match.group(1).strip()}\n")
+            # Don't raise — let signup succeed even if email fails
 
     if smtp_ready:
         try:
@@ -80,8 +95,13 @@ def _send(to: str, subject: str, html: str) -> None:
             logger.info(f"Email sent via SMTP to {to}")
             return
         except Exception as exc:
-            logger.error(f"SMTP failed: {exc}")
-            raise
+            logger.error(f"SMTP failed for {to}: {exc}")
+            # Log OTP as fallback so it's visible in Render logs
+            import re
+            otp_match = re.search(r'letter-spacing:[^>]+>([^<]+)<', html)
+            if otp_match:
+                print(f"\n[EMAIL FALLBACK] To: {to} | OTP: {otp_match.group(1).strip()}\n")
+            # Don't raise — let signup succeed even if email fails
 
     # Dev fallback — print OTP to console
     import re

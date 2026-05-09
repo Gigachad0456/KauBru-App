@@ -75,18 +75,14 @@ def signup(
         name=payload.name,
         email=email,
         password_hash=hash_password(payload.password),
-        is_verified=False,
+        is_verified=True,  # Email verification disabled — users verified on signup
     )
     db.add(user)
     db.commit()
     db.refresh(user)
 
-    # Create OTP token and send OTP email in background
-    otp = _create_otp_token(user.id, db)
-    background_tasks.add_task(send_otp_email, user.email, user.name, otp)
-
     access_token = create_access_token({"sub": str(user.id)})
-    return {"access_token": access_token, "is_verified": False}
+    return {"access_token": access_token, "is_verified": True}
 
 
 # ─── OTP Verification ─────────────────────────────────────────────────────────
