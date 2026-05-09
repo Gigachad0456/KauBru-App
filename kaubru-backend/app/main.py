@@ -19,6 +19,59 @@ from app.routes import auth, translation, dictionary, contributions, lessons, pr
 # Create all tables on startup
 Base.metadata.create_all(bind=engine)
 
+# Auto-seed missing words on every startup (safe — skips existing entries)
+def _auto_seed():
+    import ast
+    import os
+    from app.database import SessionLocal
+    from app import models
+
+    seed_path = os.path.join(os.path.dirname(__file__), "..", "seed.py")
+    if not os.path.exists(seed_path):
+        return
+
+    try:
+        with open(seed_path, encoding="utf-8") as f:
+            source = f.read()
+        tree = ast.parse(source)
+        WORDS = None
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Assign):
+                for target in node.targets:
+                    if isinstance(target, ast.Name) and target.id == "WORDS":
+                        WORDS = ast.literal_eval(node.value)
+        if not WORDS:
+            return
+
+        db = SessionLocal()
+        existing_keys = {
+            (w.english.lower().strip(), w.category.lower().strip())
+            for w in db.query(models.Word).all()
+        }
+        added = 0
+        for w in WORDS:
+            key = (w["english"].lower().strip(), w["category"].lower().strip())
+            if key not in existing_keys:
+                db.add(models.Word(
+                    english=w["english"],
+                    kaubru=w["kaubru"],
+                    category=w["category"],
+                    example_english=w.get("example_english", ""),
+                    example_kaubru=w.get("example_kaubru", ""),
+                ))
+                existing_keys.add(key)
+                added += 1
+        if added:
+            db.commit()
+            print(f"[startup] Auto-seeded {added} new words (total: {len(existing_keys)})")
+        else:
+            print(f"[startup] All {len(existing_keys)} words already in DB")
+        db.close()
+    except Exception as e:
+        print(f"[startup] Auto-seed failed: {e}")
+
+_auto_seed()
+
 app = FastAPI(
     title=settings.APP_NAME,
     description="Backend API for KauBru AI Translator — Preserve. Translate. Learn.",
