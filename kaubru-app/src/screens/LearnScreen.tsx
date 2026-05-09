@@ -9,6 +9,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { lessonsAPI, storiesAPI, pictureWordsAPI } from '../services/api';
 import { COLORS, SPACING, RADIUS, SHADOW, FONTS } from '../config/theme';
 import { API_BASE_URL } from '../config/api';
+import { useAuth } from '../context/AuthContext';
 
 interface Lesson {
   id: number; title: string; description: string;
@@ -110,10 +111,14 @@ const CULTURE_HIGHLIGHTS = [
 
 export default function LearnScreen({ navigation }: any) {
   const insets = useSafeAreaInsets();
+  const { user } = useAuth();
+  const isPremium = user?.is_premium ?? false;
   const [lessons, setLessons] = useState<Lesson[]>([]);
   const [stories, setStories] = useState<Story[]>([]);
   const [pictureWords, setPictureWords] = useState<PictureWord[]>([]);
   const [loading, setLoading] = useState(false);
+
+  const handlePremiumPress = () => navigation.navigate('Premium');
 
   const loadData = async () => {
     setLoading(true);
@@ -206,11 +211,14 @@ export default function LearnScreen({ navigation }: any) {
           </View>
         </TouchableOpacity>
 
-        {/* Flash Quiz card */}
+        {/* Flash Quiz card — PREMIUM */}
         <TouchableOpacity
           style={styles.quizCard}
           activeOpacity={0.88}
-          onPress={() => lessons[0] && navigation.navigate('Quiz', { lesson: lessons[0] })}
+          onPress={() => isPremium
+            ? (lessons[0] && navigation.navigate('Quiz', { lesson: lessons[0] }))
+            : handlePremiumPress()
+          }
         >
           <View style={styles.quizCardInner}>
             <View style={[styles.quizIconWrap, { backgroundColor: '#FFF8E7' }]}>
@@ -220,19 +228,36 @@ export default function LearnScreen({ navigation }: any) {
               <Text style={styles.quizTitle}>Lesson Quiz</Text>
               <Text style={styles.quizDesc}>Test your knowledge from the lessons</Text>
             </View>
-            <Ionicons name="chevron-forward" size={18} color={COLORS.textMuted} />
+            {isPremium
+              ? <Ionicons name="chevron-forward" size={18} color={COLORS.textMuted} />
+              : <View style={styles.lockBadge}><Ionicons name="lock-closed" size={13} color={COLORS.gold} /><Text style={styles.lockBadgeText}>PRO</Text></View>
+            }
           </View>
         </TouchableOpacity>
 
-        {/* ── Lessons section ─────────────────────────────────────────── */}
+        {/* ── Lessons section — PREMIUM ────────────────────────────────── */}
         <View style={styles.sectionRow}>
           <Text style={styles.sectionTitle}>Lessons</Text>
-          {lessons.length > 0 && (
-            <Text style={styles.sectionCount}>{lessons.length} total</Text>
-          )}
+          {!isPremium && <View style={styles.lockBadge}><Ionicons name="lock-closed" size={11} color={COLORS.gold} /><Text style={styles.lockBadgeText}>PRO</Text></View>}
+          {isPremium && lessons.length > 0 && <Text style={styles.sectionCount}>{lessons.length} total</Text>}
         </View>
 
-        {loading ? (
+        {!isPremium ? (
+          <TouchableOpacity style={styles.premiumBanner} onPress={handlePremiumPress} activeOpacity={0.88}>
+            <LinearGradient colors={['#1A3A2A', '#2D5A3D']} start={{x:0,y:0}} end={{x:1,y:1}} style={styles.premiumBannerGradient}>
+              <View style={styles.premiumBannerLeft}>
+                <Ionicons name="school-outline" size={28} color={COLORS.gold} />
+                <View>
+                  <Text style={styles.premiumBannerTitle}>Unlock All Lessons</Text>
+                  <Text style={styles.premiumBannerSub}>Greetings, family, numbers, verbs & more</Text>
+                </View>
+              </View>
+              <View style={styles.premiumBannerBtn}>
+                <Text style={styles.premiumBannerBtnText}>Upgrade</Text>
+              </View>
+            </LinearGradient>
+          </TouchableOpacity>
+        ) : loading ? (
           <ActivityIndicator color={COLORS.primary} style={{ marginVertical: SPACING.lg }} />
         ) : lessons.length === 0 ? (
           <View style={styles.emptyCard}>
@@ -240,7 +265,7 @@ export default function LearnScreen({ navigation }: any) {
             <Text style={styles.emptyText}>No lessons yet</Text>
           </View>
         ) : (
-          lessons.map((item, index) => {
+          lessons.map((item) => {
             const meta = lessonMeta(item.category);
             const pct = Math.round(item.progress * 100);
             return (
@@ -250,12 +275,9 @@ export default function LearnScreen({ navigation }: any) {
                 onPress={() => navigation.navigate('LessonDetail', { lesson: item })}
                 activeOpacity={0.85}
               >
-                {/* Icon */}
                 <View style={[styles.lessonIconBox, { backgroundColor: meta.bg }]}>
                   <Ionicons name={meta.icon as any} size={20} color={meta.color} />
                 </View>
-
-                {/* Text */}
                 <View style={styles.lessonBody}>
                   <View style={styles.lessonTitleRow}>
                     <Text style={styles.lessonTitle} numberOfLines={1}>{item.title}</Text>
@@ -269,7 +291,6 @@ export default function LearnScreen({ navigation }: any) {
                   {item.description ? (
                     <Text style={styles.lessonDesc} numberOfLines={1}>{item.description}</Text>
                   ) : null}
-                  {/* Progress bar */}
                   <View style={styles.lessonProgressRow}>
                     <View style={styles.lessonProgressTrack}>
                       <View style={[styles.lessonProgressFill, { width: `${pct}%` as any, backgroundColor: meta.color }]} />
@@ -277,15 +298,14 @@ export default function LearnScreen({ navigation }: any) {
                     <Text style={[styles.lessonPct, { color: meta.color }]}>{pct}%</Text>
                   </View>
                 </View>
-
                 <Ionicons name="chevron-forward" size={16} color={COLORS.textMuted} />
               </TouchableOpacity>
             );
           })
         )}
 
-        {/* ── Visual Vocabulary ───────────────────────────────────────── */}
-        {pictureWords.length > 0 && (
+        {/* ── Visual Vocabulary — PREMIUM ─────────────────────────────── */}
+        {(isPremium && pictureWords.length > 0) && (
           <>
             <View style={[styles.sectionRow, { marginTop: SPACING.lg }]}>
               <Text style={styles.sectionTitle}>Picture Words</Text>
@@ -316,10 +336,10 @@ export default function LearnScreen({ navigation }: any) {
           </>
         )}
 
-        {/* ── Folktales & Stories section ─────────────────────────────── */}
+        {/* ── Folktales & Stories section — PREMIUM ───────────────────── */}
         <TouchableOpacity
           style={[styles.storiesEmptyCard, { marginTop: SPACING.lg }]}
-          onPress={() => navigation.navigate('Stories')}
+          onPress={() => isPremium ? navigation.navigate('Stories') : handlePremiumPress()}
           activeOpacity={0.88}
         >
           <LinearGradient
@@ -327,27 +347,54 @@ export default function LearnScreen({ navigation }: any) {
             start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
             style={styles.storiesEmptyGradient}
           >
-            <Text style={styles.storiesEmptyTitle}>Folktales & Stories</Text>
+            <View style={styles.storiesEmptyTopRow}>
+              <Text style={styles.storiesEmptyTitle}>Folktales & Stories</Text>
+              {!isPremium && (
+                <View style={styles.lockBadge}>
+                  <Ionicons name="lock-closed" size={11} color={COLORS.gold} />
+                  <Text style={styles.lockBadgeText}>PRO</Text>
+                </View>
+              )}
+            </View>
             <Text style={styles.storiesEmptySub}>
-              {stories.length > 0
+              {isPremium && stories.length > 0
                 ? `${stories.length} traditional KauBru stor${stories.length === 1 ? 'y' : 'ies'}`
                 : 'Traditional KauBru folktales & legends'}
             </Text>
             <View style={styles.storiesEmptyBtn}>
-              <Text style={styles.storiesEmptyBtnText}>Browse stories</Text>
-              <Ionicons name="arrow-forward" size={13} color={COLORS.primary} />
+              <Text style={styles.storiesEmptyBtnText}>
+                {isPremium ? 'Browse stories' : 'Unlock with Pro'}
+              </Text>
+              <Ionicons name={isPremium ? 'arrow-forward' : 'star'} size={13} color={COLORS.primary} />
             </View>
           </LinearGradient>
         </TouchableOpacity>
 
-        {/* ── Culture Highlights ───────────────────────────────────── */}
+        {/* ── Culture Highlights — PREMIUM ─────────────────────────── */}
         <View style={[styles.sectionRow, { marginTop: SPACING.lg }]}>
           <Text style={styles.sectionTitle}>Culture & Heritage</Text>
-          <TouchableOpacity onPress={() => navigation.navigate('CultureBrowse')}>
-            <Text style={styles.viewAll}>View all</Text>
-          </TouchableOpacity>
+          {isPremium
+            ? <TouchableOpacity onPress={() => navigation.navigate('CultureBrowse')}><Text style={styles.viewAll}>View all</Text></TouchableOpacity>
+            : <View style={styles.lockBadge}><Ionicons name="lock-closed" size={11} color={COLORS.gold} /><Text style={styles.lockBadgeText}>PRO</Text></View>
+          }
         </View>
 
+        {!isPremium ? (
+          <TouchableOpacity style={styles.premiumBanner} onPress={handlePremiumPress} activeOpacity={0.88}>
+            <LinearGradient colors={['#1A2D4A', '#2D4A6A']} start={{x:0,y:0}} end={{x:1,y:1}} style={styles.premiumBannerGradient}>
+              <View style={styles.premiumBannerLeft}>
+                <Ionicons name="globe-outline" size={28} color={COLORS.gold} />
+                <View>
+                  <Text style={styles.premiumBannerTitle}>Unlock Culture & Heritage</Text>
+                  <Text style={styles.premiumBannerSub}>History, dance, music, festivals & more</Text>
+                </View>
+              </View>
+              <View style={styles.premiumBannerBtn}>
+                <Text style={styles.premiumBannerBtnText}>Upgrade</Text>
+              </View>
+            </LinearGradient>
+          </TouchableOpacity>
+        ) : (
         <ScrollView
           horizontal
           showsHorizontalScrollIndicator={false}
@@ -374,6 +421,7 @@ export default function LearnScreen({ navigation }: any) {
             </TouchableOpacity>
           ))}
         </ScrollView>
+        )}
 
         <View style={{ height: SPACING.tabBar + SPACING.lg }} />
       </ScrollView>
@@ -680,6 +728,12 @@ const styles = StyleSheet.create({
   storiesEmptyGradient: {
     padding: SPACING.xl,
   },
+  storiesEmptyTopRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: 4,
+  },
   storiesEmptyTitle: {
     fontSize: 22,
     fontWeight: '400',
@@ -807,5 +861,66 @@ const styles = StyleSheet.create({
     color: COLORS.textMuted,
     lineHeight: 16,
     fontWeight: '500',
+  },
+
+  // ── Premium lock styles ───────────────────────────────────────────────────
+  lockBadge: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+    backgroundColor: '#FFF8E7',
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: RADIUS.full,
+    borderWidth: 1,
+    borderColor: '#F0E4B8',
+  },
+  lockBadgeText: {
+    fontSize: 10,
+    fontWeight: '800',
+    color: COLORS.gold,
+    letterSpacing: 0.5,
+  },
+  premiumBanner: {
+    marginHorizontal: SPACING.lg,
+    borderRadius: RADIUS.xl,
+    overflow: 'hidden',
+    marginBottom: SPACING.md,
+    ...SHADOW.md,
+  },
+  premiumBannerGradient: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: SPACING.lg,
+    gap: SPACING.md,
+  },
+  premiumBannerLeft: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: SPACING.md,
+    flex: 1,
+  },
+  premiumBannerTitle: {
+    fontSize: 15,
+    fontWeight: '700',
+    color: COLORS.white,
+    marginBottom: 2,
+  },
+  premiumBannerSub: {
+    fontSize: 12,
+    color: 'rgba(255,255,255,0.65)',
+    fontWeight: '500',
+  },
+  premiumBannerBtn: {
+    backgroundColor: COLORS.gold,
+    paddingHorizontal: 14,
+    paddingVertical: 8,
+    borderRadius: RADIUS.full,
+  },
+  premiumBannerBtnText: {
+    fontSize: 13,
+    fontWeight: '800',
+    color: '#1A1A1A',
   },
 });
