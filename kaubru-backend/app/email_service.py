@@ -95,7 +95,7 @@ def send_otp_email(to: str, name: str, otp: str) -> None:
         </span>
       </div>
       <p style="color:#a0a0c0;line-height:1.6;text-align:center;">
-        This code expires in <strong>1 minute</strong>.
+        This code expires in <strong>10 minutes</strong>.
       </p>
       <p style="color:#606080;font-size:12px;margin-top:24px;">
         If you didn't sign up for KauBru, you can safely ignore this email.

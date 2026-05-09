@@ -48,7 +48,7 @@ def _create_otp_token(user_id: int, db: Session) -> str:
     vtoken = models.EmailVerificationToken(
         user_id=user_id,
         token=otp,
-        expires_at=datetime.utcnow() + timedelta(minutes=1),
+        expires_at=datetime.utcnow() + timedelta(minutes=10),
         used=False,
     )
     db.add(vtoken)
@@ -143,11 +143,10 @@ def login(request: Request, payload: schemas.LoginRequest, db: Session = Depends
     if not user or not verify_password(payload.password, user.password_hash):
         raise HTTPException(status_code=401, detail="Invalid email or password")
 
+    # Auto-verify users who signed up before OTP was introduced
     if not user.is_verified:
-        raise HTTPException(
-            status_code=403,
-            detail="Email not verified. Please check your email for the OTP."
-        )
+        user.is_verified = True
+        db.commit()
 
     token = create_access_token({"sub": str(user.id)})
     return {"access_token": token}
