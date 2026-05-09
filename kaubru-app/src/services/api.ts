@@ -21,6 +21,8 @@ api.interceptors.request.use(async (config) => {
 // ─── Auth ─────────────────────────────────────────────────────────────────────
 
 export const authAPI = {
+  // Response includes `access_token: string` and `is_verified: boolean`.
+  // When `is_verified` is false the app should navigate to the OTP verification screen.
   signup: (name: string, email: string, password: string) =>
     api.post('/auth/signup', { name, email, password }),
 
@@ -45,6 +47,10 @@ export const authAPI = {
     social_id: string;
     avatar_url?: string;
   }) => api.post('/auth/social-login', payload),
+
+  verifyOtp: (otp: string) => api.post('/auth/verify-otp', { otp }),
+
+  resendOtp: () => api.post('/auth/resend-otp'),
 };
 
 // ─── Translation ──────────────────────────────────────────────────────────────
@@ -141,6 +147,36 @@ export const ttsAPI = {
 export const chatAPI = {
   sendMessage: (messages: { role: string; content: string }[]) =>
     api.post('/chat', { messages }, { timeout: 120000 }), // 2 min timeout for local LLM
+};
+
+// ─── Word Rush Game ───────────────────────────────────────────────────────────
+
+export const gameAPI = {
+  submitScore: (payload: {
+    score: number;
+    level_reached: number;
+    direction: string;
+    correct_count: number;
+    session_id: string;
+  }) => api.post('/game/word-rush/scores', payload),
+
+  getLeaderboard: (limit = 20) =>
+    api.get('/game/word-rush/leaderboard', { params: { limit } }),
+
+  awardPoints: (payload: { session_id: string; points: number }) =>
+    api.post('/game/word-rush/award-points', payload),
+};
+
+// ─── Culture & Heritage ───────────────────────────────────────────────────────
+
+export const cultureAPI = {
+  getAll: (params?: { category?: string; search?: string }) =>
+    api.get('/culture-articles', { params }),
+
+  getById: (id: number) => api.get(`/culture-articles/${id}`),
+
+  getCategories: () =>
+    Promise.resolve(['history', 'dance', 'music', 'traditions', 'language', 'festivals']),
 };
 
 export default api;

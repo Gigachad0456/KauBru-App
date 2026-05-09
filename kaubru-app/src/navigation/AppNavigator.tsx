@@ -8,6 +8,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useAuth } from '../context/AuthContext';
 import LoadingOverlay from '../components/LoadingOverlay';
 
+import OTPVerificationScreen from '../screens/OTPVerificationScreen';
 import OnboardingScreen from '../screens/OnboardingScreen';
 import LoginScreen from '../screens/LoginScreen';
 import SignupScreen from '../screens/SignupScreen';
@@ -27,6 +28,9 @@ import EditProfileScreen from '../screens/EditProfileScreen';
 import StoriesScreen from '../screens/StoriesScreen';
 import StoryDetailScreen from '../screens/StoryDetailScreen';
 import ChatScreen from '../screens/ChatScreen';
+import WordRushScreen from '../screens/WordRushScreen';
+import CultureBrowseScreen from '../screens/CultureBrowseScreen';
+import ArticleDetailScreen from '../screens/ArticleDetailScreen';
 
 import { COLORS, SPACING } from '../config/theme';
 
@@ -42,11 +46,26 @@ interface Lesson {
   words?: LessonWord[]; created_at: string;
 }
 
+export interface CultureArticlePreview {
+  id: number;
+  title: string;
+  category: string;
+  summary?: string;
+  cover_image_url?: string;
+  tags?: string;
+  read_time_minutes: number;
+  is_published: boolean;
+  created_at: string;
+}
+
 export type AppStackParamList = {
   MainTabs: undefined; Premium: undefined; Pronunciation: undefined;
   SavedWords: undefined; MyContributions: undefined;
   LessonDetail: { lesson: Lesson }; Quiz: { lesson: Lesson };
   EditProfile: undefined; Stories: undefined; StoryDetail: { story: any };
+  OTPVerification: undefined; WordRush: undefined;
+  CultureBrowse: undefined;
+  ArticleDetail: { article: CultureArticlePreview };
 };
 
 // ─── Tab config ───────────────────────────────────────────────────────────────
@@ -176,6 +195,21 @@ function AppStack() {
         component={ChatScreen}
         options={{ animation: 'slide_from_bottom', animationDuration: 350 }}
       />
+      <Stack.Screen
+        name="WordRush"
+        component={WordRushScreen}
+        options={{ animation: 'slide_from_bottom', animationDuration: 350 }}
+      />
+      <Stack.Screen
+        name="CultureBrowse"
+        component={CultureBrowseScreen}
+        options={{ animation: 'slide_from_right' }}
+      />
+      <Stack.Screen
+        name="ArticleDetail"
+        component={ArticleDetailScreen}
+        options={{ animation: 'slide_from_bottom', animationDuration: 350 }}
+      />
     </Stack.Navigator>
   );
 }
@@ -183,8 +217,15 @@ function AppStack() {
 // ─── Root ─────────────────────────────────────────────────────────────────────
 
 export default function AppNavigator() {
-  const { user, loading } = useAuth();
+  const { user, loading, pendingVerification } = useAuth();
   if (loading) return <LoadingOverlay />;
+  if (pendingVerification) return (
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="OTPVerification" component={OTPVerificationScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
   return (
     <NavigationContainer>
       {user ? <AppStack /> : <AuthStack />}

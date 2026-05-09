@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {
   View, Text, StyleSheet, TouchableOpacity, ScrollView,
-  Alert, KeyboardAvoidingView, Platform,
+  KeyboardAvoidingView, Platform,
 } from 'react-native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -18,14 +18,18 @@ export default function SignupScreen({ navigation }: Props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
+  const [emailExists, setEmailExists] = useState(false);
 
   const handleSignup = async () => {
+    setErrorMsg('');
+    setEmailExists(false);
     if (!name.trim() || !email.trim() || !password.trim()) {
-      Alert.alert('Missing fields', 'Please fill in all fields.');
+      setErrorMsg('Please fill in all fields.');
       return;
     }
     if (password.length < 6) {
-      Alert.alert('Weak password', 'Password must be at least 6 characters.');
+      setErrorMsg('Password must be at least 6 characters.');
       return;
     }
     setLoading(true);
@@ -34,12 +38,13 @@ export default function SignupScreen({ navigation }: Props) {
     } catch (err: any) {
       console.error('Signup Error:', err);
       let errorMessage = 'Signup failed. Please check your internet connection and try again.';
-      
-      if (err?.response?.data?.detail) {
+
+      if (!err?.response) {
+        errorMessage = 'Server is waking up, please wait a moment and try again.';
+      } else if (err?.response?.data?.detail) {
         if (typeof err.response.data.detail === 'string') {
           errorMessage = err.response.data.detail;
         } else if (Array.isArray(err.response.data.detail)) {
-          // Handle FastAPI validation errors (422)
           errorMessage = err.response.data.detail.map((d: any) => d.msg).join('\n');
         } else {
           errorMessage = JSON.stringify(err.response.data.detail);
@@ -47,8 +52,12 @@ export default function SignupScreen({ navigation }: Props) {
       } else if (err.message) {
         errorMessage = err.message;
       }
-      
-      Alert.alert('Signup Error', errorMessage);
+
+      // Special case: email already registered — show inline with Login link
+      if (err?.response?.status === 400 && errorMessage.toLowerCase().includes('already registered')) {
+        setEmailExists(true);
+      }
+      setErrorMsg(errorMessage);
     } finally { setLoading(false); }
   };
 
@@ -80,7 +89,7 @@ export default function SignupScreen({ navigation }: Props) {
         <View style={styles.tabRow}>
           <TouchableOpacity
             style={styles.tabBtn}
-            onPress={() => navigation.goBack()}
+            onPress={() => navigation.navigate('Login')}
           >
             <Text style={styles.tabText}>Login</Text>
           </TouchableOpacity>
@@ -120,6 +129,18 @@ export default function SignupScreen({ navigation }: Props) {
             loading={loading}
             style={styles.signInBtn}
           />
+
+          {/* Inline error message */}
+          {errorMsg !== '' && (
+            <View style={styles.errorBox}>
+              <Text style={styles.errorText}>{errorMsg}</Text>
+              {emailExists && (
+                <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+                  <Text style={styles.errorLink}>Go to Login →</Text>
+                </TouchableOpacity>
+              )}
+            </View>
+          )}
         </View>
 
         {/* Divider */}
@@ -177,7 +198,18 @@ const styles = StyleSheet.create({
   tabText: { fontSize: 14, fontWeight: '600', color: COLORS.textMuted },
   tabTextActive: { fontSize: 14, fontWeight: '600', color: COLORS.textPrimary },
   form: { gap: 0 },
-  signInBtn: { marginTop: SPACING.sm, marginBottom: SPACING.lg },
+  signInBtn: { marginTop: SPACING.sm, marginBottom: SPACING.md },
+  errorBox: {
+    marginBottom: SPACING.md,
+    padding: SPACING.md,
+    backgroundColor: '#FEF2F2',
+    borderRadius: RADIUS.md,
+    borderWidth: 1,
+    borderColor: '#FECACA',
+    gap: 6,
+  },
+  errorText: { fontSize: 13, color: COLORS.error, fontWeight: '500' },
+  errorLink: { fontSize: 13, color: COLORS.primary, fontWeight: '700' },
   dividerRow: { flexDirection: 'row', alignItems: 'center', gap: SPACING.sm, marginBottom: SPACING.lg },
   dividerLine: { flex: 1, height: 1, backgroundColor: COLORS.border },
   dividerText: { fontSize: 11, color: COLORS.textMuted, letterSpacing: 0.5 },

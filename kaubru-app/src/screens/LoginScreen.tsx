@@ -33,6 +33,9 @@ export default function LoginScreen({ navigation }: Props) {
       // Render free tier cold start — server waking up
       if (!err?.response) {
         errorMessage = 'Server is waking up, please wait a moment and try again.';
+      } else if (err?.response?.status === 403) {
+        // Email not verified — surface the backend message directly
+        errorMessage = err.response.data?.detail || 'Email not verified. Please check your email for the OTP.';
       } else if (err?.response?.data?.detail) {
         if (typeof err.response.data.detail === 'string') {
           errorMessage = err.response.data.detail;

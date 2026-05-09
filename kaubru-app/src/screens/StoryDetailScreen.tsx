@@ -223,14 +223,35 @@ export default function StoryDetailScreen({ route, navigation }: any) {
 
             {/* Story text */}
             {story.content_english && (
-              <View style={styles.textBlock}>
-                <View style={styles.textBlockHeader}>
-                  <View style={styles.row}>
-                    <View style={styles.langDot} />
-                    <Text style={styles.textBlockLang}>STORY CONTENT</Text>
-                  </View>
+              <View style={styles.folktaleCard}>
+                {/* Card header */}
+                <View style={styles.folktaleCardHeader}>
+                  <View style={styles.folktaleHeaderDot} />
+                  <Text style={styles.folktaleHeaderLabel}>FOLKTALE</Text>
+                  <View style={styles.folktaleHeaderDot} />
                 </View>
-                <Text style={styles.storyText}>{story.content_english}</Text>
+
+                {/* Decorative top border */}
+                <View style={styles.folktaleTopBorder} />
+
+                {/* Opening quote mark */}
+                <Text style={styles.folktaleQuoteMark}>"</Text>
+
+                {/* Story text */}
+                <Text style={styles.folktaleText}>{story.content_english}</Text>
+
+                {/* Closing quote mark */}
+                <Text style={[styles.folktaleQuoteMark, styles.folktaleQuoteMarkClose]}>"</Text>
+
+                {/* Decorative bottom border */}
+                <View style={styles.folktaleTopBorder} />
+
+                {/* Footer */}
+                <View style={styles.folktaleFooter}>
+                  <Ionicons name="leaf-outline" size={12} color={COLORS.primary} />
+                  <Text style={styles.folktaleFooterText}>{story.title}</Text>
+                  <Ionicons name="leaf-outline" size={12} color={COLORS.primary} />
+                </View>
               </View>
             )}
 
@@ -434,6 +455,82 @@ const styles = StyleSheet.create({
 
   noContent: { alignItems: 'center', padding: SPACING.xl },
   noContentText: { fontSize: 14, color: COLORS.textMuted, marginTop: SPACING.md },
+
+  // ── Folktale card ─────────────────────────────────────────────────────────
+  folktaleCard: {
+    backgroundColor: '#FDFAF4',
+    borderRadius: RADIUS.xl,
+    borderWidth: 1.5,
+    borderColor: '#D4C5A0',
+    marginBottom: SPACING.lg,
+    overflow: 'hidden',
+    ...SHADOW.md,
+  },
+  folktaleCardHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: SPACING.sm,
+    paddingVertical: SPACING.md,
+    backgroundColor: COLORS.bgGreen,
+  },
+  folktaleHeaderDot: {
+    width: 4,
+    height: 4,
+    borderRadius: 2,
+    backgroundColor: COLORS.gold,
+  },
+  folktaleHeaderLabel: {
+    fontSize: 11,
+    fontWeight: '800',
+    color: COLORS.white,
+    letterSpacing: 3,
+  },
+  folktaleTopBorder: {
+    height: 2,
+    backgroundColor: '#D4C5A0',
+    marginHorizontal: SPACING.lg,
+    marginVertical: SPACING.sm,
+    opacity: 0.5,
+  },
+  folktaleQuoteMark: {
+    fontSize: 64,
+    color: COLORS.gold,
+    opacity: 0.3,
+    lineHeight: 60,
+    paddingHorizontal: SPACING.lg,
+    fontFamily: 'Georgia',
+  },
+  folktaleQuoteMarkClose: {
+    textAlign: 'right',
+    marginTop: -SPACING.lg,
+  },
+  folktaleText: {
+    fontSize: 16,
+    color: '#3A2E1E',
+    lineHeight: 30,
+    fontFamily: 'Georgia',
+    paddingHorizontal: SPACING.xl,
+    paddingVertical: SPACING.sm,
+    letterSpacing: 0.2,
+  },
+  folktaleFooter: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: SPACING.sm,
+    paddingVertical: SPACING.md,
+    borderTopWidth: 1,
+    borderTopColor: '#D4C5A0',
+    marginTop: SPACING.sm,
+  },
+  folktaleFooterText: {
+    fontSize: 12,
+    color: COLORS.primary,
+    fontWeight: '600',
+    fontStyle: 'italic',
+    letterSpacing: 0.5,
+  },
 
   vocabSection: {
     backgroundColor: COLORS.bgCard, borderRadius: RADIUS.lg,
