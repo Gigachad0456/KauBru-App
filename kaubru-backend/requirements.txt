@@ -19,3 +19,4 @@ aiofiles
 jinja2
 python-slugify
 cloudinary
+beautifulsoup4

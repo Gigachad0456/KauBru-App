@@ -179,4 +179,13 @@ export const cultureAPI = {
     Promise.resolve(['history', 'dance', 'music', 'traditions', 'language', 'festivals']),
 };
 
+// ─── Tripura Jobs ─────────────────────────────────────────────────────────────
+
+export const jobsAPI = {
+  getAll: (params?: { search?: string; qualification?: string; sort?: string; skip?: number; limit?: number }) =>
+    api.get('/jobs', { params }),
+
+  getQualifications: () => api.get('/jobs/qualifications'),
+};
+
 export default api;

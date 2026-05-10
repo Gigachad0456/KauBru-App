@@ -1,7 +1,7 @@
 from datetime import datetime
 from sqlalchemy import (
     Column, Integer, String, Boolean, Float,
-    DateTime, ForeignKey, Text
+    DateTime, Date, ForeignKey, Text, JSON, UniqueConstraint
 )
 from sqlalchemy.orm import relationship
 from app.database import Base
@@ -266,3 +266,31 @@ class CultureArticleWord(Base):
 
     article = relationship("CultureArticle", back_populates="vocabulary")
     word    = relationship("Word")
+
+
+class Job(Base):
+    """
+    Tripura Job Notice item.
+    status is moderation status: pending | published | rejected.
+    is_open controls whether applicants should still see it as open/active.
+    """
+    __tablename__ = "jobs"
+    __table_args__ = (
+        UniqueConstraint("title", "source_link", name="uq_jobs_title_source_link"),
+    )
+
+    id = Column(Integer, primary_key=True, index=True)
+    title = Column(String(300), nullable=False, index=True)
+    organization = Column(String(200), nullable=False, index=True)
+    job_type = Column(String(20), nullable=False, default="Government")
+    location = Column(String(120), nullable=False, default="Tripura")
+    qualification_tags = Column(JSON, nullable=False, default=list)
+    qualification_text = Column(Text, nullable=True)
+    last_date = Column(Date, nullable=True)
+    apply_link = Column(String(1000), nullable=True)
+    source_link = Column(String(1000), nullable=False)
+    description = Column(Text, nullable=True)
+    status = Column(String(20), nullable=False, default="pending")  # pending | published | rejected
+    is_open = Column(Boolean, nullable=False, default=True)
+    created_at = Column(DateTime, default=datetime.utcnow, index=True)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)

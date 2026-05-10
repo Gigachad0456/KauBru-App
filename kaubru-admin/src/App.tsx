@@ -11,6 +11,8 @@ import TranslationsPage from './pages/TranslationsPage'
 import StoriesPage from './pages/StoriesPage'
 import ActivityPage from './pages/ActivityPage'
 import PictureWordsPage from './pages/PictureWordsPage'
+import CultureArticlesPage from './pages/CultureArticlesPage'
+import JobManagerPage from './pages/JobManagerPage'
 
 function PrivateRoute({ children }: { children: React.ReactNode }) {
   const token = localStorage.getItem('token')
@@ -41,6 +43,8 @@ export default function App() {
           <Route path="stories" element={<StoriesPage />} />
           <Route path="picture-words" element={<PictureWordsPage />} />
           <Route path="activity" element={<ActivityPage />} />
+          <Route path="culture-articles" element={<CultureArticlesPage />} />
+          <Route path="jobs" element={<JobManagerPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

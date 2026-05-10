@@ -1,0 +1,3430 @@
+{
+  "words": [
+    {
+      "id": "greetings_0001",
+      "kaubru": "Hoh",
+      "english": "hello",
+      "pronunciation": "hoh",
+      "audio_url": "/audio/greetings/greetings_0001.mp3",
+      "category": "greetings",
+      "difficulty_level": 1,
+      "tags": [
+        "greetings"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "Hoh, kaham de tong?",
+          "english": "Hello, how are you?"
+        }
+      ],
+      "related_words": [
+        "goodbye",
+        "how are you",
+        "thank you"
+      ],
+      "image_url": "/images/words/greetings_0001.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "phrase"
+    },
+    {
+      "id": "greetings_0002",
+      "kaubru": "bye",
+      "english": "goodbye",
+      "pronunciation": "bye",
+      "audio_url": "/audio/greetings/greetings_0002.mp3",
+      "category": "greetings",
+      "difficulty_level": 1,
+      "tags": [
+        "greetings"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "Bye, khnai malai phi na",
+          "english": "Goodbye, see you tomorrow."
+        }
+      ],
+      "related_words": [
+        "hello",
+        "tomorrow",
+        "see you"
+      ],
+      "image_url": "/images/words/greetings_0002.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "phrase"
+    },
+    {
+      "id": "greetings_0003",
+      "kaubru": "khachang ha",
+      "english": "thank you",
+      "pronunciation": "kha-chang ha",
+      "audio_url": "/audio/greetings/greetings_0003.mp3",
+      "category": "greetings",
+      "difficulty_level": 1,
+      "tags": [
+        "greetings"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "betha khe khachangha.",
+          "english": "Thank you very much."
+        }
+      ],
+      "related_words": [
+        "yes",
+        "hello"
+      ],
+      "image_url": "/images/words/greetings_0003.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "phrase"
+    },
+    {
+      "id": "greetings_0004",
+      "kaubru": "em",
+      "english": "yes",
+      "pronunciation": "em",
+      "audio_url": "/audio/greetings/greetings_0004.mp3",
+      "category": "greetings",
+      "difficulty_level": 1,
+      "tags": [
+        "greetings"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "em, ang mchi ou/ha.",
+          "english": "Yes, I understand."
+        }
+      ],
+      "related_words": [
+        "no"
+      ],
+      "image_url": "/images/words/greetings_0004.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "phrase"
+    },
+    {
+      "id": "greetings_0005",
+      "kaubru": "ehi",
+      "english": "no",
+      "pronunciation": "eh-hi",
+      "audio_url": "/audio/greetings/greetings_0005.mp3",
+      "category": "greetings",
+      "difficulty_level": 1,
+      "tags": [
+        "greetings"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "ehi, cya ang pho",
+          "english": "No, I don't know."
+        }
+      ],
+      "related_words": [
+        "yes"
+      ],
+      "image_url": "/images/words/greetings_0005.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "phrase"
+    },
+    {
+      "id": "greetings_0006",
+      "kaubru": "kaham de tong?",
+      "english": "how are you",
+      "pronunciation": "ka-ham de tong",
+      "audio_url": "/audio/greetings/greetings_0006.mp3",
+      "category": "greetings",
+      "difficulty_level": 1,
+      "tags": [
+        "greetings"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "kaham de tong tini le?",
+          "english": "How are you today?"
+        }
+      ],
+      "related_words": [
+        "hello",
+        "good",
+        "today"
+      ],
+      "image_url": "/images/words/greetings_0006.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "phrase"
+    },
+    {
+      "id": "greetings_0007",
+      "kaubru": "nini mmung kma?",
+      "english": "what is your name",
+      "pronunciation": "ni-ni mmung kma",
+      "audio_url": "/audio/greetings/greetings_0007.mp3",
+      "category": "greetings",
+      "difficulty_level": 1,
+      "tags": [
+        "greetings"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "Nini mmung kma?",
+          "english": "What is your name?"
+        }
+      ],
+      "related_words": [
+        "my name is",
+        "your"
+      ],
+      "image_url": "/images/words/greetings_0007.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "phrase"
+    },
+    {
+      "id": "greetings_0008",
+      "kaubru": "aini mmung khe ",
+      "english": "my name is",
+      "pronunciation": "aini-mmung-khe-",
+      "audio_url": "/audio/greetings/greetings_0008.mp3",
+      "category": "greetings",
+      "difficulty_level": 1,
+      "tags": [
+        "greetings"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "Aini mmung khe Raju.",
+          "english": "My name is Raju."
+        }
+      ],
+      "related_words": [
+        "what is your name",
+        "my"
+      ],
+      "image_url": "/images/words/greetings_0008.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "phrase"
+    },
+    {
+      "id": "family_0009",
+      "kaubru": "among/mma",
+      "english": "mother",
+      "pronunciation": "a-mong / mma",
+      "audio_url": "/audio/family/family_0009.mp3",
+      "category": "family",
+      "difficulty_level": 1,
+      "tags": [
+        "family"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "Aini mma le brouh kaham ma sei.",
+          "english": "My mother is kind."
+        }
+      ],
+      "related_words": [
+        "father",
+        "family",
+        "my mother"
+      ],
+      "image_url": "/images/words/family_0009.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "family_0010",
+      "kaubru": "apa/mpha",
+      "english": "father",
+      "pronunciation": "a-pa / m-pha",
+      "audio_url": "/audio/family/family_0010.mp3",
+      "category": "family",
+      "difficulty_level": 1,
+      "tags": [
+        "family"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "Aini mpha le samung tang grao sei.",
+          "english": "My father works hard."
+        }
+      ],
+      "related_words": [
+        "mother",
+        "family",
+        "my father"
+      ],
+      "image_url": "/images/words/family_0010.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "family_0011",
+      "kaubru": "mta/ata",
+      "english": "brother",
+      "pronunciation": "m-ta / a-ta",
+      "audio_url": "/audio/family/family_0011.mp3",
+      "category": "family",
+      "difficulty_level": 1,
+      "tags": [
+        "family"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "aini mta le klau ma sei.",
+          "english": "My brother is tall."
+        }
+      ],
+      "related_words": [
+        "sister",
+        "family",
+        "my elder brother"
+      ],
+      "image_url": "/images/words/family_0011.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "family_0012",
+      "kaubru": "mbi/aibi",
+      "english": "sister",
+      "pronunciation": "m-bi / ai-bi",
+      "audio_url": "/audio/family/family_0012.mp3",
+      "category": "family",
+      "difficulty_level": 1,
+      "tags": [
+        "family"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "aini mbi le rcha krung ma sei",
+          "english": "My sister sings well."
+        }
+      ],
+      "related_words": [
+        "brother",
+        "family",
+        "my elder sister"
+      ],
+      "image_url": "/images/words/family_0012.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "family_0013",
+      "kaubru": "chrai msa",
+      "english": "child",
+      "pronunciation": "chrai m-sa",
+      "audio_url": "/audio/family/family_0013.mp3",
+      "category": "family",
+      "difficulty_level": 1,
+      "tags": [
+        "family"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "chraiha rao thung pai tong ou",
+          "english": "The child is playing."
+        }
+      ],
+      "related_words": [
+        "family",
+        "small"
+      ],
+      "image_url": "/images/words/family_0013.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "family_0014",
+      "kaubru": "nouhkhung",
+      "english": "family",
+      "pronunciation": "nouh-khung",
+      "audio_url": "/audio/family/family_0014.mp3",
+      "category": "family",
+      "difficulty_level": 1,
+      "tags": [
+        "family"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "aini le nouhkhung ktor sei.",
+          "english": "My family is big."
+        }
+      ],
+      "related_words": [
+        "mother",
+        "father",
+        "brother",
+        "sister"
+      ],
+      "image_url": "/images/words/family_0014.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "nature_0015",
+      "kaubru": "tui",
+      "english": "water",
+      "pronunciation": "tui",
+      "audio_url": "/audio/nature/nature_0015.mp3",
+      "category": "nature",
+      "difficulty_level": 1,
+      "tags": [
+        "nature"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "ang tui nang tong ha.",
+          "english": "I need water."
+        }
+      ],
+      "related_words": [
+        "river",
+        "fire"
+      ],
+      "image_url": "/images/words/nature_0015.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "food_0016",
+      "kaubru": "mairung",
+      "english": "rice",
+      "pronunciation": "mai-rung",
+      "audio_url": "/audio/food/food_0016.mp3",
+      "category": "food",
+      "difficulty_level": 1,
+      "tags": [
+        "food"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "Mairung sei chini sal boini mai.",
+          "english": "Rice is our staple food."
+        }
+      ],
+      "related_words": [
+        "eat",
+        "food"
+      ],
+      "image_url": "/images/words/food_0016.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "places_0017",
+      "kaubru": "nouh",
+      "english": "house",
+      "pronunciation": "nouh",
+      "audio_url": "/audio/places/places_0017.mp3",
+      "category": "places",
+      "difficulty_level": 1,
+      "tags": [
+        "places"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "Ang nouh thang gra nu.",
+          "english": "I am going home."
+        }
+      ],
+      "related_words": [
+        "family",
+        "go",
+        "i am going home"
+      ],
+      "image_url": "/images/words/places_0017.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "nature_0018",
+      "kaubru": "hor",
+      "english": "fire",
+      "pronunciation": "hor",
+      "audio_url": "/audio/nature/nature_0018.mp3",
+      "category": "nature",
+      "difficulty_level": 1,
+      "tags": [
+        "nature"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "hor kham tong ha.",
+          "english": "The fire is burning."
+        }
+      ],
+      "related_words": [
+        "water",
+        "burn",
+        "sun"
+      ],
+      "image_url": "/images/words/nature_0018.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "nature_0019",
+      "kaubru": "sal",
+      "english": "sun",
+      "pronunciation": "sal",
+      "audio_url": "/audio/nature/nature_0019.mp3",
+      "category": "nature",
+      "difficulty_level": 1,
+      "tags": [
+        "nature"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "sal kara ha.",
+          "english": "The sun is bright."
+        }
+      ],
+      "related_words": [
+        "moon",
+        "day",
+        "east"
+      ],
+      "image_url": "/images/words/nature_0019.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "nature_0020",
+      "kaubru": "tal",
+      "english": "moon",
+      "pronunciation": "tal",
+      "audio_url": "/audio/nature/nature_0020.mp3",
+      "category": "nature",
+      "difficulty_level": 1,
+      "tags": [
+        "nature"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "tal nythau ha.",
+          "english": "The moon is beautiful."
+        }
+      ],
+      "related_words": [
+        "sun",
+        "night",
+        "beautiful"
+      ],
+      "image_url": "/images/words/nature_0020.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "nature_0021",
+      "kaubru": "tui-sa",
+      "english": "river",
+      "pronunciation": "tui-sa",
+      "audio_url": "/audio/nature/nature_0021.mp3",
+      "category": "nature",
+      "difficulty_level": 1,
+      "tags": [
+        "nature"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "Tui-sa betha khe hiolkhlai ha.",
+          "english": "The river flows fast."
+        }
+      ],
+      "related_words": [
+        "water",
+        "north",
+        "tree"
+      ],
+      "image_url": "/images/words/nature_0021.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "nature_0022",
+      "kaubru": "mphang",
+      "english": "tree",
+      "pronunciation": "m-phang",
+      "audio_url": "/audio/nature/nature_0022.mp3",
+      "category": "nature",
+      "difficulty_level": 1,
+      "tags": [
+        "nature"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "bo mphang le klao ha le.",
+          "english": "The tree is tall."
+        }
+      ],
+      "related_words": [
+        "river",
+        "nature",
+        "big"
+      ],
+      "image_url": "/images/words/nature_0022.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "numbers_0023",
+      "kaubru": "ha",
+      "english": "one",
+      "pronunciation": "ha",
+      "audio_url": "/audio/numbers/numbers_0023.mp3",
+      "category": "numbers",
+      "difficulty_level": 1,
+      "tags": [
+        "numbers"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "thaiha appel",
+          "english": "One apple."
+        }
+      ],
+      "related_words": [
+        "two",
+        "three",
+        "numbers"
+      ],
+      "image_url": "/images/words/numbers_0023.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "numeral"
+    },
+    {
+      "id": "numbers_0024",
+      "kaubru": "knoi",
+      "english": "two",
+      "pronunciation": "k-noi",
+      "audio_url": "/audio/numbers/numbers_0024.mp3",
+      "category": "numbers",
+      "difficulty_level": 1,
+      "tags": [
+        "numbers"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "kenoi tao.",
+          "english": "Two birds."
+        }
+      ],
+      "related_words": [
+        "one",
+        "three"
+      ],
+      "image_url": "/images/words/numbers_0024.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "numeral"
+    },
+    {
+      "id": "numbers_0025",
+      "kaubru": "ktham",
+      "english": "three",
+      "pronunciation": "k-tham",
+      "audio_url": "/audio/numbers/numbers_0025.mp3",
+      "category": "numbers",
+      "difficulty_level": 1,
+      "tags": [
+        "numbers"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "chrai rao khrauktham.",
+          "english": "Three children."
+        }
+      ],
+      "related_words": [
+        "two",
+        "four"
+      ],
+      "image_url": "/images/words/numbers_0025.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "numeral"
+    },
+    {
+      "id": "numbers_0026",
+      "kaubru": "broi",
+      "english": "four",
+      "pronunciation": "b-roi",
+      "audio_url": "/audio/numbers/numbers_0026.mp3",
+      "category": "numbers",
+      "difficulty_level": 1,
+      "tags": [
+        "numbers"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "nouh kebroi.",
+          "english": "Four houses."
+        }
+      ],
+      "related_words": [
+        "three",
+        "five"
+      ],
+      "image_url": "/images/words/numbers_0026.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "numeral"
+    },
+    {
+      "id": "numbers_0027",
+      "kaubru": "ba",
+      "english": "five",
+      "pronunciation": "ba",
+      "audio_url": "/audio/numbers/numbers_0027.mp3",
+      "category": "numbers",
+      "difficulty_level": 1,
+      "tags": [
+        "numbers"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "keba tuisa.",
+          "english": "Five rivers."
+        }
+      ],
+      "related_words": [
+        "four",
+        "six"
+      ],
+      "image_url": "/images/words/numbers_0027.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "numeral"
+    },
+    {
+      "id": "numbers_0028",
+      "kaubru": "douh",
+      "english": "six",
+      "pronunciation": "douh",
+      "audio_url": "/audio/numbers/numbers_0028.mp3",
+      "category": "numbers",
+      "difficulty_level": 1,
+      "tags": [
+        "numbers"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "brouh kedouh.",
+          "english": "Six people."
+        }
+      ],
+      "related_words": [
+        "five",
+        "seven"
+      ],
+      "image_url": "/images/words/numbers_0028.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "numeral"
+    },
+    {
+      "id": "numbers_0029",
+      "kaubru": "sning",
+      "english": "seven",
+      "pronunciation": "s-ning",
+      "audio_url": "/audio/numbers/numbers_0029.mp3",
+      "category": "numbers",
+      "difficulty_level": 1,
+      "tags": [
+        "numbers"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "sal kesning.",
+          "english": "Seven days."
+        }
+      ],
+      "related_words": [
+        "six",
+        "eight",
+        "week"
+      ],
+      "image_url": "/images/words/numbers_0029.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "numeral"
+    },
+    {
+      "id": "numbers_0030",
+      "kaubru": "chaih",
+      "english": "eight",
+      "pronunciation": "chaih",
+      "audio_url": "/audio/numbers/numbers_0030.mp3",
+      "category": "numbers",
+      "difficulty_level": 1,
+      "tags": [
+        "numbers"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "tao kechaih.",
+          "english": "Eight birds."
+        }
+      ],
+      "related_words": [
+        "seven",
+        "nine"
+      ],
+      "image_url": "/images/words/numbers_0030.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "numeral"
+    },
+    {
+      "id": "numbers_0031",
+      "kaubru": "skuh",
+      "english": "nine",
+      "pronunciation": "s-kuh",
+      "audio_url": "/audio/numbers/numbers_0031.mp3",
+      "category": "numbers",
+      "difficulty_level": 1,
+      "tags": [
+        "numbers"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "mphang keskuk.",
+          "english": "Nine trees."
+        }
+      ],
+      "related_words": [
+        "eight",
+        "ten"
+      ],
+      "image_url": "/images/words/numbers_0031.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "numeral"
+    },
+    {
+      "id": "numbers_0032",
+      "kaubru": "chi",
+      "english": "ten",
+      "pronunciation": "chi",
+      "audio_url": "/audio/numbers/numbers_0032.mp3",
+      "category": "numbers",
+      "difficulty_level": 1,
+      "tags": [
+        "numbers"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "sal chi.",
+          "english": "Ten days."
+        }
+      ],
+      "related_words": [
+        "nine",
+        "twenty"
+      ],
+      "image_url": "/images/words/numbers_0032.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "numeral"
+    },
+    {
+      "id": "numbers_0033",
+      "kaubru": "khol",
+      "english": "twenty",
+      "pronunciation": "khol",
+      "audio_url": "/audio/numbers/numbers_0033.mp3",
+      "category": "numbers",
+      "difficulty_level": 1,
+      "tags": [
+        "numbers"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "brouh khol.",
+          "english": "Twenty people."
+        }
+      ],
+      "related_words": [
+        "ten",
+        "forty"
+      ],
+      "image_url": "/images/words/numbers_0033.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "numeral"
+    },
+    {
+      "id": "numbers_0034",
+      "kaubru": "kurnoi",
+      "english": "forty",
+      "pronunciation": "kur-noi",
+      "audio_url": "/audio/numbers/numbers_0034.mp3",
+      "category": "numbers",
+      "difficulty_level": 1,
+      "tags": [
+        "numbers"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "sal kurnoi.",
+          "english": "Forty days."
+        }
+      ],
+      "related_words": [
+        "twenty",
+        "sixty"
+      ],
+      "image_url": "/images/words/numbers_0034.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "numeral"
+    },
+    {
+      "id": "numbers_0035",
+      "kaubru": "kurtham",
+      "english": "sixty",
+      "pronunciation": "kur-tham",
+      "audio_url": "/audio/numbers/numbers_0035.mp3",
+      "category": "numbers",
+      "difficulty_level": 1,
+      "tags": [
+        "numbers"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "khnai kurtham.",
+          "english": "Sixty years."
+        }
+      ],
+      "related_words": [
+        "forty",
+        "eighty"
+      ],
+      "image_url": "/images/words/numbers_0035.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "numeral"
+    },
+    {
+      "id": "numbers_0036",
+      "kaubru": "kurbroi",
+      "english": "eighty",
+      "pronunciation": "kur-broi",
+      "audio_url": "/audio/numbers/numbers_0036.mp3",
+      "category": "numbers",
+      "difficulty_level": 1,
+      "tags": [
+        "numbers"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "brouh kurbroi.",
+          "english": "Eighty people."
+        }
+      ],
+      "related_words": [
+        "sixty",
+        "hundred"
+      ],
+      "image_url": "/images/words/numbers_0036.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "numeral"
+    },
+    {
+      "id": "numbers_0037",
+      "kaubru": "rzaha",
+      "english": "hundred",
+      "pronunciation": "r-za-ha",
+      "audio_url": "/audio/numbers/numbers_0037.mp3",
+      "category": "numbers",
+      "difficulty_level": 1,
+      "tags": [
+        "numbers"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "rzaha.",
+          "english": "One hundred."
+        }
+      ],
+      "related_words": [
+        "eighty"
+      ],
+      "image_url": "/images/words/numbers_0037.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "numeral"
+    },
+    {
+      "id": "math_0038",
+      "kaubru": "dalaomo",
+      "english": "addition",
+      "pronunciation": "da-lao-mo",
+      "audio_url": "/audio/math/math_0038.mp3",
+      "category": "math",
+      "difficulty_level": 1,
+      "tags": [
+        "math"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "dalaomo le phang phang songpang.",
+          "english": "Addition is combining numbers."
+        }
+      ],
+      "related_words": [
+        "plus",
+        "add",
+        "subtraction"
+      ],
+      "image_url": "/images/words/math_0038.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "math_0039",
+      "kaubru": "dalaomo",
+      "english": "plus",
+      "pronunciation": "da-lao-mo",
+      "audio_url": "/audio/math/math_0039.mp3",
+      "category": "math",
+      "difficulty_level": 1,
+      "tags": [
+        "math"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "ktham dalaomo knoi.",
+          "english": "Three plus two."
+        }
+      ],
+      "related_words": [
+        "addition",
+        "add"
+      ],
+      "image_url": "/images/words/math_0039.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "math_0040",
+      "kaubru": "dalaomo",
+      "english": "add",
+      "pronunciation": "da-lao-mo",
+      "audio_url": "/audio/math/math_0040.mp3",
+      "category": "math",
+      "difficulty_level": 1,
+      "tags": [
+        "math"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "ba dalaomo ktham.",
+          "english": "Add five and three."
+        }
+      ],
+      "related_words": [
+        "plus",
+        "addition"
+      ],
+      "image_url": "/images/words/math_0040.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "math_0041",
+      "kaubru": "skaohmo",
+      "english": "subtraction",
+      "pronunciation": "s-kaoh-mo",
+      "audio_url": "/audio/math/math_0041.mp3",
+      "category": "math",
+      "difficulty_level": 1,
+      "tags": [
+        "math"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "skaohmo le phang phang baoh.",
+          "english": "Subtraction takes away a number."
+        }
+      ],
+      "related_words": [
+        "minus",
+        "subtract",
+        "addition"
+      ],
+      "image_url": "/images/words/math_0041.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "math_0042",
+      "kaubru": "skaohmo",
+      "english": "minus",
+      "pronunciation": "s-kaoh-mo",
+      "audio_url": "/audio/math/math_0042.mp3",
+      "category": "math",
+      "difficulty_level": 1,
+      "tags": [
+        "math"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "chi skaohmo broi.",
+          "english": "Ten minus four."
+        }
+      ],
+      "related_words": [
+        "subtraction",
+        "subtract"
+      ],
+      "image_url": "/images/words/math_0042.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "math_0043",
+      "kaubru": "skaohmo",
+      "english": "subtract",
+      "pronunciation": "s-kaoh-mo",
+      "audio_url": "/audio/math/math_0043.mp3",
+      "category": "math",
+      "difficulty_level": 1,
+      "tags": [
+        "math"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "ba skaohmo knoi.",
+          "english": "Subtract two from five."
+        }
+      ],
+      "related_words": [
+        "minus",
+        "subtraction"
+      ],
+      "image_url": "/images/words/math_0043.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "math_0044",
+      "kaubru": "songpangmo",
+      "english": "multiplication",
+      "pronunciation": "song-pang-mo",
+      "audio_url": "/audio/math/math_0044.mp3",
+      "category": "math",
+      "difficulty_level": 1,
+      "tags": [
+        "math"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "songpangmo le dalaomo songpang.",
+          "english": "Multiplication repeats addition."
+        }
+      ],
+      "related_words": [
+        "multiply",
+        "times",
+        "addition"
+      ],
+      "image_url": "/images/words/math_0044.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "math_0045",
+      "kaubru": "songpangmo",
+      "english": "multiply",
+      "pronunciation": "song-pang-mo",
+      "audio_url": "/audio/math/math_0045.mp3",
+      "category": "math",
+      "difficulty_level": 1,
+      "tags": [
+        "math"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "ktham songpangmo broi.",
+          "english": "Multiply three by four."
+        }
+      ],
+      "related_words": [
+        "multiplication",
+        "times"
+      ],
+      "image_url": "/images/words/math_0045.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "math_0046",
+      "kaubru": "songpangmo",
+      "english": "times",
+      "pronunciation": "song-pang-mo",
+      "audio_url": "/audio/math/math_0046.mp3",
+      "category": "math",
+      "difficulty_level": 1,
+      "tags": [
+        "math"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "ktham songpangmo ba.",
+          "english": "Three times five."
+        }
+      ],
+      "related_words": [
+        "multiply",
+        "multiplication"
+      ],
+      "image_url": "/images/words/math_0046.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "math_0047",
+      "kaubru": "baohmo",
+      "english": "division",
+      "pronunciation": "baoh-mo",
+      "audio_url": "/audio/math/math_0047.mp3",
+      "category": "math",
+      "difficulty_level": 1,
+      "tags": [
+        "math"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "baohmo le phang phang baoh.",
+          "english": "Division splits a number."
+        }
+      ],
+      "related_words": [
+        "divide",
+        "multiplication"
+      ],
+      "image_url": "/images/words/math_0047.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "math_0048",
+      "kaubru": "baohmo",
+      "english": "divide",
+      "pronunciation": "baoh-mo",
+      "audio_url": "/audio/math/math_0048.mp3",
+      "category": "math",
+      "difficulty_level": 1,
+      "tags": [
+        "math"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "chi baohmo knoi.",
+          "english": "Divide ten by two."
+        }
+      ],
+      "related_words": [
+        "division"
+      ],
+      "image_url": "/images/words/math_0048.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "directions_0049",
+      "kaubru": "salka",
+      "english": "east",
+      "pronunciation": "sal-ka",
+      "audio_url": "/audio/directions/directions_0049.mp3",
+      "category": "directions",
+      "difficulty_level": 1,
+      "tags": [
+        "directions"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "sal salka khe phai tong ha.",
+          "english": "The sun rises in the east."
+        }
+      ],
+      "related_words": [
+        "west",
+        "north",
+        "south",
+        "sun"
+      ],
+      "image_url": "/images/words/directions_0049.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "directions_0050",
+      "kaubru": "salthang",
+      "english": "west",
+      "pronunciation": "sal-thang",
+      "audio_url": "/audio/directions/directions_0050.mp3",
+      "category": "directions",
+      "difficulty_level": 1,
+      "tags": [
+        "directions"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "sal salthang khe thang tong ha.",
+          "english": "The sun sets in the west."
+        }
+      ],
+      "related_words": [
+        "east",
+        "north",
+        "south",
+        "sun"
+      ],
+      "image_url": "/images/words/directions_0050.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "directions_0051",
+      "kaubru": "hakang",
+      "english": "north",
+      "pronunciation": "ha-kang",
+      "audio_url": "/audio/directions/directions_0051.mp3",
+      "category": "directions",
+      "difficulty_level": 1,
+      "tags": [
+        "directions"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "tuisa hakang thang tong ha.",
+          "english": "The river flows north."
+        }
+      ],
+      "related_words": [
+        "south",
+        "east",
+        "west"
+      ],
+      "image_url": "/images/words/directions_0051.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "directions_0052",
+      "kaubru": "aola",
+      "english": "south",
+      "pronunciation": "ao-la",
+      "audio_url": "/audio/directions/directions_0052.mp3",
+      "category": "directions",
+      "difficulty_level": 1,
+      "tags": [
+        "directions"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "gram aola khe tong ha.",
+          "english": "The village is to the south."
+        }
+      ],
+      "related_words": [
+        "north",
+        "east",
+        "west"
+      ],
+      "image_url": "/images/words/directions_0052.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "directions_0053",
+      "kaubru": "hatinggol",
+      "english": "direction",
+      "pronunciation": "ha-ting-gol",
+      "audio_url": "/audio/directions/directions_0053.mp3",
+      "category": "directions",
+      "difficulty_level": 1,
+      "tags": [
+        "directions"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "hatinggol mtoi thang ny nung ba?",
+          "english": "Which direction are you going?"
+        }
+      ],
+      "related_words": [
+        "east",
+        "west",
+        "north",
+        "south"
+      ],
+      "image_url": "/images/words/directions_0053.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "days_0054",
+      "kaubru": "kaukti sal",
+      "english": "sunday",
+      "pronunciation": "kauk-ti sal",
+      "audio_url": "/audio/days/days_0054.mp3",
+      "category": "days",
+      "difficulty_level": 1,
+      "tags": [
+        "days"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "kaukti sal le thung sal.",
+          "english": "Sunday is a rest day."
+        }
+      ],
+      "related_words": [
+        "monday",
+        "week",
+        "day"
+      ],
+      "image_url": "/images/words/days_0054.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "days_0055",
+      "kaubru": "tangra sal",
+      "english": "monday",
+      "pronunciation": "tang-ra sal",
+      "audio_url": "/audio/days/days_0055.mp3",
+      "category": "days",
+      "difficulty_level": 1,
+      "tags": [
+        "days"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "tangra sal le bar ni chisa sal.",
+          "english": "Monday is the first day of the week."
+        }
+      ],
+      "related_words": [
+        "sunday",
+        "tuesday",
+        "week"
+      ],
+      "image_url": "/images/words/days_0055.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "days_0056",
+      "kaubru": "kraoh sal",
+      "english": "tuesday",
+      "pronunciation": "kraoh sal",
+      "audio_url": "/audio/days/days_0056.mp3",
+      "category": "days",
+      "difficulty_level": 1,
+      "tags": [
+        "days"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "kraoh sal le tangra sal phui phai tong ha.",
+          "english": "Tuesday comes after Monday."
+        }
+      ],
+      "related_words": [
+        "monday",
+        "wednesday"
+      ],
+      "image_url": "/images/words/days_0056.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "days_0057",
+      "kaubru": "bdu sal",
+      "english": "wednesday",
+      "pronunciation": "b-du sal",
+      "audio_url": "/audio/days/days_0057.mp3",
+      "category": "days",
+      "difficulty_level": 1,
+      "tags": [
+        "days"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "bdu sal le bar ni kholphehchi sal.",
+          "english": "Wednesday is the middle of the week."
+        }
+      ],
+      "related_words": [
+        "tuesday",
+        "thursday"
+      ],
+      "image_url": "/images/words/days_0057.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "days_0058",
+      "kaubru": "songrong sal",
+      "english": "thursday",
+      "pronunciation": "song-rong sal",
+      "audio_url": "/audio/days/days_0058.mp3",
+      "category": "days",
+      "difficulty_level": 1,
+      "tags": [
+        "days"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "songrong sal le souhkra sal phui phai tong ha.",
+          "english": "Thursday comes before Friday."
+        }
+      ],
+      "related_words": [
+        "wednesday",
+        "friday"
+      ],
+      "image_url": "/images/words/days_0058.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "days_0059",
+      "kaubru": "souhkra sal",
+      "english": "friday",
+      "pronunciation": "souh-kra sal",
+      "audio_url": "/audio/days/days_0059.mp3",
+      "category": "days",
+      "difficulty_level": 1,
+      "tags": [
+        "days"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "souhkra sal le samung sal.",
+          "english": "Friday is the last working day."
+        }
+      ],
+      "related_words": [
+        "thursday",
+        "saturday"
+      ],
+      "image_url": "/images/words/days_0059.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "days_0060",
+      "kaubru": "chani sal",
+      "english": "saturday",
+      "pronunciation": "cha-ni sal",
+      "audio_url": "/audio/days/days_0060.mp3",
+      "category": "days",
+      "difficulty_level": 1,
+      "tags": [
+        "days"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "chani sal le thung sal.",
+          "english": "Saturday is a holiday."
+        }
+      ],
+      "related_words": [
+        "friday",
+        "sunday"
+      ],
+      "image_url": "/images/words/days_0060.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "days_0061",
+      "kaubru": "bar ni",
+      "english": "week",
+      "pronunciation": "bar ni",
+      "audio_url": "/audio/days/days_0061.mp3",
+      "category": "days",
+      "difficulty_level": 1,
+      "tags": [
+        "days"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "bar ni khe sal kesning tong ha.",
+          "english": "There are seven days in a week."
+        }
+      ],
+      "related_words": [
+        "day",
+        "sunday",
+        "monday"
+      ],
+      "image_url": "/images/words/days_0061.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "days_0062",
+      "kaubru": "sal",
+      "english": "day",
+      "pronunciation": "sal",
+      "audio_url": "/audio/days/days_0062.mp3",
+      "category": "days",
+      "difficulty_level": 1,
+      "tags": [
+        "days"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "tini sal le kaham sal.",
+          "english": "Today is a good day."
+        }
+      ],
+      "related_words": [
+        "week",
+        "today",
+        "sun"
+      ],
+      "image_url": "/images/words/days_0062.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "months_0063",
+      "kaubru": "khasoing tal",
+      "english": "january",
+      "pronunciation": "kha-soing tal",
+      "audio_url": "/audio/months/months_0063.mp3",
+      "category": "months",
+      "difficulty_level": 1,
+      "tags": [
+        "months"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "khasoing tal le borsa ni chisa tal.",
+          "english": "January is the first month."
+        }
+      ],
+      "related_words": [
+        "february",
+        "month",
+        "year"
+      ],
+      "image_url": "/images/words/months_0063.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "months_0064",
+      "kaubru": "phraing tal",
+      "english": "february",
+      "pronunciation": "phraing tal",
+      "audio_url": "/audio/months/months_0064.mp3",
+      "category": "months",
+      "difficulty_level": 1,
+      "tags": [
+        "months"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "phraing tal le borsa ni chingnoi tal.",
+          "english": "February is the second month."
+        }
+      ],
+      "related_words": [
+        "january",
+        "march"
+      ],
+      "image_url": "/images/words/months_0064.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "months_0065",
+      "kaubru": "choileing tal",
+      "english": "march",
+      "pronunciation": "choi-leing tal",
+      "audio_url": "/audio/months/months_0065.mp3",
+      "category": "months",
+      "difficulty_level": 1,
+      "tags": [
+        "months"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "choileing tal le borsa ni chiktham tal.",
+          "english": "March is the third month."
+        }
+      ],
+      "related_words": [
+        "february",
+        "april"
+      ],
+      "image_url": "/images/words/months_0065.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "months_0066",
+      "kaubru": "sajlang tal",
+      "english": "april",
+      "pronunciation": "saj-lang tal",
+      "audio_url": "/audio/months/months_0066.mp3",
+      "category": "months",
+      "difficulty_level": 1,
+      "tags": [
+        "months"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "sajlang tal le borsa ni chibroi tal.",
+          "english": "April is the fourth month."
+        }
+      ],
+      "related_words": [
+        "march",
+        "may"
+      ],
+      "image_url": "/images/words/months_0066.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "months_0067",
+      "kaubru": "asari tal",
+      "english": "may",
+      "pronunciation": "a-sa-ri tal",
+      "audio_url": "/audio/months/months_0067.mp3",
+      "category": "months",
+      "difficulty_level": 1,
+      "tags": [
+        "months"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "asari tal le borsa ni chara tal.",
+          "english": "May is the fifth month."
+        }
+      ],
+      "related_words": [
+        "april",
+        "june"
+      ],
+      "image_url": "/images/words/months_0067.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "months_0068",
+      "kaubru": "srao tal",
+      "english": "june",
+      "pronunciation": "srao tal",
+      "audio_url": "/audio/months/months_0068.mp3",
+      "category": "months",
+      "difficulty_level": 1,
+      "tags": [
+        "months"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "srao tal le borsa ni chidouh tal.",
+          "english": "June is the sixth month."
+        }
+      ],
+      "related_words": [
+        "may",
+        "july"
+      ],
+      "image_url": "/images/words/months_0068.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "months_0069",
+      "kaubru": "drumboi tal",
+      "english": "july",
+      "pronunciation": "drum-boi tal",
+      "audio_url": "/audio/months/months_0069.mp3",
+      "category": "months",
+      "difficulty_level": 1,
+      "tags": [
+        "months"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "drumboi tal le borsa ni chisning tal.",
+          "english": "July is the seventh month."
+        }
+      ],
+      "related_words": [
+        "june",
+        "august"
+      ],
+      "image_url": "/images/words/months_0069.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "months_0070",
+      "kaubru": "keingrai tal",
+      "english": "august",
+      "pronunciation": "keing-rai tal",
+      "audio_url": "/audio/months/months_0070.mp3",
+      "category": "months",
+      "difficulty_level": 1,
+      "tags": [
+        "months"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "keingrai tal le borsa ni chichaih tal.",
+          "english": "August is the eighth month."
+        }
+      ],
+      "related_words": [
+        "july",
+        "september"
+      ],
+      "image_url": "/images/words/months_0070.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "months_0071",
+      "kaubru": "osa tal",
+      "english": "september",
+      "pronunciation": "o-sa tal",
+      "audio_url": "/audio/months/months_0071.mp3",
+      "category": "months",
+      "difficulty_level": 1,
+      "tags": [
+        "months"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "osa tal le borsa ni chiskuh tal.",
+          "english": "September is the ninth month."
+        }
+      ],
+      "related_words": [
+        "august",
+        "october"
+      ],
+      "image_url": "/images/words/months_0071.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "months_0072",
+      "kaubru": "kehchi tal",
+      "english": "october",
+      "pronunciation": "keh-chi tal",
+      "audio_url": "/audio/months/months_0072.mp3",
+      "category": "months",
+      "difficulty_level": 1,
+      "tags": [
+        "months"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "kehchi tal le borsa ni chi tal.",
+          "english": "October is the tenth month."
+        }
+      ],
+      "related_words": [
+        "september",
+        "november"
+      ],
+      "image_url": "/images/words/months_0072.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "months_0073",
+      "kaubru": "maogru tal",
+      "english": "november",
+      "pronunciation": "mao-gru tal",
+      "audio_url": "/audio/months/months_0073.mp3",
+      "category": "months",
+      "difficulty_level": 1,
+      "tags": [
+        "months"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "maogru tal le borsa ni chisa tal.",
+          "english": "November is the eleventh month."
+        }
+      ],
+      "related_words": [
+        "october",
+        "december"
+      ],
+      "image_url": "/images/words/months_0073.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "months_0074",
+      "kaubru": "maosru tal",
+      "english": "december",
+      "pronunciation": "mao-sru tal",
+      "audio_url": "/audio/months/months_0074.mp3",
+      "category": "months",
+      "difficulty_level": 1,
+      "tags": [
+        "months"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "maosru tal le borsa ni chingnoi tal.",
+          "english": "December is the twelfth month."
+        }
+      ],
+      "related_words": [
+        "november",
+        "month",
+        "year"
+      ],
+      "image_url": "/images/words/months_0074.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "months_0075",
+      "kaubru": "tal",
+      "english": "month",
+      "pronunciation": "tal",
+      "audio_url": "/audio/months/months_0075.mp3",
+      "category": "months",
+      "difficulty_level": 1,
+      "tags": [
+        "months"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "borsa khe tal chingnoi tong ha.",
+          "english": "There are twelve months in a year."
+        }
+      ],
+      "related_words": [
+        "year",
+        "january",
+        "december"
+      ],
+      "image_url": "/images/words/months_0075.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "months_0076",
+      "kaubru": "borsa",
+      "english": "year",
+      "pronunciation": "bor-sa",
+      "audio_url": "/audio/months/months_0076.mp3",
+      "category": "months",
+      "difficulty_level": 1,
+      "tags": [
+        "months"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "tini borsa le kaham borsa.",
+          "english": "This year is good."
+        }
+      ],
+      "related_words": [
+        "month",
+        "borsa"
+      ],
+      "image_url": "/images/words/months_0076.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "adjectives_0077",
+      "kaubru": "kaham",
+      "english": "good",
+      "pronunciation": "ka-ham",
+      "audio_url": "/audio/adjectives/adjectives_0077.mp3",
+      "category": "adjectives",
+      "difficulty_level": 1,
+      "tags": [
+        "adjectives"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "bo le kaham no.",
+          "english": "This is good."
+        }
+      ],
+      "related_words": [
+        "beautiful",
+        "big",
+        "small"
+      ],
+      "image_url": "/images/words/adjectives_0077.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "adjective"
+    },
+    {
+      "id": "adjectives_0078",
+      "kaubru": "ktor",
+      "english": "big",
+      "pronunciation": "k-tor",
+      "audio_url": "/audio/adjectives/adjectives_0078.mp3",
+      "category": "adjectives",
+      "difficulty_level": 1,
+      "tags": [
+        "adjectives"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "Nouh ktor.",
+          "english": "A big house."
+        }
+      ],
+      "related_words": [
+        "small",
+        "good"
+      ],
+      "image_url": "/images/words/adjectives_0078.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "adjective"
+    },
+    {
+      "id": "adjectives_0079",
+      "kaubru": "ste",
+      "english": "small",
+      "pronunciation": "ste",
+      "audio_url": "/audio/adjectives/adjectives_0079.mp3",
+      "category": "adjectives",
+      "difficulty_level": 1,
+      "tags": [
+        "adjectives"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "taopi.",
+          "english": "A small bird."
+        }
+      ],
+      "related_words": [
+        "big",
+        "child"
+      ],
+      "image_url": "/images/words/adjectives_0079.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "adjective"
+    },
+    {
+      "id": "adjectives_0080",
+      "kaubru": "nythau",
+      "english": "beautiful",
+      "pronunciation": "ny-thau",
+      "audio_url": "/audio/adjectives/adjectives_0080.mp3",
+      "category": "adjectives",
+      "difficulty_level": 1,
+      "tags": [
+        "adjectives"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "broi nythau sei.",
+          "english": "She is beautiful."
+        }
+      ],
+      "related_words": [
+        "good",
+        "moon"
+      ],
+      "image_url": "/images/words/adjectives_0080.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "adjective"
+    },
+    {
+      "id": "pronouns_0081",
+      "kaubru": "ang",
+      "english": "i",
+      "pronunciation": "ang",
+      "audio_url": "/audio/pronouns/pronouns_0081.mp3",
+      "category": "pronouns",
+      "difficulty_level": 1,
+      "tags": [
+        "pronouns"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "ang nouh thang gra nu.",
+          "english": "I am going home."
+        }
+      ],
+      "related_words": [
+        "we",
+        "my",
+        "you"
+      ],
+      "image_url": "/images/words/pronouns_0081.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "pronoun"
+    },
+    {
+      "id": "pronouns_0082",
+      "kaubru": "chung",
+      "english": "we",
+      "pronunciation": "chung",
+      "audio_url": "/audio/pronouns/pronouns_0082.mp3",
+      "category": "pronouns",
+      "difficulty_level": 1,
+      "tags": [
+        "pronouns"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "chung thang gra nu.",
+          "english": "We are going."
+        }
+      ],
+      "related_words": [
+        "i",
+        "they",
+        "you all"
+      ],
+      "image_url": "/images/words/pronouns_0082.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "pronoun"
+    },
+    {
+      "id": "pronouns_0083",
+      "kaubru": "nung",
+      "english": "you",
+      "pronunciation": "nung",
+      "audio_url": "/audio/pronouns/pronouns_0083.mp3",
+      "category": "pronouns",
+      "difficulty_level": 1,
+      "tags": [
+        "pronouns"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "nung khe salboi se phai ou.",
+          "english": "You come daily."
+        }
+      ],
+      "related_words": [
+        "i",
+        "your",
+        "you all"
+      ],
+      "image_url": "/images/words/pronouns_0083.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "pronoun"
+    },
+    {
+      "id": "pronouns_0084",
+      "kaubru": "nrao",
+      "english": "you all",
+      "pronunciation": "n-rao",
+      "audio_url": "/audio/pronouns/pronouns_0084.mp3",
+      "category": "pronouns",
+      "difficulty_level": 1,
+      "tags": [
+        "pronouns"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "nrao phai ou.",
+          "english": "You all come."
+        }
+      ],
+      "related_words": [
+        "you",
+        "they"
+      ],
+      "image_url": "/images/words/pronouns_0084.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "pronoun"
+    },
+    {
+      "id": "pronouns_0085",
+      "kaubru": "bung",
+      "english": "he",
+      "pronunciation": "bung",
+      "audio_url": "/audio/pronouns/pronouns_0085.mp3",
+      "category": "pronouns",
+      "difficulty_level": 1,
+      "tags": [
+        "pronouns"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "bung phai ou.",
+          "english": "He is coming."
+        }
+      ],
+      "related_words": [
+        "she",
+        "they",
+        "his"
+      ],
+      "image_url": "/images/words/pronouns_0085.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "pronoun"
+    },
+    {
+      "id": "pronouns_0086",
+      "kaubru": "bung",
+      "english": "she",
+      "pronunciation": "bung",
+      "audio_url": "/audio/pronouns/pronouns_0086.mp3",
+      "category": "pronouns",
+      "difficulty_level": 1,
+      "tags": [
+        "pronouns"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "bung dophe dophe se phai ou.",
+          "english": "She always comes."
+        }
+      ],
+      "related_words": [
+        "he",
+        "they",
+        "her"
+      ],
+      "image_url": "/images/words/pronouns_0086.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "pronoun"
+    },
+    {
+      "id": "pronouns_0087",
+      "kaubru": "brao",
+      "english": "they",
+      "pronunciation": "b-rao",
+      "audio_url": "/audio/pronouns/pronouns_0087.mp3",
+      "category": "pronouns",
+      "difficulty_level": 1,
+      "tags": [
+        "pronouns"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "brao mai cha ha.",
+          "english": "They have eaten food."
+        }
+      ],
+      "related_words": [
+        "he",
+        "she",
+        "we"
+      ],
+      "image_url": "/images/words/pronouns_0087.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "pronoun"
+    },
+    {
+      "id": "pronouns_0088",
+      "kaubru": "aini",
+      "english": "my",
+      "pronunciation": "ai-ni",
+      "audio_url": "/audio/pronouns/pronouns_0088.mp3",
+      "category": "pronouns",
+      "difficulty_level": 1,
+      "tags": [
+        "pronouns"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "aini nouh ktor ha.",
+          "english": "My house is big."
+        }
+      ],
+      "related_words": [
+        "your",
+        "his",
+        "her",
+        "i"
+      ],
+      "image_url": "/images/words/pronouns_0088.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "pronoun"
+    },
+    {
+      "id": "pronouns_0089",
+      "kaubru": "nini",
+      "english": "your",
+      "pronunciation": "ni-ni",
+      "audio_url": "/audio/pronouns/pronouns_0089.mp3",
+      "category": "pronouns",
+      "difficulty_level": 1,
+      "tags": [
+        "pronouns"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "nini mmung kaham ha.",
+          "english": "Your name is good."
+        }
+      ],
+      "related_words": [
+        "my",
+        "his",
+        "you"
+      ],
+      "image_url": "/images/words/pronouns_0089.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "pronoun"
+    },
+    {
+      "id": "pronouns_0090",
+      "kaubru": "bini",
+      "english": "his",
+      "pronunciation": "bi-ni",
+      "audio_url": "/audio/pronouns/pronouns_0090.mp3",
+      "category": "pronouns",
+      "difficulty_level": 1,
+      "tags": [
+        "pronouns"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "bini mpha phai ou.",
+          "english": "His father came."
+        }
+      ],
+      "related_words": [
+        "her",
+        "my",
+        "he"
+      ],
+      "image_url": "/images/words/pronouns_0090.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "pronoun"
+    },
+    {
+      "id": "pronouns_0091",
+      "kaubru": "bini",
+      "english": "her",
+      "pronunciation": "bi-ni",
+      "audio_url": "/audio/pronouns/pronouns_0091.mp3",
+      "category": "pronouns",
+      "difficulty_level": 1,
+      "tags": [
+        "pronouns"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "bini mma di tong ha.",
+          "english": "Her mother is here."
+        }
+      ],
+      "related_words": [
+        "his",
+        "my",
+        "she"
+      ],
+      "image_url": "/images/words/pronouns_0091.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "pronoun"
+    },
+    {
+      "id": "time_0092",
+      "kaubru": "mia",
+      "english": "yesterday",
+      "pronunciation": "mi-a",
+      "audio_url": "/audio/time/time_0092.mp3",
+      "category": "time",
+      "difficulty_level": 1,
+      "tags": [
+        "time"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "mia aini ata phai ou.",
+          "english": "Yesterday my brother came."
+        }
+      ],
+      "related_words": [
+        "today",
+        "tomorrow"
+      ],
+      "image_url": "/images/words/time_0092.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "adverb"
+    },
+    {
+      "id": "time_0093",
+      "kaubru": "tini",
+      "english": "today",
+      "pronunciation": "ti-ni",
+      "audio_url": "/audio/time/time_0093.mp3",
+      "category": "time",
+      "difficulty_level": 1,
+      "tags": [
+        "time"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "tini sal kaham ha.",
+          "english": "Today is a good day."
+        }
+      ],
+      "related_words": [
+        "yesterday",
+        "tomorrow",
+        "now"
+      ],
+      "image_url": "/images/words/time_0093.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "adverb"
+    },
+    {
+      "id": "time_0094",
+      "kaubru": "taoh",
+      "english": "now",
+      "pronunciation": "taoh",
+      "audio_url": "/audio/time/time_0094.mp3",
+      "category": "time",
+      "difficulty_level": 1,
+      "tags": [
+        "time"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "taoh wo khe chung mai cha ha.",
+          "english": "Now we have eaten food."
+        }
+      ],
+      "related_words": [
+        "today",
+        "always"
+      ],
+      "image_url": "/images/words/time_0094.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "adverb"
+    },
+    {
+      "id": "time_0095",
+      "kaubru": "salboi",
+      "english": "daily",
+      "pronunciation": "sal-boi",
+      "audio_url": "/audio/time/time_0095.mp3",
+      "category": "time",
+      "difficulty_level": 1,
+      "tags": [
+        "time"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "nung khe salboi se phai ou.",
+          "english": "You come daily."
+        }
+      ],
+      "related_words": [
+        "always",
+        "today"
+      ],
+      "image_url": "/images/words/time_0095.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "adverb"
+    },
+    {
+      "id": "time_0096",
+      "kaubru": "jug",
+      "english": "always",
+      "pronunciation": "jug",
+      "audio_url": "/audio/time/time_0096.mp3",
+      "category": "time",
+      "difficulty_level": 1,
+      "tags": [
+        "time"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "ang khebu jug se nouh wo phai ou.",
+          "english": "I always come home."
+        }
+      ],
+      "related_words": [
+        "daily",
+        "now"
+      ],
+      "image_url": "/images/words/time_0096.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "adverb"
+    },
+    {
+      "id": "time_0097",
+      "kaubru": "khnai",
+      "english": "tomorrow",
+      "pronunciation": "kh-nai",
+      "audio_url": "/audio/time/time_0097.mp3",
+      "category": "time",
+      "difficulty_level": 1,
+      "tags": [
+        "time"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "khnai malai phi na.",
+          "english": "See you tomorrow."
+        }
+      ],
+      "related_words": [
+        "yesterday",
+        "today",
+        "goodbye"
+      ],
+      "image_url": "/images/words/time_0097.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "adverb"
+    },
+    {
+      "id": "family_0098",
+      "kaubru": "apa",
+      "english": "my father",
+      "pronunciation": "a-pa",
+      "audio_url": "/audio/family/family_0098.mp3",
+      "category": "family",
+      "difficulty_level": 1,
+      "tags": [
+        "family"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "apa kaham ha.",
+          "english": "My father is kind."
+        }
+      ],
+      "related_words": [],
+      "image_url": "/images/words/family_0098.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "family_0099",
+      "kaubru": "amou",
+      "english": "my mother",
+      "pronunciation": "a-mou",
+      "audio_url": "/audio/family/family_0099.mp3",
+      "category": "family",
+      "difficulty_level": 1,
+      "tags": [
+        "family"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "amou di tong ha.",
+          "english": "My mother is here."
+        }
+      ],
+      "related_words": [],
+      "image_url": "/images/words/family_0099.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "family_0100",
+      "kaubru": "ata",
+      "english": "my elder brother",
+      "pronunciation": "a-ta",
+      "audio_url": "/audio/family/family_0100.mp3",
+      "category": "family",
+      "difficulty_level": 1,
+      "tags": [
+        "family"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "ata phai ou.",
+          "english": "My elder brother came."
+        }
+      ],
+      "related_words": [],
+      "image_url": "/images/words/family_0100.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "family_0101",
+      "kaubru": "aibi",
+      "english": "my elder sister",
+      "pronunciation": "ai-bi",
+      "audio_url": "/audio/family/family_0101.mp3",
+      "category": "family",
+      "difficulty_level": 1,
+      "tags": [
+        "family"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "aibi nythau ha.",
+          "english": "My elder sister is beautiful."
+        }
+      ],
+      "related_words": [],
+      "image_url": "/images/words/family_0101.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "family_0102",
+      "kaubru": "angphaiyong",
+      "english": "my younger brother",
+      "pronunciation": "ang-phai-yong",
+      "audio_url": "/audio/family/family_0102.mp3",
+      "category": "family",
+      "difficulty_level": 1,
+      "tags": [
+        "family"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "angphaiyong ste ha.",
+          "english": "My younger brother is small."
+        }
+      ],
+      "related_words": [],
+      "image_url": "/images/words/family_0102.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "family_0103",
+      "kaubru": "anghanao",
+      "english": "my younger sister",
+      "pronunciation": "ang-ha-nao",
+      "audio_url": "/audio/family/family_0103.mp3",
+      "category": "family",
+      "difficulty_level": 1,
+      "tags": [
+        "family"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "anghanao kaham ha.",
+          "english": "My younger sister is good."
+        }
+      ],
+      "related_words": [],
+      "image_url": "/images/words/family_0103.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "family_0104",
+      "kaubru": "achwu",
+      "english": "my grandfather",
+      "pronunciation": "ach-wu",
+      "audio_url": "/audio/family/family_0104.mp3",
+      "category": "family",
+      "difficulty_level": 1,
+      "tags": [
+        "family"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "achwu khnai ha.",
+          "english": "My grandfather is old."
+        }
+      ],
+      "related_words": [],
+      "image_url": "/images/words/family_0104.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "family_0105",
+      "kaubru": "achui",
+      "english": "my grandmother",
+      "pronunciation": "a-chui",
+      "audio_url": "/audio/family/family_0105.mp3",
+      "category": "family",
+      "difficulty_level": 1,
+      "tags": [
+        "family"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "achui kaham ha.",
+          "english": "My grandmother is kind."
+        }
+      ],
+      "related_words": [],
+      "image_url": "/images/words/family_0105.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "family_0106",
+      "kaubru": "mama",
+      "english": "my uncle",
+      "pronunciation": "ma-ma",
+      "audio_url": "/audio/family/family_0106.mp3",
+      "category": "family",
+      "difficulty_level": 1,
+      "tags": [
+        "family"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "mama mia phai ou.",
+          "english": "My uncle came yesterday."
+        }
+      ],
+      "related_words": [],
+      "image_url": "/images/words/family_0106.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "family_0107",
+      "kaubru": "atoi",
+      "english": "my aunt",
+      "pronunciation": "a-toi",
+      "audio_url": "/audio/family/family_0107.mp3",
+      "category": "family",
+      "difficulty_level": 1,
+      "tags": [
+        "family"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "atoi di tong ha.",
+          "english": "My aunt is here."
+        }
+      ],
+      "related_words": [],
+      "image_url": "/images/words/family_0107.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "family_0108",
+      "kaubru": "npha",
+      "english": "your father",
+      "pronunciation": "n-pha",
+      "audio_url": "/audio/family/family_0108.mp3",
+      "category": "family",
+      "difficulty_level": 1,
+      "tags": [
+        "family"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "npha ktor ha.",
+          "english": "Your father is big."
+        }
+      ],
+      "related_words": [],
+      "image_url": "/images/words/family_0108.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "family_0109",
+      "kaubru": "nma",
+      "english": "your mother",
+      "pronunciation": "n-ma",
+      "audio_url": "/audio/family/family_0109.mp3",
+      "category": "family",
+      "difficulty_level": 1,
+      "tags": [
+        "family"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "nma phai ou.",
+          "english": "Your mother came."
+        }
+      ],
+      "related_words": [],
+      "image_url": "/images/words/family_0109.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "family_0110",
+      "kaubru": "nta",
+      "english": "your elder brother",
+      "pronunciation": "n-ta",
+      "audio_url": "/audio/family/family_0110.mp3",
+      "category": "family",
+      "difficulty_level": 1,
+      "tags": [
+        "family"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "nta di tong ha.",
+          "english": "Your elder brother is here."
+        }
+      ],
+      "related_words": [],
+      "image_url": "/images/words/family_0110.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "family_0111",
+      "kaubru": "nbi",
+      "english": "your elder sister",
+      "pronunciation": "n-bi",
+      "audio_url": "/audio/family/family_0111.mp3",
+      "category": "family",
+      "difficulty_level": 1,
+      "tags": [
+        "family"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "nbi kaham ha.",
+          "english": "Your elder sister is kind."
+        }
+      ],
+      "related_words": [],
+      "image_url": "/images/words/family_0111.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "family_0112",
+      "kaubru": "mpha",
+      "english": "his father",
+      "pronunciation": "m-pha",
+      "audio_url": "/audio/family/family_0112.mp3",
+      "category": "family",
+      "difficulty_level": 1,
+      "tags": [
+        "family"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "mpha klao ha.",
+          "english": "His father is tall."
+        }
+      ],
+      "related_words": [],
+      "image_url": "/images/words/family_0112.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "family_0113",
+      "kaubru": "mma",
+      "english": "his mother",
+      "pronunciation": "m-ma",
+      "audio_url": "/audio/family/family_0113.mp3",
+      "category": "family",
+      "difficulty_level": 1,
+      "tags": [
+        "family"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "mma di tong ha.",
+          "english": "His mother is here."
+        }
+      ],
+      "related_words": [],
+      "image_url": "/images/words/family_0113.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "family_0114",
+      "kaubru": "mta",
+      "english": "his elder brother",
+      "pronunciation": "m-ta",
+      "audio_url": "/audio/family/family_0114.mp3",
+      "category": "family",
+      "difficulty_level": 1,
+      "tags": [
+        "family"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "mta phai ou.",
+          "english": "His elder brother came."
+        }
+      ],
+      "related_words": [],
+      "image_url": "/images/words/family_0114.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "family_0115",
+      "kaubru": "mbi",
+      "english": "his elder sister",
+      "pronunciation": "m-bi",
+      "audio_url": "/audio/family/family_0115.mp3",
+      "category": "family",
+      "difficulty_level": 1,
+      "tags": [
+        "family"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "mbi nythau ha.",
+          "english": "His elder sister is beautiful."
+        }
+      ],
+      "related_words": [],
+      "image_url": "/images/words/family_0115.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "noun"
+    },
+    {
+      "id": "verbs_0116",
+      "kaubru": "thanng",
+      "english": "go",
+      "pronunciation": "thanng",
+      "audio_url": "/audio/verbs/verbs_0116.mp3",
+      "category": "verbs",
+      "difficulty_level": 1,
+      "tags": [
+        "verbs"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "khnai ang nouh wo thanng nai.",
+          "english": "I shall go home tomorrow."
+        }
+      ],
+      "related_words": [
+        "come",
+        "walk",
+        "i am going home"
+      ],
+      "image_url": "/images/words/verbs_0116.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "verb"
+    },
+    {
+      "id": "verbs_0117",
+      "kaubru": "phai",
+      "english": "come",
+      "pronunciation": "phai",
+      "audio_url": "/audio/verbs/verbs_0117.mp3",
+      "category": "verbs",
+      "difficulty_level": 1,
+      "tags": [
+        "verbs"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "nung khe salboi se phai ou.",
+          "english": "You come daily."
+        }
+      ],
+      "related_words": [
+        "go",
+        "come here"
+      ],
+      "image_url": "/images/words/verbs_0117.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "verb"
+    },
+    {
+      "id": "verbs_0118",
+      "kaubru": "cha",
+      "english": "eat",
+      "pronunciation": "cha",
+      "audio_url": "/audio/verbs/verbs_0118.mp3",
+      "category": "verbs",
+      "difficulty_level": 1,
+      "tags": [
+        "verbs"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "chung mai cha ha.",
+          "english": "We have eaten food."
+        }
+      ],
+      "related_words": [
+        "rice",
+        "eat food"
+      ],
+      "image_url": "/images/words/verbs_0118.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "verb"
+    },
+    {
+      "id": "verbs_0119",
+      "kaubru": "bahcha",
+      "english": "stand",
+      "pronunciation": "bah-cha",
+      "audio_url": "/audio/verbs/verbs_0119.mp3",
+      "category": "verbs",
+      "difficulty_level": 1,
+      "tags": [
+        "verbs"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "bung bahcha tong ou.",
+          "english": "He is standing."
+        }
+      ],
+      "related_words": [
+        "walk",
+        "go"
+      ],
+      "image_url": "/images/words/verbs_0119.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "verb"
+    },
+    {
+      "id": "verbs_0120",
+      "kaubru": "chom",
+      "english": "hide",
+      "pronunciation": "chom",
+      "audio_url": "/audio/verbs/verbs_0120.mp3",
+      "category": "verbs",
+      "difficulty_level": 1,
+      "tags": [
+        "verbs"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "bung chom nai.",
+          "english": "She will hide."
+        }
+      ],
+      "related_words": [
+        "see",
+        "look for"
+      ],
+      "image_url": "/images/words/verbs_0120.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "verb"
+    },
+    {
+      "id": "verbs_0121",
+      "kaubru": "kai",
+      "english": "plant",
+      "pronunciation": "kai",
+      "audio_url": "/audio/verbs/verbs_0121.mp3",
+      "category": "verbs",
+      "difficulty_level": 1,
+      "tags": [
+        "verbs"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "brao mairung kai ha.",
+          "english": "They have planted rice."
+        }
+      ],
+      "related_words": [
+        "sow",
+        "rice"
+      ],
+      "image_url": "/images/words/verbs_0121.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "verb"
+    },
+    {
+      "id": "verbs_0122",
+      "kaubru": "kai",
+      "english": "sow",
+      "pronunciation": "kai",
+      "audio_url": "/audio/verbs/verbs_0122.mp3",
+      "category": "verbs",
+      "difficulty_level": 1,
+      "tags": [
+        "verbs"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "bung kai nai.",
+          "english": "He will sow seeds."
+        }
+      ],
+      "related_words": [
+        "plant"
+      ],
+      "image_url": "/images/words/verbs_0122.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "verb"
+    },
+    {
+      "id": "verbs_0123",
+      "kaubru": "khui",
+      "english": "throw",
+      "pronunciation": "khui",
+      "audio_url": "/audio/verbs/verbs_0123.mp3",
+      "category": "verbs",
+      "difficulty_level": 1,
+      "tags": [
+        "verbs"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "ang khui ha.",
+          "english": "I threw it away."
+        }
+      ],
+      "related_words": [
+        "burn"
+      ],
+      "image_url": "/images/words/verbs_0123.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "verb"
+    },
+    {
+      "id": "verbs_0124",
+      "kaubru": "sau",
+      "english": "burn",
+      "pronunciation": "sau",
+      "audio_url": "/audio/verbs/verbs_0124.mp3",
+      "category": "verbs",
+      "difficulty_level": 1,
+      "tags": [
+        "verbs"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "hor sau tong ou.",
+          "english": "The fire is burning."
+        }
+      ],
+      "related_words": [
+        "fire",
+        "throw"
+      ],
+      "image_url": "/images/words/verbs_0124.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "verb"
+    },
+    {
+      "id": "verbs_0125",
+      "kaubru": "tang",
+      "english": "do",
+      "pronunciation": "tang",
+      "audio_url": "/audio/verbs/verbs_0125.mp3",
+      "category": "verbs",
+      "difficulty_level": 1,
+      "tags": [
+        "verbs"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "ang samung tang tong ou.",
+          "english": "I am doing work."
+        }
+      ],
+      "related_words": [
+        "work",
+        "say"
+      ],
+      "image_url": "/images/words/verbs_0125.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "verb"
+    },
+    {
+      "id": "verbs_0126",
+      "kaubru": "tang",
+      "english": "work",
+      "pronunciation": "tang",
+      "audio_url": "/audio/verbs/verbs_0126.mp3",
+      "category": "verbs",
+      "difficulty_level": 1,
+      "tags": [
+        "verbs"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "bung samung tang tong ou.",
+          "english": "He is working."
+        }
+      ],
+      "related_words": [
+        "do",
+        "say"
+      ],
+      "image_url": "/images/words/verbs_0126.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "verb"
+    },
+    {
+      "id": "verbs_0127",
+      "kaubru": "sa",
+      "english": "say",
+      "pronunciation": "sa",
+      "audio_url": "/audio/verbs/verbs_0127.mp3",
+      "category": "verbs",
+      "difficulty_level": 1,
+      "tags": [
+        "verbs"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "bung sa ou.",
+          "english": "She says."
+        }
+      ],
+      "related_words": [
+        "do",
+        "read"
+      ],
+      "image_url": "/images/words/verbs_0127.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "verb"
+    },
+    {
+      "id": "verbs_0128",
+      "kaubru": "hinng",
+      "english": "walk",
+      "pronunciation": "hinng",
+      "audio_url": "/audio/verbs/verbs_0128.mp3",
+      "category": "verbs",
+      "difficulty_level": 1,
+      "tags": [
+        "verbs"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "ang lama se hinng tong ha.",
+          "english": "I am walking on the road."
+        }
+      ],
+      "related_words": [
+        "go",
+        "stand"
+      ],
+      "image_url": "/images/words/verbs_0128.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "verb"
+    },
+    {
+      "id": "verbs_0129",
+      "kaubru": "pore",
+      "english": "read",
+      "pronunciation": "po-re",
+      "audio_url": "/audio/verbs/verbs_0129.mp3",
+      "category": "verbs",
+      "difficulty_level": 1,
+      "tags": [
+        "verbs"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "bung boi pore tong ha.",
+          "english": "She is reading a book."
+        }
+      ],
+      "related_words": [
+        "say",
+        "see"
+      ],
+      "image_url": "/images/words/verbs_0129.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "verb"
+    },
+    {
+      "id": "verbs_0130",
+      "kaubru": "tau",
+      "english": "look for",
+      "pronunciation": "tau",
+      "audio_url": "/audio/verbs/verbs_0130.mp3",
+      "category": "verbs",
+      "difficulty_level": 1,
+      "tags": [
+        "verbs"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "bung phuh wo tau nai tong ou.",
+          "english": "He was looking for a chicken."
+        }
+      ],
+      "related_words": [
+        "see",
+        "hide"
+      ],
+      "image_url": "/images/words/verbs_0130.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "verb"
+    },
+    {
+      "id": "verbs_0131",
+      "kaubru": "nai",
+      "english": "see",
+      "pronunciation": "nai",
+      "audio_url": "/audio/verbs/verbs_0131.mp3",
+      "category": "verbs",
+      "difficulty_level": 1,
+      "tags": [
+        "verbs"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "ang nung no nai ou.",
+          "english": "I see you."
+        }
+      ],
+      "related_words": [
+        "look for",
+        "read"
+      ],
+      "image_url": "/images/words/verbs_0131.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "part_of_speech": "verb"
+    }
+  ],
+  "metadata": {
+    "version": "1.0",
+    "total_words": 131,
+    "last_updated": "2026-01-01T00:00:00Z",
+    "categories": [
+      "adjectives",
+      "days",
+      "directions",
+      "family",
+      "food",
+      "greetings",
+      "math",
+      "months",
+      "nature",
+      "numbers",
+      "places",
+      "pronouns",
+      "time",
+      "verbs"
+    ],
+    "parts_of_speech": [
+      "noun",
+      "verb",
+      "adjective",
+      "adverb",
+      "pronoun",
+      "numeral",
+      "phrase"
+    ]
+  }
+}

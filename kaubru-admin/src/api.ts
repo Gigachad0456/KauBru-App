@@ -88,9 +88,34 @@ export const adminApi = {
   updateStory: (id: number, data: any) => api.put(`/admin/stories/${id}`, data),
   deleteStory: (id: number) => api.delete(`/admin/stories/${id}`),
 
+  // Culture Articles
+  cultureArticles: () => api.get('/admin/culture-articles'),
+  createCultureArticle: (data: any) => api.post('/admin/culture-articles', data),
+  updateCultureArticle: (id: number, data: any) => api.put(`/admin/culture-articles/${id}`, data),
+  deleteCultureArticle: (id: number) => api.delete(`/admin/culture-articles/${id}`),
+  uploadCultureArticleCover: (id: number, file: File) => {
+    const fd = new FormData()
+    fd.append('file', file)
+    return api.post(`/admin/culture-articles/${id}/cover`, fd, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    })
+  },
+
   // Translations History
   translations: (params?: { skip?: number; limit?: number; search?: string; direction?: string; user_id?: number }) =>
     api.get('/admin/translations', { params }),
   translationsCount: (params?: { search?: string; direction?: string; user_id?: number }) =>
     api.get('/admin/translations/count', { params }),
+
+  // Jobs
+  jobs: (params?: { status?: string; job_status?: string; search?: string; qualification?: string; sort?: string; skip?: number; limit?: number }) =>
+    api.get('/admin/jobs', { params }),
+  createJob: (data: any) => api.post('/admin/jobs', data),
+  updateJob: (id: number, data: any) => api.put(`/admin/jobs/${id}`, data),
+  publishJob: (id: number) => api.put(`/admin/jobs/${id}/publish`),
+  rejectJob: (id: number) => api.put(`/admin/jobs/${id}/reject`),
+  closeJob: (id: number) => api.put(`/admin/jobs/${id}/close`),
+  openJob: (id: number) => api.put(`/admin/jobs/${id}/open`),
+  deleteJob: (id: number) => api.delete(`/admin/jobs/${id}`),
+  fetchJobsNow: () => api.post('/admin/jobs/fetch'),
 }

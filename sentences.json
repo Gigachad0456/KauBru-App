@@ -1,0 +1,3689 @@
+{
+  "sentences": [
+    {
+      "id": "sentence_0001",
+      "kaubru": "Hoh, kaham de tong?",
+      "english": "Hello, how are you?",
+      "pronunciation": "hoh,-kaham-de-tong?",
+      "audio_url": "/audio/sentences/sentence_0001.mp3",
+      "difficulty_level": 1,
+      "category": "greetings",
+      "tags": [
+        "greetings"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [
+        {
+          "kaubru": "Hoh",
+          "english": "hello",
+          "role": "greeting"
+        },
+        {
+          "kaubru": "kaham",
+          "english": "good/how",
+          "role": "adjective"
+        },
+        {
+          "kaubru": "de",
+          "english": "are",
+          "role": "copula"
+        },
+        {
+          "kaubru": "tong",
+          "english": "being",
+          "role": "auxiliary"
+        }
+      ],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "The KauBru greeting 'Hoh' is used at any time of day, unlike many languages that have separate morning/evening greetings.",
+      "lesson_id": "lesson_greetings",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0002",
+      "kaubru": "Bye, khnai malai phi na",
+      "english": "Goodbye, see you tomorrow.",
+      "pronunciation": "bye,-khnai-malai-phi-na",
+      "audio_url": "/audio/sentences/sentence_0002.mp3",
+      "difficulty_level": 1,
+      "category": "greetings",
+      "tags": [
+        "greetings"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [
+        {
+          "kaubru": "Bye",
+          "english": "goodbye",
+          "role": "farewell"
+        },
+        {
+          "kaubru": "khnai",
+          "english": "tomorrow",
+          "role": "time"
+        },
+        {
+          "kaubru": "malai",
+          "english": "again",
+          "role": "adverb"
+        },
+        {
+          "kaubru": "phi na",
+          "english": "see/meet",
+          "role": "verb"
+        }
+      ],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "KauBru speakers often say 'khnai malai phi na' (see you tomorrow) as a warm farewell even when parting for longer periods.",
+      "lesson_id": "lesson_greetings",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0003",
+      "kaubru": "betha khe khachangha.",
+      "english": "Thank you very much.",
+      "pronunciation": "betha-khe-khachangha.",
+      "audio_url": "/audio/sentences/sentence_0003.mp3",
+      "difficulty_level": 1,
+      "category": "greetings",
+      "tags": [
+        "greetings"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [
+        {
+          "kaubru": "betha",
+          "english": "very much",
+          "role": "adverb"
+        },
+        {
+          "kaubru": "khe",
+          "english": "indeed",
+          "role": "particle"
+        },
+        {
+          "kaubru": "khachangha",
+          "english": "thank you",
+          "role": "expression"
+        }
+      ],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "'Khachang ha' literally means 'I am grateful'. Gratitude is expressed verbally and through reciprocal acts of service in KauBru culture.",
+      "lesson_id": "lesson_greetings",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0004",
+      "kaubru": "em, ang mchi ou/ha.",
+      "english": "Yes, I understand.",
+      "pronunciation": "em,-ang-mchi-ou/ha.",
+      "audio_url": "/audio/sentences/sentence_0004.mp3",
+      "difficulty_level": 1,
+      "category": "greetings",
+      "tags": [
+        "greetings"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [
+        {
+          "kaubru": "em",
+          "english": "yes",
+          "role": "affirmation"
+        },
+        {
+          "kaubru": "ang",
+          "english": "I",
+          "role": "subject"
+        },
+        {
+          "kaubru": "mchi",
+          "english": "understand",
+          "role": "verb"
+        },
+        {
+          "kaubru": "ou/ha",
+          "english": "ongoing/completed",
+          "role": "tense marker"
+        }
+      ],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_greetings",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0005",
+      "kaubru": "ehi, cya ang pho",
+      "english": "No, I don't know.",
+      "pronunciation": "ehi,-cya-ang-pho",
+      "audio_url": "/audio/sentences/sentence_0005.mp3",
+      "difficulty_level": 1,
+      "category": "greetings",
+      "tags": [
+        "greetings"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [
+        {
+          "kaubru": "ehi",
+          "english": "no",
+          "role": "negation"
+        },
+        {
+          "kaubru": "cya",
+          "english": "know",
+          "role": "verb"
+        },
+        {
+          "kaubru": "ang",
+          "english": "I",
+          "role": "subject"
+        },
+        {
+          "kaubru": "pho",
+          "english": "not",
+          "role": "negation marker"
+        }
+      ],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_greetings",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0006",
+      "kaubru": "kaham de tong tini le?",
+      "english": "How are you today?",
+      "pronunciation": "kaham-de-tong-tini-le?",
+      "audio_url": "/audio/sentences/sentence_0006.mp3",
+      "difficulty_level": 1,
+      "category": "greetings",
+      "tags": [
+        "greetings"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [
+        {
+          "kaubru": "kaham",
+          "english": "good/how",
+          "role": "adjective"
+        },
+        {
+          "kaubru": "de",
+          "english": "are",
+          "role": "copula"
+        },
+        {
+          "kaubru": "tong",
+          "english": "being",
+          "role": "auxiliary"
+        },
+        {
+          "kaubru": "tini",
+          "english": "today",
+          "role": "time"
+        },
+        {
+          "kaubru": "le",
+          "english": "question marker",
+          "role": "particle"
+        }
+      ],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_greetings",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0007",
+      "kaubru": "Nini mmung kma?",
+      "english": "What is your name?",
+      "pronunciation": "nini-mmung-kma?",
+      "audio_url": "/audio/sentences/sentence_0007.mp3",
+      "difficulty_level": 1,
+      "category": "greetings",
+      "tags": [
+        "greetings"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_greetings",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0008",
+      "kaubru": "Aini mmung khe Raju.",
+      "english": "My name is Raju.",
+      "pronunciation": "aini-mmung-khe-raju.",
+      "audio_url": "/audio/sentences/sentence_0008.mp3",
+      "difficulty_level": 1,
+      "category": "greetings",
+      "tags": [
+        "greetings"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_greetings",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0009",
+      "kaubru": "Aini mma le brouh kaham ma sei.",
+      "english": "My mother is kind.",
+      "pronunciation": "aini-mma-le-brouh-kaham-ma-sei.",
+      "audio_url": "/audio/sentences/sentence_0009.mp3",
+      "difficulty_level": 1,
+      "category": "family",
+      "tags": [
+        "family"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0003"
+      ],
+      "word_breakdown": [
+        {
+          "kaubru": "Aini",
+          "english": "my",
+          "role": "possessive"
+        },
+        {
+          "kaubru": "mma",
+          "english": "mother",
+          "role": "subject"
+        },
+        {
+          "kaubru": "le",
+          "english": "topic marker",
+          "role": "particle"
+        },
+        {
+          "kaubru": "brouh",
+          "english": "person",
+          "role": "noun"
+        },
+        {
+          "kaubru": "kaham",
+          "english": "good/kind",
+          "role": "adjective"
+        },
+        {
+          "kaubru": "ma sei",
+          "english": "is (she)",
+          "role": "copula"
+        }
+      ],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "Mothers hold a revered position in KauBru society. The term 'among' is used respectfully in formal contexts, 'mma' in everyday speech.",
+      "lesson_id": "lesson_family",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0010",
+      "kaubru": "Aini mpha le samung tang grao sei.",
+      "english": "My father works hard.",
+      "pronunciation": "aini-mpha-le-samung-tang-grao-sei.",
+      "audio_url": "/audio/sentences/sentence_0010.mp3",
+      "difficulty_level": 1,
+      "category": "family",
+      "tags": [
+        "family"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0003"
+      ],
+      "word_breakdown": [
+        {
+          "kaubru": "Aini",
+          "english": "my",
+          "role": "possessive"
+        },
+        {
+          "kaubru": "mpha",
+          "english": "father",
+          "role": "subject"
+        },
+        {
+          "kaubru": "le",
+          "english": "topic marker",
+          "role": "particle"
+        },
+        {
+          "kaubru": "samung",
+          "english": "work",
+          "role": "noun"
+        },
+        {
+          "kaubru": "tang",
+          "english": "do",
+          "role": "verb"
+        },
+        {
+          "kaubru": "grao",
+          "english": "hard",
+          "role": "adverb"
+        },
+        {
+          "kaubru": "sei",
+          "english": "is (he)",
+          "role": "copula"
+        }
+      ],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "'Apa' is the intimate address for one's own father; 'mpha' is used when referring to someone else's father.",
+      "lesson_id": "lesson_family",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0011",
+      "kaubru": "aini mta le klau ma sei.",
+      "english": "My brother is tall.",
+      "pronunciation": "aini-mta-le-klau-ma-sei.",
+      "audio_url": "/audio/sentences/sentence_0011.mp3",
+      "difficulty_level": 1,
+      "category": "family",
+      "tags": [
+        "family"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0003"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "The KauBru clan system (nouhkhung) is central to social identity. Family ties determine roles in ceremonies, land use, and community decisions.",
+      "lesson_id": "lesson_family",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0012",
+      "kaubru": "aini mbi le rcha krung ma sei",
+      "english": "My sister sings well.",
+      "pronunciation": "aini-mbi-le-rcha-krung-ma-sei",
+      "audio_url": "/audio/sentences/sentence_0012.mp3",
+      "difficulty_level": 1,
+      "category": "family",
+      "tags": [
+        "family"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0003"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "The KauBru clan system (nouhkhung) is central to social identity. Family ties determine roles in ceremonies, land use, and community decisions.",
+      "lesson_id": "lesson_family",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0013",
+      "kaubru": "chraiha rao thung pai tong ou",
+      "english": "The child is playing.",
+      "pronunciation": "chraiha-rao-thung-pai-tong-ou",
+      "audio_url": "/audio/sentences/sentence_0013.mp3",
+      "difficulty_level": 1,
+      "category": "family",
+      "tags": [
+        "family"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0003"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "The KauBru clan system (nouhkhung) is central to social identity. Family ties determine roles in ceremonies, land use, and community decisions.",
+      "lesson_id": "lesson_family",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0014",
+      "kaubru": "aini le nouhkhung ktor sei.",
+      "english": "My family is big.",
+      "pronunciation": "aini-le-nouhkhung-ktor-sei.",
+      "audio_url": "/audio/sentences/sentence_0014.mp3",
+      "difficulty_level": 1,
+      "category": "family",
+      "tags": [
+        "family"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0003"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "The KauBru clan system (nouhkhung) is central to social identity. Family ties determine roles in ceremonies, land use, and community decisions.",
+      "lesson_id": "lesson_family",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0015",
+      "kaubru": "ang tui nang tong ha.",
+      "english": "I need water.",
+      "pronunciation": "ang-tui-nang-tong-ha.",
+      "audio_url": "/audio/sentences/sentence_0015.mp3",
+      "difficulty_level": 1,
+      "category": "nature",
+      "tags": [
+        "nature"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0002"
+      ],
+      "word_breakdown": [
+        {
+          "kaubru": "ang",
+          "english": "I",
+          "role": "subject"
+        },
+        {
+          "kaubru": "tui",
+          "english": "water",
+          "role": "object"
+        },
+        {
+          "kaubru": "nang",
+          "english": "need/want",
+          "role": "verb"
+        },
+        {
+          "kaubru": "tong ha",
+          "english": "present completed",
+          "role": "tense marker"
+        }
+      ],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "Water (tui) is considered a life-giving force. The word 'tui-sa' (river) literally means 'flowing water'.",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0016",
+      "kaubru": "Mairung sei chini sal boini mai.",
+      "english": "Rice is our staple food.",
+      "pronunciation": "mairung-sei-chini-sal-boini-mai.",
+      "audio_url": "/audio/sentences/sentence_0016.mp3",
+      "difficulty_level": 1,
+      "category": "food",
+      "tags": [
+        "food"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0002"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "Rice (mairung) is the staple food and holds deep cultural significance. The rice harvest festival is one of the most important KauBru celebrations.",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0017",
+      "kaubru": "Ang nouh thang gra nu.",
+      "english": "I am going home.",
+      "pronunciation": "ang-nouh-thang-gra-nu.",
+      "audio_url": "/audio/sentences/sentence_0017.mp3",
+      "difficulty_level": 1,
+      "category": "places",
+      "tags": [
+        "places"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0002"
+      ],
+      "word_breakdown": [
+        {
+          "kaubru": "Ang",
+          "english": "I",
+          "role": "subject"
+        },
+        {
+          "kaubru": "nouh",
+          "english": "home",
+          "role": "destination"
+        },
+        {
+          "kaubru": "thang",
+          "english": "go",
+          "role": "verb"
+        },
+        {
+          "kaubru": "gra nu",
+          "english": "going (present)",
+          "role": "tense marker"
+        }
+      ],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "Traditional KauBru houses (nouh) are built on stilts using bamboo and wood, reflecting the community's forest-dwelling heritage.",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0018",
+      "kaubru": "hor kham tong ha.",
+      "english": "The fire is burning.",
+      "pronunciation": "hor-kham-tong-ha.",
+      "audio_url": "/audio/sentences/sentence_0018.mp3",
+      "difficulty_level": 1,
+      "category": "nature",
+      "tags": [
+        "nature"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0002"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "Fire (hor) plays a central role in KauBru rituals, cooking, and warmth. The hearth is considered sacred in traditional homes.",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0019",
+      "kaubru": "sal kara ha.",
+      "english": "The sun is bright.",
+      "pronunciation": "sal-kara-ha.",
+      "audio_url": "/audio/sentences/sentence_0019.mp3",
+      "difficulty_level": 1,
+      "category": "nature",
+      "tags": [
+        "nature"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0002"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "The sun (sal) is also the word for 'day' in KauBru, reflecting the community's deep connection to natural cycles.",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0020",
+      "kaubru": "tal nythau ha.",
+      "english": "The moon is beautiful.",
+      "pronunciation": "tal-nythau-ha.",
+      "audio_url": "/audio/sentences/sentence_0020.mp3",
+      "difficulty_level": 1,
+      "category": "nature",
+      "tags": [
+        "nature"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0002"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "The moon (tal) is also the word for 'month', showing how the KauBru lunar calendar shaped their language.",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0021",
+      "kaubru": "Tui-sa betha khe hiolkhlai ha.",
+      "english": "The river flows fast.",
+      "pronunciation": "tui-sa-betha-khe-hiolkhlai-ha.",
+      "audio_url": "/audio/sentences/sentence_0021.mp3",
+      "difficulty_level": 1,
+      "category": "nature",
+      "tags": [
+        "nature"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0002"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "Rivers (tui-sa) are sacred in KauBru culture. Many settlements are named after nearby rivers, and water spirits are part of traditional belief.",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0022",
+      "kaubru": "bo mphang le klao ha le.",
+      "english": "The tree is tall.",
+      "pronunciation": "bo-mphang-le-klao-ha-le.",
+      "audio_url": "/audio/sentences/sentence_0022.mp3",
+      "difficulty_level": 1,
+      "category": "nature",
+      "tags": [
+        "nature"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0002"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0023",
+      "kaubru": "thaiha appel",
+      "english": "One apple.",
+      "pronunciation": "thaiha-appel",
+      "audio_url": "/audio/sentences/sentence_0023.mp3",
+      "difficulty_level": 1,
+      "category": "numbers",
+      "tags": [
+        "numbers"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_numbers",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0024",
+      "kaubru": "kenoi tao.",
+      "english": "Two birds.",
+      "pronunciation": "kenoi-tao.",
+      "audio_url": "/audio/sentences/sentence_0024.mp3",
+      "difficulty_level": 1,
+      "category": "numbers",
+      "tags": [
+        "numbers"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_numbers",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0025",
+      "kaubru": "chrai rao khrauktham.",
+      "english": "Three children.",
+      "pronunciation": "chrai-rao-khrauktham.",
+      "audio_url": "/audio/sentences/sentence_0025.mp3",
+      "difficulty_level": 1,
+      "category": "numbers",
+      "tags": [
+        "numbers"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_numbers",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0026",
+      "kaubru": "nouh kebroi.",
+      "english": "Four houses.",
+      "pronunciation": "nouh-kebroi.",
+      "audio_url": "/audio/sentences/sentence_0026.mp3",
+      "difficulty_level": 1,
+      "category": "numbers",
+      "tags": [
+        "numbers"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_numbers",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0027",
+      "kaubru": "keba tuisa.",
+      "english": "Five rivers.",
+      "pronunciation": "keba-tuisa.",
+      "audio_url": "/audio/sentences/sentence_0027.mp3",
+      "difficulty_level": 1,
+      "category": "numbers",
+      "tags": [
+        "numbers"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_numbers",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0028",
+      "kaubru": "brouh kedouh.",
+      "english": "Six people.",
+      "pronunciation": "brouh-kedouh.",
+      "audio_url": "/audio/sentences/sentence_0028.mp3",
+      "difficulty_level": 1,
+      "category": "numbers",
+      "tags": [
+        "numbers"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_numbers",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0029",
+      "kaubru": "sal kesning.",
+      "english": "Seven days.",
+      "pronunciation": "sal-kesning.",
+      "audio_url": "/audio/sentences/sentence_0029.mp3",
+      "difficulty_level": 1,
+      "category": "numbers",
+      "tags": [
+        "numbers"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_numbers",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0030",
+      "kaubru": "tao kechaih.",
+      "english": "Eight birds.",
+      "pronunciation": "tao-kechaih.",
+      "audio_url": "/audio/sentences/sentence_0030.mp3",
+      "difficulty_level": 1,
+      "category": "numbers",
+      "tags": [
+        "numbers"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_numbers",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0031",
+      "kaubru": "mphang keskuk.",
+      "english": "Nine trees.",
+      "pronunciation": "mphang-keskuk.",
+      "audio_url": "/audio/sentences/sentence_0031.mp3",
+      "difficulty_level": 1,
+      "category": "numbers",
+      "tags": [
+        "numbers"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_numbers",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0032",
+      "kaubru": "sal chi.",
+      "english": "Ten days.",
+      "pronunciation": "sal-chi.",
+      "audio_url": "/audio/sentences/sentence_0032.mp3",
+      "difficulty_level": 1,
+      "category": "numbers",
+      "tags": [
+        "numbers"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_numbers",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0033",
+      "kaubru": "brouh khol.",
+      "english": "Twenty people.",
+      "pronunciation": "brouh-khol.",
+      "audio_url": "/audio/sentences/sentence_0033.mp3",
+      "difficulty_level": 1,
+      "category": "numbers",
+      "tags": [
+        "numbers"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_numbers",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0034",
+      "kaubru": "sal kurnoi.",
+      "english": "Forty days.",
+      "pronunciation": "sal-kurnoi.",
+      "audio_url": "/audio/sentences/sentence_0034.mp3",
+      "difficulty_level": 1,
+      "category": "numbers",
+      "tags": [
+        "numbers"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_numbers",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0035",
+      "kaubru": "khnai kurtham.",
+      "english": "Sixty years.",
+      "pronunciation": "khnai-kurtham.",
+      "audio_url": "/audio/sentences/sentence_0035.mp3",
+      "difficulty_level": 1,
+      "category": "numbers",
+      "tags": [
+        "numbers"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_numbers",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0036",
+      "kaubru": "brouh kurbroi.",
+      "english": "Eighty people.",
+      "pronunciation": "brouh-kurbroi.",
+      "audio_url": "/audio/sentences/sentence_0036.mp3",
+      "difficulty_level": 1,
+      "category": "numbers",
+      "tags": [
+        "numbers"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_numbers",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0037",
+      "kaubru": "rzaha.",
+      "english": "One hundred.",
+      "pronunciation": "rzaha.",
+      "audio_url": "/audio/sentences/sentence_0037.mp3",
+      "difficulty_level": 1,
+      "category": "numbers",
+      "tags": [
+        "numbers"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_numbers",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0038",
+      "kaubru": "dalaomo le phang phang songpang.",
+      "english": "Addition is combining numbers.",
+      "pronunciation": "dalaomo-le-phang-phang-songpang.",
+      "audio_url": "/audio/sentences/sentence_0038.mp3",
+      "difficulty_level": 1,
+      "category": "math",
+      "tags": [
+        "math"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0039",
+      "kaubru": "ktham dalaomo knoi.",
+      "english": "Three plus two.",
+      "pronunciation": "ktham-dalaomo-knoi.",
+      "audio_url": "/audio/sentences/sentence_0039.mp3",
+      "difficulty_level": 1,
+      "category": "math",
+      "tags": [
+        "math"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0040",
+      "kaubru": "ba dalaomo ktham.",
+      "english": "Add five and three.",
+      "pronunciation": "ba-dalaomo-ktham.",
+      "audio_url": "/audio/sentences/sentence_0040.mp3",
+      "difficulty_level": 1,
+      "category": "math",
+      "tags": [
+        "math"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0041",
+      "kaubru": "skaohmo le phang phang baoh.",
+      "english": "Subtraction takes away a number.",
+      "pronunciation": "skaohmo-le-phang-phang-baoh.",
+      "audio_url": "/audio/sentences/sentence_0041.mp3",
+      "difficulty_level": 1,
+      "category": "math",
+      "tags": [
+        "math"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0042",
+      "kaubru": "chi skaohmo broi.",
+      "english": "Ten minus four.",
+      "pronunciation": "chi-skaohmo-broi.",
+      "audio_url": "/audio/sentences/sentence_0042.mp3",
+      "difficulty_level": 1,
+      "category": "math",
+      "tags": [
+        "math"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0043",
+      "kaubru": "ba skaohmo knoi.",
+      "english": "Subtract two from five.",
+      "pronunciation": "ba-skaohmo-knoi.",
+      "audio_url": "/audio/sentences/sentence_0043.mp3",
+      "difficulty_level": 1,
+      "category": "math",
+      "tags": [
+        "math"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0044",
+      "kaubru": "songpangmo le dalaomo songpang.",
+      "english": "Multiplication repeats addition.",
+      "pronunciation": "songpangmo-le-dalaomo-songpang.",
+      "audio_url": "/audio/sentences/sentence_0044.mp3",
+      "difficulty_level": 1,
+      "category": "math",
+      "tags": [
+        "math"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0045",
+      "kaubru": "ktham songpangmo broi.",
+      "english": "Multiply three by four.",
+      "pronunciation": "ktham-songpangmo-broi.",
+      "audio_url": "/audio/sentences/sentence_0045.mp3",
+      "difficulty_level": 1,
+      "category": "math",
+      "tags": [
+        "math"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0046",
+      "kaubru": "ktham songpangmo ba.",
+      "english": "Three times five.",
+      "pronunciation": "ktham-songpangmo-ba.",
+      "audio_url": "/audio/sentences/sentence_0046.mp3",
+      "difficulty_level": 1,
+      "category": "math",
+      "tags": [
+        "math"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0047",
+      "kaubru": "baohmo le phang phang baoh.",
+      "english": "Division splits a number.",
+      "pronunciation": "baohmo-le-phang-phang-baoh.",
+      "audio_url": "/audio/sentences/sentence_0047.mp3",
+      "difficulty_level": 1,
+      "category": "math",
+      "tags": [
+        "math"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0048",
+      "kaubru": "chi baohmo knoi.",
+      "english": "Divide ten by two.",
+      "pronunciation": "chi-baohmo-knoi.",
+      "audio_url": "/audio/sentences/sentence_0048.mp3",
+      "difficulty_level": 1,
+      "category": "math",
+      "tags": [
+        "math"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0049",
+      "kaubru": "sal salka khe phai tong ha.",
+      "english": "The sun rises in the east.",
+      "pronunciation": "sal-salka-khe-phai-tong-ha.",
+      "audio_url": "/audio/sentences/sentence_0049.mp3",
+      "difficulty_level": 1,
+      "category": "directions",
+      "tags": [
+        "directions"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0002"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "The KauBru directional system is based on the sun's path. 'Salka' (east) means 'where the sun comes from'.",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0050",
+      "kaubru": "sal salthang khe thang tong ha.",
+      "english": "The sun sets in the west.",
+      "pronunciation": "sal-salthang-khe-thang-tong-ha.",
+      "audio_url": "/audio/sentences/sentence_0050.mp3",
+      "difficulty_level": 1,
+      "category": "directions",
+      "tags": [
+        "directions"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0002"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "'Salthang' (west) means 'where the sun goes', reflecting the sun-based orientation of KauBru geography.",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0051",
+      "kaubru": "tuisa hakang thang tong ha.",
+      "english": "The river flows north.",
+      "pronunciation": "tuisa-hakang-thang-tong-ha.",
+      "audio_url": "/audio/sentences/sentence_0051.mp3",
+      "difficulty_level": 1,
+      "category": "directions",
+      "tags": [
+        "directions"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0002"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0052",
+      "kaubru": "gram aola khe tong ha.",
+      "english": "The village is to the south.",
+      "pronunciation": "gram-aola-khe-tong-ha.",
+      "audio_url": "/audio/sentences/sentence_0052.mp3",
+      "difficulty_level": 1,
+      "category": "directions",
+      "tags": [
+        "directions"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0002"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0053",
+      "kaubru": "hatinggol mtoi thang ny nung ba?",
+      "english": "Which direction are you going?",
+      "pronunciation": "hatinggol-mtoi-thang-ny-nung-ba?",
+      "audio_url": "/audio/sentences/sentence_0053.mp3",
+      "difficulty_level": 1,
+      "category": "directions",
+      "tags": [
+        "directions"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0002"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0054",
+      "kaubru": "kaukti sal le thung sal.",
+      "english": "Sunday is a rest day.",
+      "pronunciation": "kaukti-sal-le-thung-sal.",
+      "audio_url": "/audio/sentences/sentence_0054.mp3",
+      "difficulty_level": 1,
+      "category": "days",
+      "tags": [
+        "days"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "The KauBru week names blend traditional and modern influences. 'Kaukti sal' (Sunday) is the day of rest.",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0055",
+      "kaubru": "tangra sal le bar ni chisa sal.",
+      "english": "Monday is the first day of the week.",
+      "pronunciation": "tangra-sal-le-bar-ni-chisa-sal.",
+      "audio_url": "/audio/sentences/sentence_0055.mp3",
+      "difficulty_level": 1,
+      "category": "days",
+      "tags": [
+        "days"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0056",
+      "kaubru": "kraoh sal le tangra sal phui phai tong ha.",
+      "english": "Tuesday comes after Monday.",
+      "pronunciation": "kraoh-sal-le-tangra-sal-phui-phai-tong-ha.",
+      "audio_url": "/audio/sentences/sentence_0056.mp3",
+      "difficulty_level": 1,
+      "category": "days",
+      "tags": [
+        "days"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0057",
+      "kaubru": "bdu sal le bar ni kholphehchi sal.",
+      "english": "Wednesday is the middle of the week.",
+      "pronunciation": "bdu-sal-le-bar-ni-kholphehchi-sal.",
+      "audio_url": "/audio/sentences/sentence_0057.mp3",
+      "difficulty_level": 1,
+      "category": "days",
+      "tags": [
+        "days"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0058",
+      "kaubru": "songrong sal le souhkra sal phui phai tong ha.",
+      "english": "Thursday comes before Friday.",
+      "pronunciation": "songrong-sal-le-souhkra-sal-phui-phai-tong-ha.",
+      "audio_url": "/audio/sentences/sentence_0058.mp3",
+      "difficulty_level": 1,
+      "category": "days",
+      "tags": [
+        "days"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0059",
+      "kaubru": "souhkra sal le samung sal.",
+      "english": "Friday is the last working day.",
+      "pronunciation": "souhkra-sal-le-samung-sal.",
+      "audio_url": "/audio/sentences/sentence_0059.mp3",
+      "difficulty_level": 1,
+      "category": "days",
+      "tags": [
+        "days"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0060",
+      "kaubru": "chani sal le thung sal.",
+      "english": "Saturday is a holiday.",
+      "pronunciation": "chani-sal-le-thung-sal.",
+      "audio_url": "/audio/sentences/sentence_0060.mp3",
+      "difficulty_level": 1,
+      "category": "days",
+      "tags": [
+        "days"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0061",
+      "kaubru": "bar ni khe sal kesning tong ha.",
+      "english": "There are seven days in a week.",
+      "pronunciation": "bar-ni-khe-sal-kesning-tong-ha.",
+      "audio_url": "/audio/sentences/sentence_0061.mp3",
+      "difficulty_level": 1,
+      "category": "days",
+      "tags": [
+        "days"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0062",
+      "kaubru": "tini sal le kaham sal.",
+      "english": "Today is a good day.",
+      "pronunciation": "tini-sal-le-kaham-sal.",
+      "audio_url": "/audio/sentences/sentence_0062.mp3",
+      "difficulty_level": 1,
+      "category": "days",
+      "tags": [
+        "days"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0063",
+      "kaubru": "khasoing tal le borsa ni chisa tal.",
+      "english": "January is the first month.",
+      "pronunciation": "khasoing-tal-le-borsa-ni-chisa-tal.",
+      "audio_url": "/audio/sentences/sentence_0063.mp3",
+      "difficulty_level": 1,
+      "category": "months",
+      "tags": [
+        "months"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0064",
+      "kaubru": "phraing tal le borsa ni chingnoi tal.",
+      "english": "February is the second month.",
+      "pronunciation": "phraing-tal-le-borsa-ni-chingnoi-tal.",
+      "audio_url": "/audio/sentences/sentence_0064.mp3",
+      "difficulty_level": 1,
+      "category": "months",
+      "tags": [
+        "months"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0065",
+      "kaubru": "choileing tal le borsa ni chiktham tal.",
+      "english": "March is the third month.",
+      "pronunciation": "choileing-tal-le-borsa-ni-chiktham-tal.",
+      "audio_url": "/audio/sentences/sentence_0065.mp3",
+      "difficulty_level": 1,
+      "category": "months",
+      "tags": [
+        "months"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0066",
+      "kaubru": "sajlang tal le borsa ni chibroi tal.",
+      "english": "April is the fourth month.",
+      "pronunciation": "sajlang-tal-le-borsa-ni-chibroi-tal.",
+      "audio_url": "/audio/sentences/sentence_0066.mp3",
+      "difficulty_level": 1,
+      "category": "months",
+      "tags": [
+        "months"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0067",
+      "kaubru": "asari tal le borsa ni chara tal.",
+      "english": "May is the fifth month.",
+      "pronunciation": "asari-tal-le-borsa-ni-chara-tal.",
+      "audio_url": "/audio/sentences/sentence_0067.mp3",
+      "difficulty_level": 1,
+      "category": "months",
+      "tags": [
+        "months"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0068",
+      "kaubru": "srao tal le borsa ni chidouh tal.",
+      "english": "June is the sixth month.",
+      "pronunciation": "srao-tal-le-borsa-ni-chidouh-tal.",
+      "audio_url": "/audio/sentences/sentence_0068.mp3",
+      "difficulty_level": 1,
+      "category": "months",
+      "tags": [
+        "months"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0069",
+      "kaubru": "drumboi tal le borsa ni chisning tal.",
+      "english": "July is the seventh month.",
+      "pronunciation": "drumboi-tal-le-borsa-ni-chisning-tal.",
+      "audio_url": "/audio/sentences/sentence_0069.mp3",
+      "difficulty_level": 1,
+      "category": "months",
+      "tags": [
+        "months"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0070",
+      "kaubru": "keingrai tal le borsa ni chichaih tal.",
+      "english": "August is the eighth month.",
+      "pronunciation": "keingrai-tal-le-borsa-ni-chichaih-tal.",
+      "audio_url": "/audio/sentences/sentence_0070.mp3",
+      "difficulty_level": 1,
+      "category": "months",
+      "tags": [
+        "months"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0071",
+      "kaubru": "osa tal le borsa ni chiskuh tal.",
+      "english": "September is the ninth month.",
+      "pronunciation": "osa-tal-le-borsa-ni-chiskuh-tal.",
+      "audio_url": "/audio/sentences/sentence_0071.mp3",
+      "difficulty_level": 1,
+      "category": "months",
+      "tags": [
+        "months"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0072",
+      "kaubru": "kehchi tal le borsa ni chi tal.",
+      "english": "October is the tenth month.",
+      "pronunciation": "kehchi-tal-le-borsa-ni-chi-tal.",
+      "audio_url": "/audio/sentences/sentence_0072.mp3",
+      "difficulty_level": 1,
+      "category": "months",
+      "tags": [
+        "months"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0073",
+      "kaubru": "maogru tal le borsa ni chisa tal.",
+      "english": "November is the eleventh month.",
+      "pronunciation": "maogru-tal-le-borsa-ni-chisa-tal.",
+      "audio_url": "/audio/sentences/sentence_0073.mp3",
+      "difficulty_level": 1,
+      "category": "months",
+      "tags": [
+        "months"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0074",
+      "kaubru": "maosru tal le borsa ni chingnoi tal.",
+      "english": "December is the twelfth month.",
+      "pronunciation": "maosru-tal-le-borsa-ni-chingnoi-tal.",
+      "audio_url": "/audio/sentences/sentence_0074.mp3",
+      "difficulty_level": 1,
+      "category": "months",
+      "tags": [
+        "months"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0075",
+      "kaubru": "borsa khe tal chingnoi tong ha.",
+      "english": "There are twelve months in a year.",
+      "pronunciation": "borsa-khe-tal-chingnoi-tong-ha.",
+      "audio_url": "/audio/sentences/sentence_0075.mp3",
+      "difficulty_level": 1,
+      "category": "months",
+      "tags": [
+        "months"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0076",
+      "kaubru": "tini borsa le kaham borsa.",
+      "english": "This year is good.",
+      "pronunciation": "tini-borsa-le-kaham-borsa.",
+      "audio_url": "/audio/sentences/sentence_0076.mp3",
+      "difficulty_level": 1,
+      "category": "months",
+      "tags": [
+        "months"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0077",
+      "kaubru": "bo le kaham no.",
+      "english": "This is good.",
+      "pronunciation": "bo-le-kaham-no.",
+      "audio_url": "/audio/sentences/sentence_0077.mp3",
+      "difficulty_level": 1,
+      "category": "adjectives",
+      "tags": [
+        "adjectives"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0078",
+      "kaubru": "Nouh ktor.",
+      "english": "A big house.",
+      "pronunciation": "nouh-ktor.",
+      "audio_url": "/audio/sentences/sentence_0078.mp3",
+      "difficulty_level": 1,
+      "category": "adjectives",
+      "tags": [
+        "adjectives"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0079",
+      "kaubru": "taopi.",
+      "english": "A small bird.",
+      "pronunciation": "taopi.",
+      "audio_url": "/audio/sentences/sentence_0079.mp3",
+      "difficulty_level": 1,
+      "category": "adjectives",
+      "tags": [
+        "adjectives"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0080",
+      "kaubru": "broi nythau sei.",
+      "english": "She is beautiful.",
+      "pronunciation": "broi-nythau-sei.",
+      "audio_url": "/audio/sentences/sentence_0080.mp3",
+      "difficulty_level": 1,
+      "category": "adjectives",
+      "tags": [
+        "adjectives"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0081",
+      "kaubru": "ang nouh thang gra nu.",
+      "english": "I am going home.",
+      "pronunciation": "ang-nouh-thang-gra-nu.",
+      "audio_url": "/audio/sentences/sentence_0081.mp3",
+      "difficulty_level": 1,
+      "category": "pronouns",
+      "tags": [
+        "pronouns"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0003"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0082",
+      "kaubru": "chung thang gra nu.",
+      "english": "We are going.",
+      "pronunciation": "chung-thang-gra-nu.",
+      "audio_url": "/audio/sentences/sentence_0082.mp3",
+      "difficulty_level": 1,
+      "category": "pronouns",
+      "tags": [
+        "pronouns"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0003"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0083",
+      "kaubru": "nung khe salboi se phai ou.",
+      "english": "You come daily.",
+      "pronunciation": "nung-khe-salboi-se-phai-ou.",
+      "audio_url": "/audio/sentences/sentence_0083.mp3",
+      "difficulty_level": 1,
+      "category": "pronouns",
+      "tags": [
+        "pronouns"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0003"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0084",
+      "kaubru": "nrao phai ou.",
+      "english": "You all come.",
+      "pronunciation": "nrao-phai-ou.",
+      "audio_url": "/audio/sentences/sentence_0084.mp3",
+      "difficulty_level": 1,
+      "category": "pronouns",
+      "tags": [
+        "pronouns"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0003"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0085",
+      "kaubru": "bung phai ou.",
+      "english": "He is coming.",
+      "pronunciation": "bung-phai-ou.",
+      "audio_url": "/audio/sentences/sentence_0085.mp3",
+      "difficulty_level": 1,
+      "category": "pronouns",
+      "tags": [
+        "pronouns"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0003"
+      ],
+      "word_breakdown": [
+        {
+          "kaubru": "bung",
+          "english": "he/she",
+          "role": "subject"
+        },
+        {
+          "kaubru": "phai",
+          "english": "come",
+          "role": "verb"
+        },
+        {
+          "kaubru": "ou",
+          "english": "ongoing",
+          "role": "tense marker"
+        }
+      ],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0086",
+      "kaubru": "bung dophe dophe se phai ou.",
+      "english": "She always comes.",
+      "pronunciation": "bung-dophe-dophe-se-phai-ou.",
+      "audio_url": "/audio/sentences/sentence_0086.mp3",
+      "difficulty_level": 1,
+      "category": "pronouns",
+      "tags": [
+        "pronouns"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0003"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0087",
+      "kaubru": "brao mai cha ha.",
+      "english": "They have eaten food.",
+      "pronunciation": "brao-mai-cha-ha.",
+      "audio_url": "/audio/sentences/sentence_0087.mp3",
+      "difficulty_level": 1,
+      "category": "pronouns",
+      "tags": [
+        "pronouns"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0003"
+      ],
+      "word_breakdown": [
+        {
+          "kaubru": "brao",
+          "english": "they",
+          "role": "subject"
+        },
+        {
+          "kaubru": "mai",
+          "english": "food",
+          "role": "object"
+        },
+        {
+          "kaubru": "cha",
+          "english": "eat",
+          "role": "verb"
+        },
+        {
+          "kaubru": "ha",
+          "english": "completed",
+          "role": "tense marker"
+        }
+      ],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0088",
+      "kaubru": "aini nouh ktor ha.",
+      "english": "My house is big.",
+      "pronunciation": "aini-nouh-ktor-ha.",
+      "audio_url": "/audio/sentences/sentence_0088.mp3",
+      "difficulty_level": 1,
+      "category": "pronouns",
+      "tags": [
+        "pronouns"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0003"
+      ],
+      "word_breakdown": [
+        {
+          "kaubru": "aini",
+          "english": "my",
+          "role": "possessive"
+        },
+        {
+          "kaubru": "nouh",
+          "english": "house",
+          "role": "subject"
+        },
+        {
+          "kaubru": "ktor",
+          "english": "big",
+          "role": "adjective"
+        },
+        {
+          "kaubru": "ha",
+          "english": "is (statement)",
+          "role": "copula"
+        }
+      ],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0089",
+      "kaubru": "nini mmung kaham ha.",
+      "english": "Your name is good.",
+      "pronunciation": "nini-mmung-kaham-ha.",
+      "audio_url": "/audio/sentences/sentence_0089.mp3",
+      "difficulty_level": 1,
+      "category": "pronouns",
+      "tags": [
+        "pronouns"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0003"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0090",
+      "kaubru": "bini mpha phai ou.",
+      "english": "His father came.",
+      "pronunciation": "bini-mpha-phai-ou.",
+      "audio_url": "/audio/sentences/sentence_0090.mp3",
+      "difficulty_level": 1,
+      "category": "pronouns",
+      "tags": [
+        "pronouns"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0003"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0091",
+      "kaubru": "bini mma di tong ha.",
+      "english": "Her mother is here.",
+      "pronunciation": "bini-mma-di-tong-ha.",
+      "audio_url": "/audio/sentences/sentence_0091.mp3",
+      "difficulty_level": 1,
+      "category": "pronouns",
+      "tags": [
+        "pronouns"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0003"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0092",
+      "kaubru": "mia aini ata phai ou.",
+      "english": "Yesterday my brother came.",
+      "pronunciation": "mia-aini-ata-phai-ou.",
+      "audio_url": "/audio/sentences/sentence_0092.mp3",
+      "difficulty_level": 1,
+      "category": "time",
+      "tags": [
+        "time"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0002"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0093",
+      "kaubru": "tini sal kaham ha.",
+      "english": "Today is a good day.",
+      "pronunciation": "tini-sal-kaham-ha.",
+      "audio_url": "/audio/sentences/sentence_0093.mp3",
+      "difficulty_level": 1,
+      "category": "time",
+      "tags": [
+        "time"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0002"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0094",
+      "kaubru": "taoh wo khe chung mai cha ha.",
+      "english": "Now we have eaten food.",
+      "pronunciation": "taoh-wo-khe-chung-mai-cha-ha.",
+      "audio_url": "/audio/sentences/sentence_0094.mp3",
+      "difficulty_level": 1,
+      "category": "time",
+      "tags": [
+        "time"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0002"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0095",
+      "kaubru": "ang khebu jug se nouh wo phai ou.",
+      "english": "I always come home.",
+      "pronunciation": "ang-khebu-jug-se-nouh-wo-phai-ou.",
+      "audio_url": "/audio/sentences/sentence_0095.mp3",
+      "difficulty_level": 1,
+      "category": "time",
+      "tags": [
+        "time"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0002"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0096",
+      "kaubru": "khnai malai phi na.",
+      "english": "See you tomorrow.",
+      "pronunciation": "khnai-malai-phi-na.",
+      "audio_url": "/audio/sentences/sentence_0096.mp3",
+      "difficulty_level": 1,
+      "category": "time",
+      "tags": [
+        "time"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0002"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0097",
+      "kaubru": "apa kaham ha.",
+      "english": "My father is kind.",
+      "pronunciation": "apa-kaham-ha.",
+      "audio_url": "/audio/sentences/sentence_0097.mp3",
+      "difficulty_level": 1,
+      "category": "family",
+      "tags": [
+        "family"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0003"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "The KauBru clan system (nouhkhung) is central to social identity. Family ties determine roles in ceremonies, land use, and community decisions.",
+      "lesson_id": "lesson_family",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0098",
+      "kaubru": "amou di tong ha.",
+      "english": "My mother is here.",
+      "pronunciation": "amou-di-tong-ha.",
+      "audio_url": "/audio/sentences/sentence_0098.mp3",
+      "difficulty_level": 1,
+      "category": "family",
+      "tags": [
+        "family"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0003"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "The KauBru clan system (nouhkhung) is central to social identity. Family ties determine roles in ceremonies, land use, and community decisions.",
+      "lesson_id": "lesson_family",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0099",
+      "kaubru": "ata phai ou.",
+      "english": "My elder brother came.",
+      "pronunciation": "ata-phai-ou.",
+      "audio_url": "/audio/sentences/sentence_0099.mp3",
+      "difficulty_level": 1,
+      "category": "family",
+      "tags": [
+        "family"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0003"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "The KauBru clan system (nouhkhung) is central to social identity. Family ties determine roles in ceremonies, land use, and community decisions.",
+      "lesson_id": "lesson_family",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0100",
+      "kaubru": "aibi nythau ha.",
+      "english": "My elder sister is beautiful.",
+      "pronunciation": "aibi-nythau-ha.",
+      "audio_url": "/audio/sentences/sentence_0100.mp3",
+      "difficulty_level": 1,
+      "category": "family",
+      "tags": [
+        "family"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0003"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "The KauBru clan system (nouhkhung) is central to social identity. Family ties determine roles in ceremonies, land use, and community decisions.",
+      "lesson_id": "lesson_family",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0101",
+      "kaubru": "angphaiyong ste ha.",
+      "english": "My younger brother is small.",
+      "pronunciation": "angphaiyong-ste-ha.",
+      "audio_url": "/audio/sentences/sentence_0101.mp3",
+      "difficulty_level": 1,
+      "category": "family",
+      "tags": [
+        "family"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0003"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "The KauBru clan system (nouhkhung) is central to social identity. Family ties determine roles in ceremonies, land use, and community decisions.",
+      "lesson_id": "lesson_family",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0102",
+      "kaubru": "anghanao kaham ha.",
+      "english": "My younger sister is good.",
+      "pronunciation": "anghanao-kaham-ha.",
+      "audio_url": "/audio/sentences/sentence_0102.mp3",
+      "difficulty_level": 1,
+      "category": "family",
+      "tags": [
+        "family"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0003"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "The KauBru clan system (nouhkhung) is central to social identity. Family ties determine roles in ceremonies, land use, and community decisions.",
+      "lesson_id": "lesson_family",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0103",
+      "kaubru": "achwu khnai ha.",
+      "english": "My grandfather is old.",
+      "pronunciation": "achwu-khnai-ha.",
+      "audio_url": "/audio/sentences/sentence_0103.mp3",
+      "difficulty_level": 1,
+      "category": "family",
+      "tags": [
+        "family"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0003"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "The KauBru clan system (nouhkhung) is central to social identity. Family ties determine roles in ceremonies, land use, and community decisions.",
+      "lesson_id": "lesson_family",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0104",
+      "kaubru": "achui kaham ha.",
+      "english": "My grandmother is kind.",
+      "pronunciation": "achui-kaham-ha.",
+      "audio_url": "/audio/sentences/sentence_0104.mp3",
+      "difficulty_level": 1,
+      "category": "family",
+      "tags": [
+        "family"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0003"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "The KauBru clan system (nouhkhung) is central to social identity. Family ties determine roles in ceremonies, land use, and community decisions.",
+      "lesson_id": "lesson_family",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0105",
+      "kaubru": "mama mia phai ou.",
+      "english": "My uncle came yesterday.",
+      "pronunciation": "mama-mia-phai-ou.",
+      "audio_url": "/audio/sentences/sentence_0105.mp3",
+      "difficulty_level": 1,
+      "category": "family",
+      "tags": [
+        "family"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0003"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "The KauBru clan system (nouhkhung) is central to social identity. Family ties determine roles in ceremonies, land use, and community decisions.",
+      "lesson_id": "lesson_family",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0106",
+      "kaubru": "atoi di tong ha.",
+      "english": "My aunt is here.",
+      "pronunciation": "atoi-di-tong-ha.",
+      "audio_url": "/audio/sentences/sentence_0106.mp3",
+      "difficulty_level": 1,
+      "category": "family",
+      "tags": [
+        "family"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0003"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "The KauBru clan system (nouhkhung) is central to social identity. Family ties determine roles in ceremonies, land use, and community decisions.",
+      "lesson_id": "lesson_family",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0107",
+      "kaubru": "npha ktor ha.",
+      "english": "Your father is big.",
+      "pronunciation": "npha-ktor-ha.",
+      "audio_url": "/audio/sentences/sentence_0107.mp3",
+      "difficulty_level": 1,
+      "category": "family",
+      "tags": [
+        "family"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0003"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "The KauBru clan system (nouhkhung) is central to social identity. Family ties determine roles in ceremonies, land use, and community decisions.",
+      "lesson_id": "lesson_family",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0108",
+      "kaubru": "nma phai ou.",
+      "english": "Your mother came.",
+      "pronunciation": "nma-phai-ou.",
+      "audio_url": "/audio/sentences/sentence_0108.mp3",
+      "difficulty_level": 1,
+      "category": "family",
+      "tags": [
+        "family"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0003"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "The KauBru clan system (nouhkhung) is central to social identity. Family ties determine roles in ceremonies, land use, and community decisions.",
+      "lesson_id": "lesson_family",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0109",
+      "kaubru": "nta di tong ha.",
+      "english": "Your elder brother is here.",
+      "pronunciation": "nta-di-tong-ha.",
+      "audio_url": "/audio/sentences/sentence_0109.mp3",
+      "difficulty_level": 1,
+      "category": "family",
+      "tags": [
+        "family"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0003"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "The KauBru clan system (nouhkhung) is central to social identity. Family ties determine roles in ceremonies, land use, and community decisions.",
+      "lesson_id": "lesson_family",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0110",
+      "kaubru": "nbi kaham ha.",
+      "english": "Your elder sister is kind.",
+      "pronunciation": "nbi-kaham-ha.",
+      "audio_url": "/audio/sentences/sentence_0110.mp3",
+      "difficulty_level": 1,
+      "category": "family",
+      "tags": [
+        "family"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0003"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "The KauBru clan system (nouhkhung) is central to social identity. Family ties determine roles in ceremonies, land use, and community decisions.",
+      "lesson_id": "lesson_family",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0111",
+      "kaubru": "mpha klao ha.",
+      "english": "His father is tall.",
+      "pronunciation": "mpha-klao-ha.",
+      "audio_url": "/audio/sentences/sentence_0111.mp3",
+      "difficulty_level": 1,
+      "category": "family",
+      "tags": [
+        "family"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0003"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "The KauBru clan system (nouhkhung) is central to social identity. Family ties determine roles in ceremonies, land use, and community decisions.",
+      "lesson_id": "lesson_family",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0112",
+      "kaubru": "mma di tong ha.",
+      "english": "His mother is here.",
+      "pronunciation": "mma-di-tong-ha.",
+      "audio_url": "/audio/sentences/sentence_0112.mp3",
+      "difficulty_level": 1,
+      "category": "family",
+      "tags": [
+        "family"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0003"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "The KauBru clan system (nouhkhung) is central to social identity. Family ties determine roles in ceremonies, land use, and community decisions.",
+      "lesson_id": "lesson_family",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0113",
+      "kaubru": "mta phai ou.",
+      "english": "His elder brother came.",
+      "pronunciation": "mta-phai-ou.",
+      "audio_url": "/audio/sentences/sentence_0113.mp3",
+      "difficulty_level": 1,
+      "category": "family",
+      "tags": [
+        "family"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0003"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "The KauBru clan system (nouhkhung) is central to social identity. Family ties determine roles in ceremonies, land use, and community decisions.",
+      "lesson_id": "lesson_family",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0114",
+      "kaubru": "mbi nythau ha.",
+      "english": "His elder sister is beautiful.",
+      "pronunciation": "mbi-nythau-ha.",
+      "audio_url": "/audio/sentences/sentence_0114.mp3",
+      "difficulty_level": 1,
+      "category": "family",
+      "tags": [
+        "family"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0003"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "The KauBru clan system (nouhkhung) is central to social identity. Family ties determine roles in ceremonies, land use, and community decisions.",
+      "lesson_id": "lesson_family",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0115",
+      "kaubru": "khnai ang nouh wo thanng nai.",
+      "english": "I shall go home tomorrow.",
+      "pronunciation": "khnai-ang-nouh-wo-thanng-nai.",
+      "audio_url": "/audio/sentences/sentence_0115.mp3",
+      "difficulty_level": 1,
+      "category": "verbs",
+      "tags": [
+        "verbs"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0002"
+      ],
+      "word_breakdown": [
+        {
+          "kaubru": "khnai",
+          "english": "tomorrow",
+          "role": "time"
+        },
+        {
+          "kaubru": "ang",
+          "english": "I",
+          "role": "subject"
+        },
+        {
+          "kaubru": "nouh",
+          "english": "home",
+          "role": "destination"
+        },
+        {
+          "kaubru": "wo",
+          "english": "to (direction)",
+          "role": "particle"
+        },
+        {
+          "kaubru": "thanng",
+          "english": "go",
+          "role": "verb"
+        },
+        {
+          "kaubru": "nai",
+          "english": "will (future)",
+          "role": "tense marker"
+        }
+      ],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0116",
+      "kaubru": "chung mai cha ha.",
+      "english": "We have eaten food.",
+      "pronunciation": "chung-mai-cha-ha.",
+      "audio_url": "/audio/sentences/sentence_0116.mp3",
+      "difficulty_level": 1,
+      "category": "verbs",
+      "tags": [
+        "verbs"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0002"
+      ],
+      "word_breakdown": [
+        {
+          "kaubru": "chung",
+          "english": "we",
+          "role": "subject"
+        },
+        {
+          "kaubru": "mai",
+          "english": "food",
+          "role": "object"
+        },
+        {
+          "kaubru": "cha",
+          "english": "eat",
+          "role": "verb"
+        },
+        {
+          "kaubru": "ha",
+          "english": "completed",
+          "role": "tense marker"
+        }
+      ],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0117",
+      "kaubru": "bung bahcha tong ou.",
+      "english": "He is standing.",
+      "pronunciation": "bung-bahcha-tong-ou.",
+      "audio_url": "/audio/sentences/sentence_0117.mp3",
+      "difficulty_level": 1,
+      "category": "verbs",
+      "tags": [
+        "verbs"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0002"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0118",
+      "kaubru": "bung chom nai.",
+      "english": "She will hide.",
+      "pronunciation": "bung-chom-nai.",
+      "audio_url": "/audio/sentences/sentence_0118.mp3",
+      "difficulty_level": 1,
+      "category": "verbs",
+      "tags": [
+        "verbs"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0002"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0119",
+      "kaubru": "brao mairung kai ha.",
+      "english": "They have planted rice.",
+      "pronunciation": "brao-mairung-kai-ha.",
+      "audio_url": "/audio/sentences/sentence_0119.mp3",
+      "difficulty_level": 1,
+      "category": "verbs",
+      "tags": [
+        "verbs"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0002"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0120",
+      "kaubru": "bung kai nai.",
+      "english": "He will sow seeds.",
+      "pronunciation": "bung-kai-nai.",
+      "audio_url": "/audio/sentences/sentence_0120.mp3",
+      "difficulty_level": 1,
+      "category": "verbs",
+      "tags": [
+        "verbs"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0002"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0121",
+      "kaubru": "ang khui ha.",
+      "english": "I threw it away.",
+      "pronunciation": "ang-khui-ha.",
+      "audio_url": "/audio/sentences/sentence_0121.mp3",
+      "difficulty_level": 1,
+      "category": "verbs",
+      "tags": [
+        "verbs"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0002"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0122",
+      "kaubru": "hor sau tong ou.",
+      "english": "The fire is burning.",
+      "pronunciation": "hor-sau-tong-ou.",
+      "audio_url": "/audio/sentences/sentence_0122.mp3",
+      "difficulty_level": 1,
+      "category": "verbs",
+      "tags": [
+        "verbs"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0002"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0123",
+      "kaubru": "ang samung tang tong ou.",
+      "english": "I am doing work.",
+      "pronunciation": "ang-samung-tang-tong-ou.",
+      "audio_url": "/audio/sentences/sentence_0123.mp3",
+      "difficulty_level": 1,
+      "category": "verbs",
+      "tags": [
+        "verbs"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0002"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0124",
+      "kaubru": "bung samung tang tong ou.",
+      "english": "He is working.",
+      "pronunciation": "bung-samung-tang-tong-ou.",
+      "audio_url": "/audio/sentences/sentence_0124.mp3",
+      "difficulty_level": 1,
+      "category": "verbs",
+      "tags": [
+        "verbs"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0002"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0125",
+      "kaubru": "bung sa ou.",
+      "english": "She says.",
+      "pronunciation": "bung-sa-ou.",
+      "audio_url": "/audio/sentences/sentence_0125.mp3",
+      "difficulty_level": 1,
+      "category": "verbs",
+      "tags": [
+        "verbs"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0002"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0126",
+      "kaubru": "ang lama se hinng tong ha.",
+      "english": "I am walking on the road.",
+      "pronunciation": "ang-lama-se-hinng-tong-ha.",
+      "audio_url": "/audio/sentences/sentence_0126.mp3",
+      "difficulty_level": 1,
+      "category": "verbs",
+      "tags": [
+        "verbs"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0002"
+      ],
+      "word_breakdown": [
+        {
+          "kaubru": "ang",
+          "english": "I",
+          "role": "subject"
+        },
+        {
+          "kaubru": "lama",
+          "english": "road/path",
+          "role": "location"
+        },
+        {
+          "kaubru": "se",
+          "english": "on/along",
+          "role": "particle"
+        },
+        {
+          "kaubru": "hinng",
+          "english": "walk",
+          "role": "verb"
+        },
+        {
+          "kaubru": "tong ha",
+          "english": "present continuous",
+          "role": "tense marker"
+        }
+      ],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0127",
+      "kaubru": "bung boi pore tong ha.",
+      "english": "She is reading a book.",
+      "pronunciation": "bung-boi-pore-tong-ha.",
+      "audio_url": "/audio/sentences/sentence_0127.mp3",
+      "difficulty_level": 1,
+      "category": "verbs",
+      "tags": [
+        "verbs"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0002"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0128",
+      "kaubru": "bung phuh wo tau nai tong ou.",
+      "english": "He was looking for a chicken.",
+      "pronunciation": "bung-phuh-wo-tau-nai-tong-ou.",
+      "audio_url": "/audio/sentences/sentence_0128.mp3",
+      "difficulty_level": 1,
+      "category": "verbs",
+      "tags": [
+        "verbs"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0002"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0129",
+      "kaubru": "ang nung no nai ou.",
+      "english": "I see you.",
+      "pronunciation": "ang-nung-no-nai-ou.",
+      "audio_url": "/audio/sentences/sentence_0129.mp3",
+      "difficulty_level": 1,
+      "category": "verbs",
+      "tags": [
+        "verbs"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0002"
+      ],
+      "word_breakdown": [
+        {
+          "kaubru": "ang",
+          "english": "I",
+          "role": "subject"
+        },
+        {
+          "kaubru": "nung",
+          "english": "you",
+          "role": "object"
+        },
+        {
+          "kaubru": "no",
+          "english": "object marker",
+          "role": "particle"
+        },
+        {
+          "kaubru": "nai",
+          "english": "see",
+          "role": "verb"
+        },
+        {
+          "kaubru": "ou",
+          "english": "ongoing",
+          "role": "tense marker"
+        }
+      ],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0130",
+      "kaubru": "taoh ou nouh thang gra nu .",
+      "english": "I am going home now.",
+      "pronunciation": "taoh-ou-nouh-thang-gra-nu-.",
+      "audio_url": "/audio/sentences/sentence_0130.mp3",
+      "difficulty_level": 1,
+      "category": "phrases",
+      "tags": [
+        "phrases"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0002"
+      ],
+      "word_breakdown": [
+        {
+          "kaubru": "taoh",
+          "english": "now",
+          "role": "time"
+        },
+        {
+          "kaubru": "ou",
+          "english": "I (emphatic)",
+          "role": "subject"
+        },
+        {
+          "kaubru": "nouh",
+          "english": "home",
+          "role": "destination"
+        },
+        {
+          "kaubru": "thang",
+          "english": "go",
+          "role": "verb"
+        },
+        {
+          "kaubru": "gra nu",
+          "english": "going (present)",
+          "role": "tense marker"
+        }
+      ],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0131",
+      "kaubru": "among nung no maiya ong ou ang.",
+      "english": "I love you, mother.",
+      "pronunciation": "among-nung-no-maiya-ong-ou-ang.",
+      "audio_url": "/audio/sentences/sentence_0131.mp3",
+      "difficulty_level": 1,
+      "category": "phrases",
+      "tags": [
+        "phrases"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0002"
+      ],
+      "word_breakdown": [],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "Expressing love directly is a modern influence; traditionally affection was shown through acts of care and provision.",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0132",
+      "kaubru": "Mtoi ou thang ny nung ba?",
+      "english": "Where are you going?",
+      "pronunciation": "mtoi-ou-thang-ny-nung-ba?",
+      "audio_url": "/audio/sentences/sentence_0132.mp3",
+      "difficulty_level": 1,
+      "category": "phrases",
+      "tags": [
+        "phrases"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0002"
+      ],
+      "word_breakdown": [
+        {
+          "kaubru": "Mtoi",
+          "english": "where",
+          "role": "question word"
+        },
+        {
+          "kaubru": "ou",
+          "english": "going",
+          "role": "auxiliary"
+        },
+        {
+          "kaubru": "thang",
+          "english": "go",
+          "role": "verb"
+        },
+        {
+          "kaubru": "ny",
+          "english": "are",
+          "role": "copula"
+        },
+        {
+          "kaubru": "nung",
+          "english": "you",
+          "role": "subject"
+        },
+        {
+          "kaubru": "ba",
+          "english": "question marker",
+          "role": "particle"
+        }
+      ],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0133",
+      "kaubru": "phut khe phai di ro ou.",
+      "english": "Come here quickly.",
+      "pronunciation": "phut-khe-phai-di-ro-ou.",
+      "audio_url": "/audio/sentences/sentence_0133.mp3",
+      "difficulty_level": 1,
+      "category": "phrases",
+      "tags": [
+        "phrases"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0002"
+      ],
+      "word_breakdown": [
+        {
+          "kaubru": "phut",
+          "english": "quickly",
+          "role": "adverb"
+        },
+        {
+          "kaubru": "khe",
+          "english": "please/indeed",
+          "role": "particle"
+        },
+        {
+          "kaubru": "phai",
+          "english": "come",
+          "role": "verb"
+        },
+        {
+          "kaubru": "di",
+          "english": "here",
+          "role": "location"
+        },
+        {
+          "kaubru": "ro",
+          "english": "imperative marker",
+          "role": "particle"
+        },
+        {
+          "kaubru": "ou",
+          "english": "ongoing",
+          "role": "tense marker"
+        }
+      ],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "Direct commands in KauBru are softened by context and tone. 'Phai di ro' is a warm invitation rather than an order.",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "sentence_0134",
+      "kaubru": "Mai cha lai na.",
+      "english": "Let us eat food.",
+      "pronunciation": "mai-cha-lai-na.",
+      "audio_url": "/audio/sentences/sentence_0134.mp3",
+      "difficulty_level": 1,
+      "category": "phrases",
+      "tags": [
+        "phrases"
+      ],
+      "grammar_points": [
+        "grammar_rule_0001",
+        "grammar_rule_0002"
+      ],
+      "word_breakdown": [
+        {
+          "kaubru": "Mai",
+          "english": "food",
+          "role": "object"
+        },
+        {
+          "kaubru": "cha",
+          "english": "eat",
+          "role": "verb"
+        },
+        {
+          "kaubru": "lai na",
+          "english": "let us (inclusive)",
+          "role": "particle"
+        }
+      ],
+      "phrase_components": [],
+      "context": "example sentence",
+      "cultural_notes": "Sharing food (mai cha) is a central act of hospitality in KauBru culture. Refusing food is considered impolite.",
+      "lesson_id": "lesson_daily_conversations",
+      "related_sentences": [],
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  ],
+  "metadata": {
+    "version": "1.0",
+    "total_sentences": 134,
+    "last_updated": "2026-01-01T00:00:00Z",
+    "categories": [
+      "adjectives",
+      "days",
+      "directions",
+      "family",
+      "food",
+      "greetings",
+      "math",
+      "months",
+      "nature",
+      "numbers",
+      "phrases",
+      "places",
+      "pronouns",
+      "time",
+      "verbs"
+    ],
+    "difficulty_levels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  }
+}

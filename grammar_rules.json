@@ -1,0 +1,417 @@
+{
+  "grammar_rules": [
+    {
+      "id": "grammar_rule_0001",
+      "title": "Basic Sentence Structure (SOV)",
+      "title_kaubru": "Brouh Kaubru Songpang (SOV)",
+      "category": "syntax",
+      "difficulty_level": 1,
+      "description": "KauBru follows Subject-Object-Verb order. The verb always comes at the end of the sentence.",
+      "description_kaubru": "KauBru le brouh-mai-tang songpang se tong ha. Tang le salmung phui phai tong ha.",
+      "rule_pattern": "Subject + Object + Verb + [Tense Marker]",
+      "examples": [
+        {
+          "kaubru": "ang mai cha ha",
+          "english": "I have eaten food.",
+          "breakdown": "ang (I) + mai (food) + cha (eat) + ha (completed)",
+          "audio_url": "/audio/grammar/grammar_rule_0001_ex1.mp3"
+        },
+        {
+          "kaubru": "bung nouh thang gra nu",
+          "english": "He is going home.",
+          "breakdown": "bung (he) + nouh (home) + thang (go) + gra nu (present continuous)",
+          "audio_url": "/audio/grammar/grammar_rule_0001_ex2.mp3"
+        },
+        {
+          "kaubru": "ang tui nang tong ha",
+          "english": "I need water.",
+          "breakdown": "ang (I) + tui (water) + nang (need) + tong ha (present)",
+          "audio_url": "/audio/grammar/grammar_rule_0001_ex3.mp3"
+        }
+      ],
+      "exceptions": [
+        {
+          "description": "Questions can place the question word first: 'Mtoi ou thang ny nung ba?' (Where are you going?)",
+          "example_kaubru": "Mtoi ou thang ny nung ba?",
+          "example_english": "Where are you going?"
+        }
+      ],
+      "related_rules": [
+        "grammar_rule_0002",
+        "grammar_rule_0003"
+      ],
+      "practice_exercises": [
+        {
+          "type": "arrange_words",
+          "question_english": "Arrange: I / rice / eat / completed",
+          "correct_answer": "ang mairung cha ha",
+          "options": [
+            "ang mairung cha ha",
+            "mairung ang cha ha",
+            "cha ang mairung ha"
+          ]
+        },
+        {
+          "type": "translate",
+          "question_english": "Translate: She is reading a book.",
+          "correct_answer": "bung boi pore tong ha",
+          "options": [
+            "bung boi pore tong ha",
+            "boi bung pore ha",
+            "pore bung boi tong ha"
+          ]
+        }
+      ],
+      "tags": [
+        "beginner",
+        "essential",
+        "syntax"
+      ],
+      "lesson_id": "lesson_daily_conversations",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "grammar_rule_0002",
+      "title": "Tense Markers",
+      "title_kaubru": "Sal Talmung (Tense Markers)",
+      "category": "morphology",
+      "difficulty_level": 2,
+      "description": "KauBru uses sentence-final particles to mark tense. 'ha' marks completed action, 'tong ou' marks ongoing action, 'nai' marks future action.",
+      "description_kaubru": "KauBru le salmung phui khe tang talmung tong ha. 'ha' le cha ha tang, 'tong ou' le tong tang, 'nai' le khnai tang.",
+      "rule_pattern": "Sentence + [ha | tong ou | nai]",
+      "examples": [
+        {
+          "kaubru": "bung phai ha",
+          "english": "He came. (completed)",
+          "breakdown": "bung (he) + phai (come) + ha (past/completed)",
+          "audio_url": "/audio/grammar/grammar_rule_0002_ex1.mp3"
+        },
+        {
+          "kaubru": "bung phai tong ou",
+          "english": "He is coming. (ongoing)",
+          "breakdown": "bung (he) + phai (come) + tong ou (present continuous)",
+          "audio_url": "/audio/grammar/grammar_rule_0002_ex2.mp3"
+        },
+        {
+          "kaubru": "bung phai nai",
+          "english": "He will come. (future)",
+          "breakdown": "bung (he) + phai (come) + nai (future marker)",
+          "audio_url": "/audio/grammar/grammar_rule_0002_ex3.mp3"
+        },
+        {
+          "kaubru": "hor sau tong ou",
+          "english": "The fire is burning.",
+          "breakdown": "hor (fire) + sau (burn) + tong ou (ongoing)",
+          "audio_url": "/audio/grammar/grammar_rule_0002_ex4.mp3"
+        }
+      ],
+      "exceptions": [
+        {
+          "description": "Some stative verbs use 'ha' for present state, not past: 'aini nouh ktor ha' (My house is big)",
+          "example_kaubru": "aini nouh ktor ha",
+          "example_english": "My house is big."
+        }
+      ],
+      "related_rules": [
+        "grammar_rule_0001"
+      ],
+      "practice_exercises": [
+        {
+          "type": "fill_in_blank",
+          "question_kaubru": "bung phai ___",
+          "question_english": "He came. (use past marker)",
+          "correct_answer": "ha",
+          "options": [
+            "ha",
+            "tong ou",
+            "nai"
+          ]
+        },
+        {
+          "type": "fill_in_blank",
+          "question_kaubru": "ang samung tang ___ ___",
+          "question_english": "I am working. (use ongoing marker)",
+          "correct_answer": "tong ou",
+          "options": [
+            "ha",
+            "tong ou",
+            "nai"
+          ]
+        }
+      ],
+      "tags": [
+        "beginner",
+        "essential",
+        "tense"
+      ],
+      "lesson_id": "lesson_daily_conversations",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "grammar_rule_0003",
+      "title": "Possessive Pronouns",
+      "title_kaubru": "Aini-Nini-Bini Talmung",
+      "category": "morphology",
+      "difficulty_level": 1,
+      "description": "Possessives are formed by adding 'ni' after the pronoun: ang (I) → aini (my), nung (you) → nini (your), bung (he/she) → bini (his/her).",
+      "description_kaubru": "Aini le ang + ni, nini le nung + ni, bini le bung + ni. 'ni' le maiya talmung.",
+      "rule_pattern": "Pronoun + ni → Possessive",
+      "examples": [
+        {
+          "kaubru": "aini nouh ktor ha",
+          "english": "My house is big.",
+          "breakdown": "aini (my) + nouh (house) + ktor (big) + ha",
+          "audio_url": "/audio/grammar/grammar_rule_0003_ex1.mp3"
+        },
+        {
+          "kaubru": "nini mmung kaham ha",
+          "english": "Your name is good.",
+          "breakdown": "nini (your) + mmung (name) + kaham (good) + ha",
+          "audio_url": "/audio/grammar/grammar_rule_0003_ex2.mp3"
+        },
+        {
+          "kaubru": "bini mpha phai ou",
+          "english": "His father came.",
+          "breakdown": "bini (his) + mpha (father) + phai (come) + ou (ongoing)",
+          "audio_url": "/audio/grammar/grammar_rule_0003_ex3.mp3"
+        }
+      ],
+      "exceptions": [
+        {
+          "description": "Kinship terms have special possessive forms: apa (my father), npha (your father), mpha (his/her father)",
+          "example_kaubru": "apa kaham ha",
+          "example_english": "My father is kind."
+        }
+      ],
+      "related_rules": [
+        "grammar_rule_0001",
+        "grammar_rule_0004"
+      ],
+      "practice_exercises": [
+        {
+          "type": "fill_in_blank",
+          "question_english": "___ house is big. (my)",
+          "correct_answer": "aini",
+          "options": [
+            "aini",
+            "nini",
+            "bini"
+          ]
+        },
+        {
+          "type": "translate",
+          "question_english": "Your name is good.",
+          "correct_answer": "nini mmung kaham ha",
+          "options": [
+            "nini mmung kaham ha",
+            "aini mmung kaham ha",
+            "bini mmung kaham ha"
+          ]
+        }
+      ],
+      "tags": [
+        "beginner",
+        "pronouns",
+        "possessive"
+      ],
+      "lesson_id": "lesson_daily_conversations",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "grammar_rule_0004",
+      "title": "Personal Pronouns",
+      "title_kaubru": "Brouh Talmung (Personal Pronouns)",
+      "category": "morphology",
+      "difficulty_level": 1,
+      "description": "KauBru has distinct pronouns for singular and plural. Notably, 'bung' is used for both he and she (no gender distinction in third person singular).",
+      "description_kaubru": "ang (I), chung (we), nung (you), nrao (you all), bung (he/she), brao (they).",
+      "rule_pattern": "Singular: ang / nung / bung | Plural: chung / nrao / brao",
+      "examples": [
+        {
+          "kaubru": "ang nouh thang gra nu",
+          "english": "I am going home.",
+          "breakdown": "ang (I) + nouh (home) + thang (go) + gra nu (present)",
+          "audio_url": "/audio/grammar/grammar_rule_0004_ex1.mp3"
+        },
+        {
+          "kaubru": "bung phai tong ou",
+          "english": "He/She is coming.",
+          "breakdown": "bung (he/she) + phai (come) + tong ou (ongoing)",
+          "audio_url": "/audio/grammar/grammar_rule_0004_ex2.mp3"
+        },
+        {
+          "kaubru": "brao mai cha ha",
+          "english": "They have eaten food.",
+          "breakdown": "brao (they) + mai (food) + cha (eat) + ha (completed)",
+          "audio_url": "/audio/grammar/grammar_rule_0004_ex3.mp3"
+        }
+      ],
+      "exceptions": [
+        {
+          "description": "'bung' covers both he and she — KauBru does not distinguish gender in third person pronouns",
+          "example_kaubru": "bung nythau ha",
+          "example_english": "He/She is beautiful."
+        }
+      ],
+      "related_rules": [
+        "grammar_rule_0003"
+      ],
+      "practice_exercises": [
+        {
+          "type": "choose",
+          "question_english": "Which pronoun means 'they'?",
+          "correct_answer": "brao",
+          "options": [
+            "bung",
+            "brao",
+            "nrao",
+            "chung"
+          ]
+        },
+        {
+          "type": "translate",
+          "question_english": "We are going.",
+          "correct_answer": "chung thang gra nu",
+          "options": [
+            "chung thang gra nu",
+            "ang thang gra nu",
+            "brao thang gra nu"
+          ]
+        }
+      ],
+      "tags": [
+        "beginner",
+        "pronouns",
+        "essential"
+      ],
+      "lesson_id": "lesson_daily_conversations",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "grammar_rule_0005",
+      "title": "Negation",
+      "title_kaubru": "Ehi / Pho Talmung (Negation)",
+      "category": "syntax",
+      "difficulty_level": 2,
+      "description": "Negation in KauBru uses 'ehi' (no) as a standalone response, or 'pho' placed after the verb to negate a statement.",
+      "description_kaubru": "'ehi' le salmung phui khe tang pho. 'pho' le tang phui khe tong ha.",
+      "rule_pattern": "Subject + Object + Verb + pho",
+      "examples": [
+        {
+          "kaubru": "ehi, cya ang pho",
+          "english": "No, I don't know.",
+          "breakdown": "ehi (no) + cya (know) + ang (I) + pho (not)",
+          "audio_url": "/audio/grammar/grammar_rule_0005_ex1.mp3"
+        },
+        {
+          "kaubru": "ang phai pho",
+          "english": "I am not coming.",
+          "breakdown": "ang (I) + phai (come) + pho (not)",
+          "audio_url": "/audio/grammar/grammar_rule_0005_ex2.mp3"
+        }
+      ],
+      "exceptions": [],
+      "related_rules": [
+        "grammar_rule_0001",
+        "grammar_rule_0002"
+      ],
+      "practice_exercises": [
+        {
+          "type": "translate",
+          "question_english": "I am not going.",
+          "correct_answer": "ang thang pho",
+          "options": [
+            "ang thang pho",
+            "ang pho thang",
+            "pho ang thang"
+          ]
+        }
+      ],
+      "tags": [
+        "intermediate",
+        "negation",
+        "syntax"
+      ],
+      "lesson_id": "lesson_daily_conversations",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "grammar_rule_0006",
+      "title": "Counting System",
+      "title_kaubru": "Phang Talmung (Counting System)",
+      "category": "semantics",
+      "difficulty_level": 2,
+      "description": "KauBru uses a vigesimal (base-20) counting system. Numbers above ten are formed using 'khol' (20) as the base unit: khol (20), kurnoi (40=2x20), kurtham (60=3x20), kurbroi (80=4x20).",
+      "description_kaubru": "KauBru le phang talmung khol (20) se tong ha. kurnoi le knoi khol, kurtham le ktham khol.",
+      "rule_pattern": "Base numbers: ha knoi ktham broi ba douh sning chaih skuh chi | Tens: khol kurnoi kurtham kurbroi rzaha",
+      "examples": [
+        {
+          "kaubru": "brouh khol",
+          "english": "Twenty people.",
+          "breakdown": "brouh (people) + khol (twenty)",
+          "audio_url": "/audio/grammar/grammar_rule_0006_ex1.mp3"
+        },
+        {
+          "kaubru": "sal kurnoi",
+          "english": "Forty days.",
+          "breakdown": "sal (day) + kurnoi (forty = 2x20)",
+          "audio_url": "/audio/grammar/grammar_rule_0006_ex2.mp3"
+        },
+        {
+          "kaubru": "rzaha",
+          "english": "One hundred.",
+          "breakdown": "rzaha (hundred, borrowed term)",
+          "audio_url": "/audio/grammar/grammar_rule_0006_ex3.mp3"
+        }
+      ],
+      "exceptions": [
+        {
+          "description": "'rzaha' (hundred) is a borrowed term, not derived from the base-20 system",
+          "example_kaubru": "rzaha",
+          "example_english": "One hundred."
+        }
+      ],
+      "related_rules": [
+        "grammar_rule_0001"
+      ],
+      "practice_exercises": [
+        {
+          "type": "choose",
+          "question_english": "What is 40 in KauBru?",
+          "correct_answer": "kurnoi",
+          "options": [
+            "khol",
+            "kurnoi",
+            "kurtham",
+            "kurbroi"
+          ]
+        }
+      ],
+      "tags": [
+        "intermediate",
+        "numbers",
+        "counting"
+      ],
+      "lesson_id": "lesson_numbers",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  ],
+  "metadata": {
+    "version": "1.0",
+    "total_grammar_rules": 6,
+    "last_updated": "2026-01-01T00:00:00Z",
+    "categories": [
+      "syntax",
+      "morphology",
+      "phonology",
+      "semantics",
+      "pragmatics"
+    ]
+  }
+}

@@ -242,11 +242,10 @@ def translations_per_day(
     _: models.User = Depends(require_admin),
 ):
     from datetime import timedelta
-    from sqlalchemy import cast, Date
     since = datetime.utcnow() - timedelta(days=days)
     rows = (
         db.query(
-            cast(models.TranslationHistory.created_at, Date).label("day"),
+            func.date(models.TranslationHistory.created_at).label("day"),
             func.count(models.TranslationHistory.id).label("cnt"),
         )
         .filter(models.TranslationHistory.created_at >= since)
@@ -264,11 +263,10 @@ def signups_per_day(
     _: models.User = Depends(require_admin),
 ):
     from datetime import timedelta
-    from sqlalchemy import cast, Date
     since = datetime.utcnow() - timedelta(days=days)
     rows = (
         db.query(
-            cast(models.User.created_at, Date).label("day"),
+            func.date(models.User.created_at).label("day"),
             func.count(models.User.id).label("cnt"),
         )
         .filter(models.User.created_at >= since)

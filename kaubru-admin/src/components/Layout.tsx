@@ -11,6 +11,8 @@ const NAV = [
   { to: '/picture-words', icon: '🖼',  label: 'Picture Words' },
   { to: '/translations',  icon: '⇄',  label: 'Translations' },
   { to: '/activity',      icon: '◷',  label: 'Activity' },
+  { to: '/culture-articles', icon: '🏛', label: 'Culture Articles' },
+  { to: '/jobs',          icon: '💼', label: 'Job Manager' },
 ]
 
 export default function Layout() {

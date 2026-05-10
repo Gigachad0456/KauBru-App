@@ -14,7 +14,7 @@ mimetypes.add_type('audio/aac', '.aac')
 from app.config import settings
 from app.database import Base, engine
 from app.limiter import limiter
-from app.routes import auth, translation, dictionary, contributions, lessons, premium, admin, tts, notifications, stories, picture_words, chat, game, culture
+from app.routes import auth, translation, dictionary, contributions, lessons, premium, admin, tts, notifications, stories, picture_words, chat, game, culture, jobs
 
 # Create all tables on startup
 Base.metadata.create_all(bind=engine)
@@ -136,6 +136,7 @@ app.include_router(culture.router)
 app.include_router(picture_words.router)
 app.include_router(chat.router)
 app.include_router(game.router)
+app.include_router(jobs.router)
 
 @app.get("/", tags=["Health"])
 def root():

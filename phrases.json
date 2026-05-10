@@ -1,0 +1,292 @@
+{
+  "phrases": [
+    {
+      "id": "phrases_0132",
+      "kaubru": "ang nouh thang ganu",
+      "english": "i am going home",
+      "pronunciation": "ang nouh thang ga-nu",
+      "audio_url": "/audio/phrases/phrases_0132.mp3",
+      "category": "phrases",
+      "difficulty_level": 1,
+      "tags": [
+        "phrases"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "taoh ou nouh thang gra nu .",
+          "english": "I am going home now."
+        }
+      ],
+      "related_words": [
+        "go",
+        "house",
+        "come here"
+      ],
+      "image_url": "/images/words/phrases_0132.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "context": "informal",
+      "usage_notes": "",
+      "related_phrases": [
+        "go",
+        "house",
+        "come here"
+      ],
+      "word_breakdown": [
+        {
+          "kaubru": "taoh",
+          "english": "now",
+          "role": "time"
+        },
+        {
+          "kaubru": "ou",
+          "english": "I (emphatic)",
+          "role": "subject"
+        },
+        {
+          "kaubru": "nouh",
+          "english": "home",
+          "role": "destination"
+        },
+        {
+          "kaubru": "thang",
+          "english": "go",
+          "role": "verb"
+        },
+        {
+          "kaubru": "gra nu",
+          "english": "going (present)",
+          "role": "tense marker"
+        }
+      ],
+      "cultural_context": ""
+    },
+    {
+      "id": "phrases_0133",
+      "kaubru": "ang nung no maiya ong ou",
+      "english": "i love you",
+      "pronunciation": "ang nung no mai-ya ong ou",
+      "audio_url": "/audio/phrases/phrases_0133.mp3",
+      "category": "phrases",
+      "difficulty_level": 1,
+      "tags": [
+        "phrases"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "among nung no maiya ong ou ang.",
+          "english": "I love you, mother."
+        }
+      ],
+      "related_words": [
+        "you",
+        "my",
+        "come here"
+      ],
+      "image_url": "/images/words/phrases_0133.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "context": "informal",
+      "usage_notes": "Expressing love directly is a modern influence; traditionally affection was shown through acts of care and provision.",
+      "related_phrases": [
+        "you",
+        "my",
+        "come here"
+      ],
+      "word_breakdown": [],
+      "cultural_context": "Expressing love directly is a modern influence; traditionally affection was shown through acts of care and provision."
+    },
+    {
+      "id": "phrases_0134",
+      "kaubru": "mtoi ou thang ny nung ba?",
+      "english": "where are you going",
+      "pronunciation": "m-toi ou thang ny nung ba",
+      "audio_url": "/audio/phrases/phrases_0134.mp3",
+      "category": "phrases",
+      "difficulty_level": 1,
+      "tags": [
+        "phrases"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "Mtoi ou thang ny nung ba?",
+          "english": "Where are you going?"
+        }
+      ],
+      "related_words": [
+        "go",
+        "direction",
+        "you"
+      ],
+      "image_url": "/images/words/phrases_0134.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "context": "informal",
+      "usage_notes": "",
+      "related_phrases": [
+        "go",
+        "direction",
+        "you"
+      ],
+      "word_breakdown": [
+        {
+          "kaubru": "Mtoi",
+          "english": "where",
+          "role": "question word"
+        },
+        {
+          "kaubru": "ou",
+          "english": "going",
+          "role": "auxiliary"
+        },
+        {
+          "kaubru": "thang",
+          "english": "go",
+          "role": "verb"
+        },
+        {
+          "kaubru": "ny",
+          "english": "are",
+          "role": "copula"
+        },
+        {
+          "kaubru": "nung",
+          "english": "you",
+          "role": "subject"
+        },
+        {
+          "kaubru": "ba",
+          "english": "question marker",
+          "role": "particle"
+        }
+      ],
+      "cultural_context": ""
+    },
+    {
+      "id": "phrases_0135",
+      "kaubru": "phai di ro",
+      "english": "come here",
+      "pronunciation": "phai di ro",
+      "audio_url": "/audio/phrases/phrases_0135.mp3",
+      "category": "phrases",
+      "difficulty_level": 1,
+      "tags": [
+        "phrases"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "phut khe phai di ro ou.",
+          "english": "Come here quickly."
+        }
+      ],
+      "related_words": [
+        "come",
+        "i am going home"
+      ],
+      "image_url": "/images/words/phrases_0135.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "context": "informal",
+      "usage_notes": "Direct commands in KauBru are softened by context and tone. 'Phai di ro' is a warm invitation rather than an order.",
+      "related_phrases": [
+        "come",
+        "i am going home"
+      ],
+      "word_breakdown": [
+        {
+          "kaubru": "phut",
+          "english": "quickly",
+          "role": "adverb"
+        },
+        {
+          "kaubru": "khe",
+          "english": "please/indeed",
+          "role": "particle"
+        },
+        {
+          "kaubru": "phai",
+          "english": "come",
+          "role": "verb"
+        },
+        {
+          "kaubru": "di",
+          "english": "here",
+          "role": "location"
+        },
+        {
+          "kaubru": "ro",
+          "english": "imperative marker",
+          "role": "particle"
+        },
+        {
+          "kaubru": "ou",
+          "english": "ongoing",
+          "role": "tense marker"
+        }
+      ],
+      "cultural_context": "Direct commands in KauBru are softened by context and tone. 'Phai di ro' is a warm invitation rather than an order."
+    },
+    {
+      "id": "phrases_0136",
+      "kaubru": "mai cha di",
+      "english": "eat food",
+      "pronunciation": "mai cha di",
+      "audio_url": "/audio/phrases/phrases_0136.mp3",
+      "category": "phrases",
+      "difficulty_level": 1,
+      "tags": [
+        "phrases"
+      ],
+      "usage_examples": [
+        {
+          "kaubru": "Mai cha lai na.",
+          "english": "Let us eat food."
+        }
+      ],
+      "related_words": [
+        "eat",
+        "rice"
+      ],
+      "image_url": "/images/words/phrases_0136.jpg",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "context": "informal",
+      "usage_notes": "Sharing food (mai cha) is a central act of hospitality in KauBru culture. Refusing food is considered impolite.",
+      "related_phrases": [
+        "eat",
+        "rice"
+      ],
+      "word_breakdown": [
+        {
+          "kaubru": "Mai",
+          "english": "food",
+          "role": "object"
+        },
+        {
+          "kaubru": "cha",
+          "english": "eat",
+          "role": "verb"
+        },
+        {
+          "kaubru": "lai na",
+          "english": "let us (inclusive)",
+          "role": "particle"
+        }
+      ],
+      "cultural_context": "Sharing food (mai cha) is a central act of hospitality in KauBru culture. Refusing food is considered impolite."
+    }
+  ],
+  "metadata": {
+    "version": "1.0",
+    "total_phrases": 5,
+    "last_updated": "2026-01-01T00:00:00Z",
+    "categories": [
+      "phrases"
+    ],
+    "contexts": [
+      "formal",
+      "informal",
+      "casual"
+    ]
+  }
+}

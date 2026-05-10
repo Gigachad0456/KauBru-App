@@ -31,6 +31,7 @@ import ChatScreen from '../screens/ChatScreen';
 import WordRushScreen from '../screens/WordRushScreen';
 import CultureBrowseScreen from '../screens/CultureBrowseScreen';
 import ArticleDetailScreen from '../screens/ArticleDetailScreen';
+import JobsScreen from '../screens/JobsScreen';
 
 import { COLORS, SPACING } from '../config/theme';
 
@@ -74,6 +75,7 @@ const TABS = [
   { name: 'Translate',  icon: 'swap-horizontal',  label: 'Translate'  },
   { name: 'Dictionary', icon: 'book-outline',      label: 'Dictionary' },
   { name: 'Learn',      icon: 'school-outline',    label: 'Learn'      },
+  { name: 'Jobs',       icon: 'briefcase-outline', label: 'Jobs'       },
   { name: 'Contribute', icon: 'pencil-outline',    label: 'Contribute' },
   { name: 'Profile',    icon: 'person-outline',    label: 'Profile'    },
 ] as const;
@@ -117,6 +119,7 @@ function MainTabs() {
         const components: Record<string, React.ComponentType<any>> = {
           Translate: HomeScreen, Dictionary: DictionaryScreen,
           Learn: LearnScreen, Contribute: ContributeScreen, Profile: ProfileScreen,
+          Jobs: JobsScreen,
         };
         return (
           <Tab.Screen
