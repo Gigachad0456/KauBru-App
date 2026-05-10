@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import {
   View, Text, StyleSheet, TextInput, TouchableOpacity,
-  FlatList, KeyboardAvoidingView, Platform, ActivityIndicator,
-  SafeAreaView
+  FlatList, KeyboardAvoidingView, Platform, ActivityIndicator
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { chatAPI, authAPI } from '../services/api';
 import { COLORS, SPACING, RADIUS, SHADOW, FONTS } from '../config/theme';
@@ -117,8 +117,8 @@ export default function ChatScreen({ navigation }: any) {
 
       <KeyboardAvoidingView 
         style={styles.keyboardView} 
-        behavior={Platform.OS === 'ios' ? 'padding' : 'padding'}
-        keyboardVerticalOffset={Platform.OS === 'ios' ? 10 : 25}
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+        keyboardVerticalOffset={Platform.OS === 'ios' ? 10 : 0}
       >
         <FlatList
           ref={flatListRef}
