@@ -20,12 +20,17 @@ export default function SignupScreen({ navigation }: Props) {
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
   const [emailExists, setEmailExists] = useState(false);
+  const [agreeTerms, setAgreeTerms] = useState(false);
 
   const handleSignup = async () => {
     setErrorMsg('');
     setEmailExists(false);
     if (!name.trim() || !email.trim() || !password.trim()) {
       setErrorMsg('Please fill in all fields.');
+      return;
+    }
+    if (!agreeTerms) {
+      setErrorMsg('You must agree to the Terms of Service and Privacy Policy.');
       return;
     }
     if (password.length < 6) {
@@ -161,11 +166,22 @@ export default function SignupScreen({ navigation }: Props) {
           </TouchableOpacity>
         </View>
 
-        <Text style={styles.terms}>
-          By continuing, you agree to KauBru's{' '}
-          <Text style={styles.termsLink}>Terms of Service</Text> and{' '}
-          <Text style={styles.termsLink}>Privacy Policy</Text>.
-        </Text>
+        <TouchableOpacity 
+          style={styles.checkboxRow} 
+          onPress={() => setAgreeTerms(!agreeTerms)}
+          activeOpacity={0.7}
+        >
+          <MaterialCommunityIcons 
+            name={agreeTerms ? "checkbox-marked" : "checkbox-blank-outline"} 
+            size={22} 
+            color={agreeTerms ? COLORS.primary : COLORS.textMuted} 
+          />
+          <Text style={styles.terms}>
+            I agree to KauBru's{' '}
+            <Text style={styles.termsLink} onPress={() => navigation.navigate('Terms')}>Terms of Service</Text> and{' '}
+            <Text style={styles.termsLink} onPress={() => navigation.navigate('Terms')}>Privacy Policy</Text>.
+          </Text>
+        </TouchableOpacity>
       </ScrollView>
     </KeyboardAvoidingView>
   );
@@ -221,6 +237,7 @@ const styles = StyleSheet.create({
     borderRadius: RADIUS.md, backgroundColor: COLORS.bgCard,
   },
   socialText: { fontSize: 14, fontWeight: '600', color: COLORS.textPrimary },
-  terms: { fontSize: 11, color: COLORS.textMuted, textAlign: 'center', lineHeight: 18 },
-  termsLink: { color: COLORS.textPrimary, fontWeight: '600' },
+  checkboxRow: { flexDirection: 'row', alignItems: 'flex-start', gap: 12, marginTop: SPACING.md, paddingHorizontal: SPACING.sm },
+  terms: { flex: 1, fontSize: 12, color: COLORS.textMuted, lineHeight: 18 },
+  termsLink: { color: COLORS.primary, fontWeight: '700' },
 });

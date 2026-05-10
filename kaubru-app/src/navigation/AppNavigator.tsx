@@ -12,6 +12,7 @@ import OTPVerificationScreen from '../screens/OTPVerificationScreen';
 import OnboardingScreen from '../screens/OnboardingScreen';
 import LoginScreen from '../screens/LoginScreen';
 import SignupScreen from '../screens/SignupScreen';
+import TermsScreen from '../screens/TermsScreen';
 
 import HomeScreen from '../screens/HomeScreen';
 import DictionaryScreen from '../screens/DictionaryScreen';
@@ -155,6 +156,11 @@ function AuthStack() {
         component={SignupScreen}
         options={{ animation: 'slide_from_right' }}
       />
+      <Stack.Screen
+        name="Terms"
+        component={TermsScreen}
+        options={{ animation: 'slide_from_bottom', presentation: 'modal' }}
+      />
     </Stack.Navigator>
   );
 }
@@ -212,6 +218,11 @@ function AppStack() {
         name="ArticleDetail"
         component={ArticleDetailScreen}
         options={{ animation: 'slide_from_bottom', animationDuration: 350 }}
+      />
+      <Stack.Screen
+        name="Terms"
+        component={TermsScreen}
+        options={{ animation: 'slide_from_bottom', presentation: 'modal' }}
       />
     </Stack.Navigator>
   );

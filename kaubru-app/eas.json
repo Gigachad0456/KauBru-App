@@ -17,8 +17,7 @@
       }
     },
     "aptoide": {
-      "distribution": "internal",
-      "channel": "preview",
+      "extends": "production",
       "android": {
         "buildType": "apk",
         "gradleCommand": ":app:assembleRelease"
